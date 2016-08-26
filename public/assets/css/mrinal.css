@@ -1,0 +1,269 @@
+@font-face {
+    font-family: AltHazer;
+    src: url("../fonts/alt_hazer.ttf");
+}
+ul#nav> li a {
+    color: #000;
+    font-family: 'AltHazer', sans-serif;
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+ul#nav> li.active {
+    background: #111;
+    margin: 0;
+}
+ul#nav> li.active a {
+    color: white;
+    border-bottom: none;
+}
+.columns>h4 {
+    font-family: 'AltHazer', sans-serif;
+    font-size: 32px !important;
+    letter-spacing: 2px;
+}
+#header p.site-desc {
+    font-family: 'AltHazer', sans-serif;
+    letter-spacing: 2px;
+    color: #000;
+}
+.icon-holder> img {
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-bottom: 0 !important;
+}
+.item>img {
+    border: 1px solid black;
+}
+.box-info>a>img {
+    float: left;
+    height: 80px;
+    width: 80px;
+    border: 1px solid black;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px !important;
+}
+h3>.icon-holder {
+    float: right;
+}
+.box-info>.icon-holder, .columns>.icon-holder {
+    margin-top: 15px;
+}
+#works.single .box-info {
+    margin-bottom: 20px;
+}
+#works.single .galleryImg {
+    position: relative;
+    line-height: 0.5;
+    margin-bottom: 5px;
+    border: 1px solid black;
+}
+.galleryImg> img {
+    margin-bottom: 0 !important;
+}
+.box-info>.border-top {
+    padding-top: 10px !important;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
+    color: white;
+}
+.overlay>p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    margin: 0;
+    margin-right: 10%;
+    font-family: 'Roboto Slab', Georgia, serif;
+    font-size: 34px;
+    font-style: italic;
+    line-height: 1.5;
+    font-weight: 300;
+    width: 80%;
+    text-align: center;
+}
+.galleryImg:hover .overlay {
+    opacity: 0.9;
+}
+.link-prev, .link-next {
+    cursor: pointer;
+}
+.inactive {
+    display: none !important;
+}
+#footer ul#social li {
+    display: inline-block !important;
+}
+#footer ul#social li a {
+    padding: 0;
+    margin-right: 15px;
+    display: inline;
+    border: none !important;
+}
+#footer ul#social li a>img {
+    opacity: 0.8
+}
+#footer ul#social li a>img:hover {
+    opacity: 1
+}
+#social {
+    margin-top: 25px;
+}
+
+/*Sidebar */
+
+.sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 99999999999999999999999999999999999999;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+
+.sidenav a {
+    font-family: 'AltHazer', sans-serif;
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover, .offcanvas a:focus {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 36px;
+    margin-left: 50px;
+}
+.sidenav li.active a {
+    color: white;
+}
+.hamburger {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    line-height: 1;
+}
+.hamburger img {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.hamburger:hover img {
+    opacity: 1;
+}
+
+/*React router animations*/
+
+.route-slider {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+}
+.pageSlider-leave {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+.pageSlider-leave.pageSlider-leave-active {
+    transform: translate3d(100%, 0, 0);
+    transition: all 600ms;
+    opacity: 0.01;
+}
+.pageSlider-enter {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0.01;
+}
+.pageSlider-enter.pageSlider-enter-active {
+    transform: translate3d(0, 0, 0);
+    transition: all 600ms;
+    opacity: 1;
+}
+
+/*Media queries*/
+
+@media screen and (max-width:1300px) {
+    .icon-holder> img {
+        width: 20px;
+        height: 20px;
+    }
+    h3>.icon-holder>img {
+        width: 14.5px;
+        height: 14.5px;
+    }
+    .box-info>a>img {
+        width: 70px;
+        height: 70px;
+    }
+    .overlay>p {
+        font-size: 27px;
+    }
+}
+@media screen and (max-width:959px) {
+    ul#nav> li a {
+        font-size: 24px;
+    }
+    #big-screen {
+        display: none;
+    }
+    .box-info>a>img {
+        width: 60px;
+        height: 60px;
+    }
+    .overlay>p {
+        font-size: 24px;
+    }
+}
+@media screen and (min-width:959px) {
+    #small-screen {
+        display: none;
+    }
+}
+@media screen and (min-width: 767px) {
+    .hamburger, .sidenav {
+        display: none;
+    }
+}
+@media screen and (max-width:480px) {
+    .site-desc>.icon-holder, .columns>.icon-holder {
+        display: none;
+    }
+    .overlay>p {
+        font-size: 16px;
+    }
+}

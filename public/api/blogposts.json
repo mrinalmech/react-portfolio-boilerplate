@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "date": "22/08/2016",
+    "category": "Personal",
+    "imgUrl": "assets/images/blog/01.png",
+    "title": "New Metallica!!!",
+    "excerpt":"sasasasa",
+    "firstpara":"firstpara1",
+    "secondpara":"secondpara1",
+    "quote":"Metal Up Your Ass!!!!",
+    "tags":["Personal","Music","Metallica"]
+  },
+  {
+    "id": 2,
+    "date": "20/08/2016",
+    "category": "Technical",
+    "imgUrl": "assets/images/blog/02.png",
+    "title":"god",
+    "excerpt":"sasasasasa",
+    "firstpara":"firstpara2",
+    "secondpara":"secondpara2",
+    "quote":"Angular ki Wrangler",
+    "tags":["Personal","Technical"]
+  },
+  {
+    "id": 3,
+    "date": "20/08/2016",
+    "category": "Technical",
+    "imgUrl": "assets/images/blog/02.png",
+    "title":"god",
+    "excerpt":"sasasasasa",
+    "firstpara":"firstpara2",
+    "secondpara":"secondpara2",
+    "quote":"Angular ki Wrangler",
+    "tags":["Personal","Technical"]
+  },
+  {
+    "id": 4,
+    "date": "20/08/2016",
+    "category": "Technical",
+    "imgUrl": "assets/images/blog/02.png",
+    "title":"god",
+    "excerpt":"sasasasasa",
+    "firstpara":"firstpara2",
+    "secondpara":"secondpara2",
+    "quote":"Angular ki Wrangler",
+    "tags":["Personal","Technical"]
+  }
+]

@@ -1,0 +1,207 @@
+[{
+    "id": 1,
+    "name": "Kairos Website",
+    "task": "Full Stack Web Development",
+    "imgUrl": "assets/images/works_architecture01.jpg",
+    "client": "Kairos",
+    "clientDesc": "Kairos is a not-for-profit consultancy company based out of Austria",
+    "clientLogo": "assets/images/portfolio/kairos/logo.png",
+    "clientUrl": "http://kairos.sunlight-project.org",
+    "stack": ["angular", "sass", "compass", "bootstrap","bower", "babel", "php", "mysql", "gulp"],
+    "gallery": [{
+        "url": "assets/images/portfolio/kairos/gallery01.png",
+        "caption": "Fully responsive layout on a variety of devices. Pure.css was used for the grid layout."
+    }, {
+        "url": "assets/images/portfolio/kairos/gallery07.png",
+        "caption": "Projects page populated by HTTP requests to a REST API in PHP which fetches the data from a MySQL database."
+    }, {
+        "url": "assets/images/portfolio/kairos/gallery08.png",
+        "caption": "Contacts page populated by HTTP requests to a REST API in PHP which fetches the data from a MySQL database."
+    }, {
+        "url": "assets/images/portfolio/kairos/gallery02.png",
+        "caption": "Bootstrap based lightbox modal and gallery for images."
+    }, {
+        "url": "assets/images/portfolio/kairos/gallery03.png",
+        "caption": "Angular filters to sort/filter the data on various parameters."
+    }, {
+        "url": "assets/images/portfolio/kairos/gallery04.png",
+        "caption": "Full dual language support with the click of a button using state parameters."
+    }, {
+        "url": "assets/images/portfolio/kairos/gallery05.png",
+        "caption": "Custom CMS with complete CRUD functionalities using a REST API coded in PHP."
+    }, {
+        "url": "assets/images/portfolio/kairos/gallery06.png",
+        "caption": "Image upload and retrieval via PHP."
+    },{
+        "url": "assets/images/portfolio/kairos/gallery09.png",
+        "caption": "SQL database design."
+    }]
+}, {
+    "id": 2,
+    "name": "ELiquid Canada Website",
+    "task": "Full Stack Web Development",
+    "imgUrl": "assets/images/works_architecture02.jpg",
+    "client": "ELiquid Canada",
+    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
+    "clientLogo": "assets/images/portfolio/eliquid/logo.png",
+    "clientUrl": "#",
+    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "gallery": [{
+        "url": "assets/images/works_photography01.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography02.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography03.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography04.jpg",
+        "caption": "sex"
+    }]
+
+}, {
+    "id": 3,
+    "name": "Workplace Savings Calculator",
+    "task": "Desktop Software Development",
+    "imgUrl": "assets/images/works_architecture03.jpg",
+    "client": "Global Workplace Analytics",
+    "clientDesc": "GWA is a management consultancy company that create and communicate strategies for the workplace",
+    "clientLogo": "assets/images/portfolio/gwa/logo.png",
+    "clientUrl": "http://globalworkplaceanalytics.com/",
+    "stack": ["unity", "csharp"],
+    "gallery": [{
+        "url": "assets/images/works_photography01.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography02.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography03.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography04.jpg",
+        "caption": "sex"
+    }]
+
+}, {
+    "id": 4,
+    "name": "Socilab",
+    "task": "Frontend Web Development",
+    "imgUrl": "assets/images/works_architecture04.jpg",
+    "client": "ELiquid Canada",
+    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
+    "clientLogo": "assets/images/portfolio/eliquid/logo.png",
+    "clientUrl": "#",
+    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "gallery": [{
+        "url": "assets/images/works_photography01.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography02.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography03.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography04.jpg",
+        "caption": "sex"
+    }]
+
+}, {
+    "id": 5,
+    "name": "ELiquid Canada Website",
+    "task": "Full Stack Web Development",
+    "imgUrl": "assets/images/portfolio/americansteel/thumb.png",
+    "client": "ELiquid Canada",
+    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
+    "clientLogo": "assets/images/portfolio/eliquid/logo.png",
+    "clientUrl": "#",
+    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "gallery": [{
+        "url": "assets/images/works_photography01.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography02.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography03.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography04.jpg",
+        "caption": "sex"
+    }]
+
+}, {
+    "id": 6,
+    "name": "ELiquid Canada Website",
+    "task": "Full Stack Web Development",
+    "imgUrl": "assets/images/portfolio/icarusinc/thumb.png",
+    "client": "ELiquid Canada",
+    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
+    "clientLogo": "assets/images/portfolio/eliquid/logo.png",
+    "clientUrl": "#",
+    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "gallery": [{
+        "url": "assets/images/works_photography01.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography02.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography03.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography04.jpg",
+        "caption": "sex"
+    }]
+
+}, {
+    "id": 7,
+    "name": "ELiquid Canada Website",
+    "task": "Full Stack Web Development",
+    "imgUrl": "assets/images/portfolio/macondo/thumb.png",
+    "client": "ELiquid Canada",
+    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
+    "clientLogo": "assets/images/portfolio/icarusinc/thumb.png",
+    "clientUrl": "#",
+    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "gallery": [{
+        "url": "assets/images/works_photography01.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography02.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography03.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography04.jpg",
+        "caption": "sex"
+    }]
+
+}, {
+    "id": 8,
+    "name": "ELiquid Canada Website",
+    "task": "Full Stack Web Development",
+    "imgUrl": "assets/images/portfolio/mrinalmech/thumb.png",
+    "client": "ELiquid Canada",
+    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
+    "clientLogo": "assets/images/portfolio/eliquid/logo.png",
+    "clientUrl": "#",
+    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "gallery": [{
+        "url": "assets/images/works_photography01.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography02.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography03.jpg",
+        "caption": "sex"
+    }, {
+        "url": "assets/images/works_photography04.jpg",
+        "caption": "sex"
+    }]
+
+}]
