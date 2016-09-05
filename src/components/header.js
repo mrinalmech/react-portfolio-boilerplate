@@ -71,12 +71,7 @@ export default class Footer extends Component {
                                 <div className="icon-holder">
                                     <img src="assets/images/icons/php.png" alt="" title="PHP"/>
                                     <img src="assets/images/icons/laravel.png" alt="" title="Laravel"/>
-                                    <img src="assets/images/icons/python.png" alt="" title="Python"/>
-                                    <img src="assets/images/icons/django.png" alt="" title="Django"/>
-                                    <img src="assets/images/icons/ruby.png" alt="" title="Ruby"/>
-                                    <img src="assets/images/icons/rails.png" alt="" title="Rails"/>
                                     <img src="assets/images/icons/node.png" alt="" title="Node.js"/>
-                                    <img src="assets/images/icons/asp.png" alt="" title="Asp.net"/>
                                     <img src="assets/images/icons/mysql.png" alt="" title="MySQL"/>
                                     <img src="assets/images/icons/postgresql.png" alt="" title="PostgreSQL"/>
                                     <img src="assets/images/icons/mongodb.png" alt="" title="MongoDB"/>

@@ -2,12 +2,13 @@
     "id": 1,
     "name": "Kairos Website",
     "task": "Full Stack Web Development",
-    "imgUrl": "assets/images/works_architecture01.jpg",
+    "desc": "Kairos needed a new website for their company with features like portfolio display/filtering, CMS capabilities etc. I built the site from the ground up handling everything from the layout to the database design.",
+    "imgUrl": "assets/images/portfolio/kairos/thumb.png",
     "client": "Kairos",
     "clientDesc": "Kairos is a not-for-profit consultancy company based out of Austria",
     "clientLogo": "assets/images/portfolio/kairos/logo.png",
     "clientUrl": "http://kairos.sunlight-project.org",
-    "stack": ["angular", "sass", "compass", "bootstrap","bower", "babel", "php", "mysql", "gulp"],
+    "stack": ["angular", "sass", "compass", "bootstrap", "bower", "babel", "php", "mysql", "gulp"],
     "gallery": [{
         "url": "assets/images/portfolio/kairos/gallery01.png",
         "caption": "Fully responsive layout on a variety of devices. Pure.css was used for the grid layout."
@@ -32,7 +33,7 @@
     }, {
         "url": "assets/images/portfolio/kairos/gallery06.png",
         "caption": "Image upload and retrieval via PHP."
-    },{
+    }, {
         "url": "assets/images/portfolio/kairos/gallery09.png",
         "caption": "SQL database design."
     }]
@@ -40,168 +41,193 @@
     "id": 2,
     "name": "ELiquid Canada Website",
     "task": "Full Stack Web Development",
-    "imgUrl": "assets/images/works_architecture02.jpg",
+    "desc": "ELiquid needed a new website for their ecommerce company. I was provided the initial design which I converted to an Angular 2 SPA implementing standard ecommerce website functionalities like product filtering, CRUD functionalities for sellers/admins etc. I also handled the database design as well as building a RESTful API for the frontend to communicate with the database.",
+    "imgUrl": "assets/images/portfolio/eliquid/thumb.png",
     "client": "ELiquid Canada",
     "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
     "clientLogo": "assets/images/portfolio/eliquid/logo.png",
-    "clientUrl": "#",
+    "clientUrl": "http://eliquidscanada.com",
     "stack": ["angular", "ts", "babel", "php", "mysql"],
     "gallery": [{
-        "url": "assets/images/works_photography01.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/eliquid/gallery01.png",
+        "caption": "Home page populated by a RESTful API coded in PHP."
     }, {
-        "url": "assets/images/works_photography02.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/eliquid/gallery02.png",
+        "caption": "Angular filters for filtering products according to various criteria."
     }, {
-        "url": "assets/images/works_photography03.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/eliquid/gallery03.png",
+        "caption": "Filters in action displaying products of a certain company."
     }, {
-        "url": "assets/images/works_photography04.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/eliquid/gallery04.png",
+        "caption": "Product pages populated via route ids in the url."
+    }, {
+        "url": "assets/images/portfolio/eliquid/gallery05.png",
+        "caption": "Sliding wishlist/cart functionality."
+    }, {
+        "url": "assets/images/portfolio/eliquid/gallery06.png",
+        "caption": "CRUD functionality using a RESTful API coded in PHP and a MySQL database."
+    }, {
+        "url": "assets/images/portfolio/eliquid/gallery07.png",
+        "caption": "Orders interface for each seller ordered by buyer and buyer type."
+    }, {
+        "url": "assets/images/portfolio/eliquid/gallery08.png",
+        "caption": "Interface for website admin to change lists displayed on the home page."
+    }, {
+        "url": "assets/images/portfolio/eliquid/gallery09.png",
+        "caption": "SQL database design."
     }]
 
 }, {
     "id": 3,
     "name": "Workplace Savings Calculator",
     "task": "Desktop Software Development",
-    "imgUrl": "assets/images/works_architecture03.jpg",
+    "desc": "Global Workplace Analytics had an Excel calculator that calculated savings for remote work and telecommunication which they wanted to convert to a mobile and desktop version. I handled the design and development of this multi-platform application.",
+    "imgUrl": "assets/images/portfolio/gwa/thumb.png",
     "client": "Global Workplace Analytics",
     "clientDesc": "GWA is a management consultancy company that create and communicate strategies for the workplace",
     "clientLogo": "assets/images/portfolio/gwa/logo.png",
     "clientUrl": "http://globalworkplaceanalytics.com/",
     "stack": ["unity", "csharp"],
     "gallery": [{
-        "url": "assets/images/works_photography01.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/gwa/gallery01.png",
+        "caption": "Minimalist main UI with an input slider and a radial progress bar for output."
     }, {
-        "url": "assets/images/works_photography02.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/gwa/gallery02.png",
+        "caption": "Panel slides away to reveal more detailed output parameters."
     }, {
-        "url": "assets/images/works_photography03.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/gwa/gallery03.png",
+        "caption": "Tabbed structure for the various inputs on the left."
     }, {
-        "url": "assets/images/works_photography04.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/gwa/gallery04.png",
+        "caption": "Color changes to indicate positive/negative effects."
+    }, {
+        "url": "assets/images/portfolio/gwa/gallery05.png",
+        "caption": "Panels for each output parameter to see dependent inputs."
     }]
 
 }, {
     "id": 4,
     "name": "Socilab",
     "task": "Frontend Web Development",
-    "imgUrl": "assets/images/works_architecture04.jpg",
-    "client": "ELiquid Canada",
-    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
-    "clientLogo": "assets/images/portfolio/eliquid/logo.png",
-    "clientUrl": "#",
-    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "desc": "Socilab wanted a frontend overhaul for their social anlytics website. I implemented a new responsive design as well as additional frontend functionalities and visualizations.",
+    "imgUrl": "assets/images/portfolio/socilab/thumb.png",
+    "client": "Socilab",
+    "clientDesc": "Socilab is a platform for social network analysis using LinkedIn networks",
+    "clientLogo": "assets/images/portfolio/socilab/logo.png",
+    "clientUrl": "http://socilab.com/",
+    "stack": ["angular", "bootstrap", "sass", "compass", "node", "mongodb", "gulp"],
     "gallery": [{
-        "url": "assets/images/works_photography01.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/socilab/gallery03.png",
+        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
     }, {
-        "url": "assets/images/works_photography02.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/socilab/gallery01.png",
+        "caption": "Minimalist home page with a carousel stating the various functionalities of the site."
     }, {
-        "url": "assets/images/works_photography03.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/socilab/gallery02.png",
+        "caption": "Minimalist contact form for consulting work. Email script was made using Node.js"
     }, {
-        "url": "assets/images/works_photography04.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/socilab/gallery04.png",
+        "caption": "Visual metrics of the user's nework is displayed in a graphical form using the LinkedIn API."
+    }, {
+        "url": "assets/images/portfolio/socilab/gallery05.png",
+        "caption": "LinkedIn API provides for a messaging functionality."
     }]
 
 }, {
     "id": 5,
-    "name": "ELiquid Canada Website",
-    "task": "Full Stack Web Development",
+    "name": "American Steel",
+    "task": "Game Development",
+    "desc": "American Steel is a 2d run and gun shooter (Contra, Megaman et al.) with a visual aesthetic reminiscent of 80s Saturday morning cartoons (He-man, Centurions et al.). I am handling the entire programming aspect including artificial intelligence, physics, gameplay programming etc.",
     "imgUrl": "assets/images/portfolio/americansteel/thumb.png",
-    "client": "ELiquid Canada",
-    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
-    "clientLogo": "assets/images/portfolio/eliquid/logo.png",
-    "clientUrl": "#",
-    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "client": "Macondo Games (personal)",
+    "clientDesc": "American Steel is a 2d run and gun shooter with a visual aesthetic reminiscent of 80s Saturday morning cartoons (that I am developing)",
+    "clientLogo": "assets/images/portfolio/americansteel/logo.png",
+    "clientUrl": "http://www.macondogames.com/#games",
+    "stack": ["unity", "csharp", "trello"],
     "gallery": [{
-        "url": "assets/images/works_photography01.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/americansteel/gallery01.png",
+        "caption": "Level Selection Screen done in an 80s aesthetic."
     }, {
-        "url": "assets/images/works_photography02.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/americansteel/gallery03.png",
+        "caption": "The first boss fight in the game"
     }, {
-        "url": "assets/images/works_photography03.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/americansteel/gallery02.png",
+        "caption": "Project management via Trello."
     }, {
-        "url": "assets/images/works_photography04.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/americansteel/gallery04.png",
+        "caption": "Animation using Unity's Mecanim animation system."
     }]
 
 }, {
     "id": 6,
-    "name": "ELiquid Canada Website",
+    "name": "Macondo Games Website",
     "task": "Full Stack Web Development",
-    "imgUrl": "assets/images/portfolio/icarusinc/thumb.png",
-    "client": "ELiquid Canada",
-    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
-    "clientLogo": "assets/images/portfolio/eliquid/logo.png",
-    "clientUrl": "#",
-    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "desc": "For the website for my video games company I designed and implemented a responsive SPA website with a contact form. I also handled the database design and backend.",
+    "imgUrl": "assets/images/portfolio/macondo/thumb.png",
+    "client": "Macondo Games (personal)",
+    "clientDesc": "Macondo Games is an independent video game company based out of Mumbai (that I own)",
+    "clientLogo": "assets/images/portfolio/macondo/logo.png",
+    "clientUrl": "http://www.macondogames.com",
+    "stack": ["angular", "jquery", "sass", "compass", "bower", "babel", "gulp"],
     "gallery": [{
-        "url": "assets/images/works_photography01.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/macondo/gallery01.png",
+        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
     }, {
-        "url": "assets/images/works_photography02.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/macondo/gallery02.png",
+        "caption": "Form validation via JQuery. Mailing list script in PHP and Zoho API."
     }, {
-        "url": "assets/images/works_photography03.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/macondo/gallery03.png",
+        "caption": "AJAX confirms form submission via a customised modal."
     }, {
-        "url": "assets/images/works_photography04.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/macondo/gallery04.png",
+        "caption": "Facebook/Twitter APIs used for share/tweet buttons respectively."
     }]
 
 }, {
     "id": 7,
-    "name": "ELiquid Canada Website",
+    "name": "Icarus Inc Website",
     "task": "Full Stack Web Development",
-    "imgUrl": "assets/images/portfolio/macondo/thumb.png",
-    "client": "ELiquid Canada",
-    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
-    "clientLogo": "assets/images/portfolio/icarusinc/thumb.png",
-    "clientUrl": "#",
-    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "desc": "For the website for my webcomic I designed and implemented a responsive SPA website with navigation controls for the comic. I also handled the database design and backend.",
+    "imgUrl": "assets/images/portfolio/icarusinc/thumb.png",
+    "client": "Icarus Inc (personal)",
+    "clientDesc": "Icarus Inc is a dystopian sci-fi webcomic set in the near future (that I am writing)",
+    "clientLogo": "assets/images/portfolio/icarusinc/logo.png",
+    "clientUrl": "http://www.icarus-inc.com",
+    "stack": ["angular", "sass", "compass", "bower", "babel", "gulp"],
     "gallery": [{
-        "url": "assets/images/works_photography01.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/icarusinc/gallery03.png",
+        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
     }, {
-        "url": "assets/images/works_photography02.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/icarusinc/gallery01.png",
+        "caption": "Slider and ui-router used for comic navigation."
     }, {
-        "url": "assets/images/works_photography03.jpg",
-        "caption": "sex"
-    }, {
-        "url": "assets/images/works_photography04.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/icarusinc/gallery02.png",
+        "caption": "Bootstrap based carousel."
     }]
 
 }, {
     "id": 8,
-    "name": "ELiquid Canada Website",
+    "name": "Mrinal Mech Website",
     "task": "Full Stack Web Development",
+    "desc": "For my personal portfolio website I designed and implemented a responsive SPA website. I also handled the database design and backend.",
     "imgUrl": "assets/images/portfolio/mrinalmech/thumb.png",
-    "client": "ELiquid Canada",
-    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
-    "clientLogo": "assets/images/portfolio/eliquid/logo.png",
-    "clientUrl": "#",
-    "stack": ["angular", "ts", "babel", "php", "mysql"],
+    "client": "Mrinal Mech (personal)",
+    "clientDesc": "My portfolio website",
+    "clientLogo": "assets/images/portfolio/mrinalmech/logo.png",
+    "clientUrl": "http://www.mrinalmech.com",
+    "stack": ["react", "reactrouter", "redux", "jquery", "babel", "php", "laravel", "postgresql", "aws", "gulp"],
     "gallery": [{
-        "url": "assets/images/works_photography01.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/mrinalmech/gallery01.png",
+        "caption": "Fully responsive layout on a variety of devices. A custom CSS template was used."
     }, {
-        "url": "assets/images/works_photography02.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/mrinalmech/gallery04.png",
+        "caption": "Data loaded via a Laravel/PHP RESTful API extracting data from a Postgresql database."
     }, {
-        "url": "assets/images/works_photography03.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/mrinalmech/gallery02.png",
+        "caption": "Pagination with Redux states to remember last viewed pages."
     }, {
-        "url": "assets/images/works_photography04.jpg",
-        "caption": "sex"
+        "url": "assets/images/portfolio/mrinalmech/gallery03.png",
+        "caption": "React router used for routing with sliding animations."
     }]
 
 }]

@@ -36,7 +36,7 @@ export default class WorkSingle extends React.Component {
                                     <div className="box-info">
                                         <h3 className="border-top">{this.state.work.name}</h3>
                                         <p className="project-desc">2013</p>
-                                        <p>The various forms of elements from different places expose the essence or identity of a subject through eliminating all non-essential forms, features, or concepts.
+                                        <p>{this.state.work.desc}
                                         </p>
                                     </div>
                                 </div>
@@ -44,9 +44,7 @@ export default class WorkSingle extends React.Component {
                                 <div className="desktop-3 tablet-6 mobile-half columns">
                                     <div className="box-info">
                                         <h4 className="border-top">Category</h4>
-                                        <p>
-                                            Photography<br/>
-                                            Art Direction
+                                        <p>{this.state.work.task}
                                         </p>
                                     </div>
                                 </div>

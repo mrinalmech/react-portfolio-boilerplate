@@ -63,17 +63,12 @@ export default class ServicesPage extends React.Component {
                                 <div className="desktop-6 tablet-6 columns">
                                     <h4>backend web</h4>
                                     <p>
-                                        I specialize in making server side software which implement RESTful APIs that communicate with the frontend and manipulate databases during CRUD operations. My weapon of choice is either faithful old PHP or Node.js for those seeking a full Javascript stack.
+                                        I specialize in making server side software which implement RESTful APIs that communicate with the frontend and manipulate databases during CRUD operations. My weapon of choice is either faithful old PHP (vanilla or using a framework such as Laravel) or Node.js for those seeking a full Javascript stack. And once the application is ready for deployment I can host it, especially on AWS whose EC2 and Elastic Beanstalk services I am very familiar with.
                                     </p>
                                     <div className="icon-holder">
                                         <img src="assets/images/icons/php.png" alt="" title="PHP"/>
                                         <img src="assets/images/icons/laravel.png" alt="" title="Laravel"/>
                                         <img src="assets/images/icons/node.png" alt="" title="Node.js"/>
-                                        <img src="assets/images/icons/asp.png" alt="" title="Asp.net"/>
-                                        <img src="assets/images/icons/python.png" alt="" title="Python"/>
-                                        <img src="assets/images/icons/django.png" alt="" title="Django"/>
-                                        <img src="assets/images/icons/ruby.png" alt="" title="Ruby"/>
-                                        <img src="assets/images/icons/rails.png" alt="" title="Rails"/>
                                         <img src="assets/images/icons/aws.png" alt="" title="AWS"/>
                                     </div>
                                 </div>
@@ -86,7 +81,8 @@ export default class ServicesPage extends React.Component {
                                 </div>
                                 <div className="desktop-6 pull-3 tablet-6 tablet-pull-0 columns">
                                     <h4>database</h4>
-                                    <p>I have knowledge of databases both relational and non-relational. My master's specialization in databases has given me a good idea about database design and implementation to ensure optimum memory usage, fast operation times and data consistency.
+                                    <p>
+                                        I have knowledge of databases both relational and non-relational. My master's specialization in databases has given me a good idea about database design and implementation to ensure optimum memory usage, fast operation times and data consistency.
                                     </p>
                                     <div className="icon-holder">
                                         <img src="assets/images/icons/mysql.png" alt="" title="MySQL"/>
@@ -104,10 +100,11 @@ export default class ServicesPage extends React.Component {
                                 </div>
                                 <div className="desktop-6 tablet-6 columns">
                                     <h4>mobile</h4>
-                                    <p>A structure designed and constructed to have robustness will not suffer from disproportionate collapse (progressive collapse) under accidental loading. When it comes to steel framed buildings, to achieve robustness is about designing connections appropriately. Cncrete structures is less problem with structural robustness.</p>
+                                    <p>I have experience in creating mobile applications whether natively for Android or using a framework such as React Native or Unity.</p>
                                     <div className="icon-holder">
                                         <img src="assets/images/icons/react.png" alt="" title="React Native"/>
                                         <img src="assets/images/icons/android.png" alt="" title="Android"/>
+                                        <img src="assets/images/icons/unity.png" alt="" title="Unity"/>
                                     </div>
                                 </div>
                                 <div className="clear"></div>
@@ -119,7 +116,7 @@ export default class ServicesPage extends React.Component {
                                 </div>
                                 <div className="desktop-6 tablet-6 columns">
                                     <h4>video games</h4>
-                                    <p>Architectural drawings are made according to a set of conventions, which include particular views (floor plan, section etc.), sheet sizes, units of measurement and scales, annotation and cross referencing. Conventionally, drawings were made in ink on paper or a similar material, and any copies required had to be laboriously made by hand.
+                                    <p>Video games have been a love of mine since a very young age and this love has manifested itself into a set of skills crucial to video game development from physics programming to artificial intelligence development. My preferred video game development framework is Unity. I also possess a vast knowledge of various game mechanics across genres due to my extensive gaming habit. Currently digging on Overwatch and Deus Ex: Mankind Divided.
                                     </p>
                                     <div className="icon-holder">
                                         <img src="assets/images/icons/unity.png" alt="" title="Unity"/>
@@ -134,7 +131,7 @@ export default class ServicesPage extends React.Component {
                                 </div>
                                 <div className="desktop-6 tablet-6 columns">
                                     <h4>desktop software</h4>
-                                    <p>The development of the computer had a major impact on the methods used to design and create technical drawings, making manual draughting almost obsolete, and opening up new possibilities of form using organic shapes and complex geometry. Today the vast majority of drawings are created using CAD software.</p>
+                                    <p>Despite the prevalence of cloud based web and mobile apps the desktop application still has a bit of life left in it. My expertise in this domain consists of design and development of desktop applications in Java (Swing) and C#. For a more gameological feel I can crack out Unity.</p>
                                     <div className="icon-holder">
                                         <img src="assets/images/icons/unity.png" alt="" title="Unity"/>
                                         <img src="assets/images/icons/java.png" alt="" title="Java"/>

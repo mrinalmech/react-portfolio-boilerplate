@@ -2,6 +2,9 @@
     font-family: AltHazer;
     src: url("../fonts/alt_hazer.ttf");
 }
+
+/* Top navigation */
+
 ul#nav> li a {
     color: #000;
     font-family: 'AltHazer', sans-serif;
@@ -16,16 +19,61 @@ ul#nav> li.active a {
     color: white;
     border-bottom: none;
 }
-.columns>h4 {
-    font-family: 'AltHazer', sans-serif;
-    font-size: 32px !important;
-    letter-spacing: 2px;
-}
+
+/* Header */
+
 #header p.site-desc {
     font-family: 'AltHazer', sans-serif;
     letter-spacing: 2px;
     color: #000;
 }
+
+/* Services */
+
+.columns>h4 {
+    font-family: 'AltHazer', sans-serif;
+    font-size: 32px !important;
+    letter-spacing: 2px;
+}
+
+/* About */
+
+.box-about h3 {
+    font-family: 'AltHazer', sans-serif;
+    color: #000;
+    font-size: 32px;
+    border-bottom: 1px solid #000;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+.box-about>p {
+    margin-top: 10px;
+}
+.about-headline {
+    font-family: 'Roboto Slab', Georgia, serif;
+    margin-top: 5px;
+}
+.button.full {
+    font-family: 'AltHazer', sans-serif;
+    color: #fff;
+    font-size: 32px;
+    line-height: 26px;
+}
+.underline {
+    border-bottom: 0px solid #000;
+}
+.edu-holder>a {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+.about-holder>img {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    border: 1px solid black;
+}
+
+/*Works*/
+
 .icon-holder> img {
     padding-left: 1px;
     padding-right: 1px;
@@ -103,6 +151,9 @@ h3>.icon-holder {
 .inactive {
     display: none !important;
 }
+
+/* Footer */
+
 #footer ul#social li {
     display: inline-block !important;
 }
@@ -126,27 +177,16 @@ h3>.icon-holder {
 
 .sidenav {
     height: 100%;
-    /* 100% Full-height */
     width: 0;
-    /* 0 width - change this with JavaScript */
     position: fixed;
-    /* Stay in place */
     z-index: 99999999999999999999999999999999999999;
-    /* Stay on top */
     top: 0;
     left: 0;
     background-color: #111;
-    /* Black*/
     overflow-x: hidden;
-    /* Disable horizontal scroll */
     padding-top: 60px;
-    /* Place content 60px from the top */
     transition: 0.5s;
-    /* 0.5 second transition effect to slide in the sidenav */
 }
-
-/* The navigation menu links */
-
 .sidenav a {
     font-family: 'AltHazer', sans-serif;
     padding: 8px 8px 8px 32px;
@@ -156,15 +196,9 @@ h3>.icon-holder {
     display: block;
     transition: 0.3s
 }
-
-/* When you mouse over the navigation links, change their color */
-
 .sidenav a:hover, .offcanvas a:focus {
     color: #f1f1f1;
 }
-
-/* Position and style the close button (top right corner) */
-
 .sidenav .closebtn {
     position: absolute;
     top: 0;

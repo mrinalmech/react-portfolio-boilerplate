@@ -13,7 +13,6 @@ export default class WorksPage extends React.Component {
         this.state = {
             works: [],
             completeWorks: [],
-            offset: 0,
             size: 4
         };
 
@@ -30,6 +29,7 @@ export default class WorksPage extends React.Component {
         const works = this._getWorks();
         return (
             <div className="route-slider">
+
                 <section id="works" className="">
                     <div className="container">
                         {works}
@@ -38,13 +38,13 @@ export default class WorksPage extends React.Component {
                             <div className="nav-pages">
                                 <a title="Previous" className="link-prev" onClick={this.prev}>
                                     <div>
-                                        <span className={this.state.offset === 0 && 'inactive'}>Previous</span>
+                                        <span className={this.props.worksPageNo === 1 && 'inactive'}>Previous</span>
                                     </div>
                                 </a>
 
                                 <a title="Next" className="link-next" onClick={this.next}>
                                     <div>
-                                        <span className={this.state.offset + this.state.size >= this.state.completeWorks.length && 'inactive'}>Next</span>
+                                        <span className={this.props.worksPageNo * this.state.size >= this.state.completeWorks.length && 'inactive'}>Next</span>
                                     </div>
                                 </a>
 
@@ -62,26 +62,18 @@ export default class WorksPage extends React.Component {
 
     prev() {
         this.setState({
-            offset: this.state.offset - this.state.size
-        }, function() {
-            this.setState({
-                works: this.state.completeWorks.slice(this.state.offset + 0, this.state.offset + this.state.size)
-            });
-            window.scrollTo(0, 0);
+            works: this.state.completeWorks.slice((this.props.worksPageNo - 2) * this.state.size, (this.props.worksPageNo - 1) * this.state.size)
         });
-
+        window.scrollTo(0, 0);
+        this.props.decrementWorksPage();
     }
 
     next() {
         this.setState({
-            offset: this.state.offset + this.state.size
-        }, function() {
-            this.setState({
-                works: this.state.completeWorks.slice(this.state.offset + 0, this.state.offset + this.state.size)
-            });
-            window.scrollTo(0, 0);
+            works: this.state.completeWorks.slice(this.props.worksPageNo * this.state.size, (this.props.worksPageNo + 1) * this.state.size)
         });
-
+        window.scrollTo(0, 0);
+        this.props.incrementWorksPage();
     }
 
     _getWorks() {
@@ -98,9 +90,15 @@ export default class WorksPage extends React.Component {
             success: (works) => {
                 this.setState({
                     completeWorks: works,
-                    works: works.slice(this.state.offset + 0, this.state.offset + this.state.size)
+                    works: works.slice((this.props.worksPageNo - 1) * this.state.size, (this.props.worksPageNo) * this.state.size)
                 })
             }
         });
     }
 }
+
+WorksPage.propTypes = {
+    worksPageNo: React.PropTypes.number.isRequired,
+    incrementWorksPage: React.PropTypes.func.isRequired,
+    decrementWorksPage: React.PropTypes.func.isRequired
+};

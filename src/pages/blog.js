@@ -13,7 +13,6 @@ export default class BlogPage extends React.Component {
         this.state = {
             blogPosts: [],
             completeBlogPosts: [],
-            offset: 0,
             size: 2
         };
 
@@ -34,7 +33,6 @@ export default class BlogPage extends React.Component {
                     <div className="container">
                         {blogPosts}
                         <div className="desktop-12 columns">
-
                             <div className="nav-pages">
                                 <a className="link-prev" onClick={this.prev}>
                                     <div>
@@ -60,31 +58,28 @@ export default class BlogPage extends React.Component {
     }
 
     prev() {
-        this.setState({
-            offset: this.state.offset - this.state.size
-        }, function() {
+
             this.setState({
-                blogPosts: this.state.completeBlogPosts.slice(this.state.offset + 0, this.state.offset + this.state.size)
+                blogPosts: this.state.completeBlogPosts.slice((this.props.blogPageNo - 2) * this.state.size, (this.props.blogPageNo - 1) * this.state.size)
             });
             window.scrollTo(0, 0);
-        });
+            this.props.decrementBlogPage();
 
     }
 
     next() {
-        this.setState({
-            offset: this.state.offset + this.state.size
-        }, function() {
+
             this.setState({
-                blogPosts: this.state.completeBlogPosts.slice(this.state.offset + 0, this.state.offset + this.state.size)
+                blogPosts: this.state.completeBlogPosts.slice(this.props.blogPageNo * this.state.size, (this.props.blogPageNo + 1) * this.state.size)
             });
             window.scrollTo(0, 0);
-        });
+            this.props.incrementBlogPage();
+
 
     }
 
     _getBlogPosts() {
-          return this.state.blogPosts.map((blogPost) => {
+        return this.state.blogPosts.map((blogPost) => {
             return <BlogPost {...blogPost} key={blogPost.id}/>
         });
     }
@@ -97,9 +92,15 @@ export default class BlogPage extends React.Component {
             success: (blogPosts) => {
                 this.setState({
                     completeBlogPosts: blogPosts,
-                    blogPosts: blogPosts.slice(this.state.offset + 0, this.state.offset + this.state.size)
+                    blogPosts: blogPosts.slice((this.props.blogPageNo-1)*this.state.size, (this.props.blogPageNo-1)*this.state.size + this.state.size)
                 })
             }
         });
     }
 }
+
+BlogPage.propTypes = {
+    blogPageNo: React.PropTypes.number.isRequired,
+    incrementBlogPage: React.PropTypes.func.isRequired,
+    decrementBlogPage: React.PropTypes.func.isRequired
+};

@@ -21,7 +21,9 @@ export default class BlogPost extends React.Component {
                 <div className="desktop-3 tablet-12 columns">
                     <div className="box-meta">
                         <span className="category">
-                            <a href="archive.html">{this.props.category}</a>
+                            <Link to="/blog">
+                                {this.props.category}
+                            </Link>
                         </span><br/>
                         <span className="date">{this.props.date}</span>
                     </div>

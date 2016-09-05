@@ -1,5 +1,6 @@
 import React from 'react';
 import jQuery from 'jquery';
+import {Link} from 'react-router';
 
 import Footer from '../components/footer';
 
@@ -35,8 +36,9 @@ export default class BlogSingle extends React.Component {
                             <div className="desktop-3 tablet-12 columns">
                                 <div className="box-meta">
                                     <span className="category">
-                                        <a href="archive.php">{this.state.blogPost.category}
-                                        </a>
+                                        <Link to="/blog">
+                                            {this.state.blogPost.category}
+                                        </Link>
                                     </span><br/>
                                     <span className="date">{this.state.blogPost.date}
                                     </span>
