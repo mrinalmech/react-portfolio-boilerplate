@@ -38,7 +38,7 @@ export default class WorksPage extends React.Component {
     handleImageChange() {
         const galleryElement = document.getElementById('vorks');
         if (imagesLoaded(galleryElement)) {
-            var element = document.getElementById('works-loader');
+            const element = document.getElementById('works-loader');
 
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';

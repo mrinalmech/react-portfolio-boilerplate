@@ -17,7 +17,7 @@ export default class Footer extends Component {
         const galleryElement = this.refs.gallery;
 
         if (imagesLoaded(galleryElement)) {
-            var element = document.getElementById('loader');
+            const element = document.getElementById('loader');
 
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';

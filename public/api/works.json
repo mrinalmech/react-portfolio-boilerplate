@@ -228,6 +228,9 @@
     }, {
         "url": "assets/images/portfolio/mrinalmech/gallery03.png",
         "caption": "React router used for routing with sliding animations."
+    }, {
+        "url": "assets/images/portfolio/mrinalmech/gallery05.png",
+        "caption": "Pure CSS loading screens."
     }]
 
 }]

@@ -38,7 +38,7 @@ export default class BlogPage extends React.Component {
     handleImageChange() {
         const galleryElement = document.getElementById('blog');
         if (imagesLoaded(galleryElement)) {
-            var element = document.getElementById('blog-loader');
+            const element = document.getElementById('blog-loader');
 
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';

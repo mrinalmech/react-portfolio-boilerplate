@@ -34,7 +34,7 @@ export default class WorkSingle extends React.Component {
         const galleryElement = this.refs.gallery;
 
         if (imagesLoaded(galleryElement)) {
-            var element = document.getElementById('work-single-loader');
+            const element = document.getElementById('work-single-loader');
 
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';

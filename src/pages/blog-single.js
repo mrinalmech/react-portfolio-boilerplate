@@ -35,7 +35,7 @@ export default class BlogSingle extends React.Component {
         const galleryElement = this.refs.gallery;
 
         if (imagesLoaded(galleryElement)) {
-            var element = document.getElementById('blog-single-loader');
+            const element = document.getElementById('blog-single-loader');
 
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';

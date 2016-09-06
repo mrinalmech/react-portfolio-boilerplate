@@ -38756,14 +38756,16 @@ var Footer = function (_Component) {
             var galleryElement = this.refs.gallery;
 
             if (imagesLoaded(galleryElement)) {
-                var element = document.getElementById('loader');
+                (function () {
+                    var element = document.getElementById('loader');
 
-                element.style.opacity = "0";
-                element.style.filter = 'alpha(opacity=0)';
+                    element.style.opacity = "0";
+                    element.style.filter = 'alpha(opacity=0)';
 
-                setTimeout(function () {
-                    element.parentNode.removeChild(element);
-                }, 350);
+                    setTimeout(function () {
+                        element.parentNode.removeChild(element);
+                    }, 350);
+                })();
             }
         }
     }, {
@@ -39293,14 +39295,16 @@ var AboutPage = function (_React$Component) {
             var galleryElement = this.refs.gallery;
 
             if (imagesLoaded(galleryElement)) {
-                var element = document.getElementById('about-loader');
+                (function () {
+                    var element = document.getElementById('about-loader');
 
-                element.style.opacity = "0";
-                element.style.filter = 'alpha(opacity=0)';
+                    element.style.opacity = "0";
+                    element.style.filter = 'alpha(opacity=0)';
 
-                setTimeout(function () {
-                    element.parentNode.removeChild(element);
-                }, 350);
+                    setTimeout(function () {
+                        element.parentNode.removeChild(element);
+                    }, 350);
+                })();
             }
         }
     }, {
@@ -39577,14 +39581,16 @@ var BlogSingle = function (_React$Component) {
             var galleryElement = this.refs.gallery;
 
             if (imagesLoaded(galleryElement)) {
-                var element = document.getElementById('blog-single-loader');
+                (function () {
+                    var element = document.getElementById('blog-single-loader');
 
-                element.style.opacity = "0";
-                element.style.filter = 'alpha(opacity=0)';
+                    element.style.opacity = "0";
+                    element.style.filter = 'alpha(opacity=0)';
 
-                setTimeout(function () {
-                    element.parentNode.removeChild(element);
-                }, 350);
+                    setTimeout(function () {
+                        element.parentNode.removeChild(element);
+                    }, 350);
+                })();
             }
         }
     }, {
@@ -39804,14 +39810,16 @@ var BlogPage = function (_React$Component) {
         value: function handleImageChange() {
             var galleryElement = document.getElementById('blog');
             if (imagesLoaded(galleryElement)) {
-                var element = document.getElementById('blog-loader');
+                (function () {
+                    var element = document.getElementById('blog-loader');
 
-                element.style.opacity = "0";
-                element.style.filter = 'alpha(opacity=0)';
+                    element.style.opacity = "0";
+                    element.style.filter = 'alpha(opacity=0)';
 
-                setTimeout(function () {
-                    element.parentNode.removeChild(element);
-                }, 350);
+                    setTimeout(function () {
+                        element.parentNode.removeChild(element);
+                    }, 350);
+                })();
             }
         }
     }, {
@@ -40010,14 +40018,16 @@ var ServicesPage = function (_React$Component) {
             var galleryElement = this.refs.gallery;
 
             if (imagesLoaded(galleryElement)) {
-                var element = document.getElementById('services-loader');
+                (function () {
+                    var element = document.getElementById('services-loader');
 
-                element.style.opacity = "0";
-                element.style.filter = 'alpha(opacity=0)';
+                    element.style.opacity = "0";
+                    element.style.filter = 'alpha(opacity=0)';
 
-                setTimeout(function () {
-                    element.parentNode.removeChild(element);
-                }, 350);
+                    setTimeout(function () {
+                        element.parentNode.removeChild(element);
+                    }, 350);
+                })();
             }
         }
     }, {
@@ -40399,14 +40409,16 @@ var WorkSingle = function (_React$Component) {
             var galleryElement = this.refs.gallery;
 
             if (imagesLoaded(galleryElement)) {
-                var element = document.getElementById('work-single-loader');
+                (function () {
+                    var element = document.getElementById('work-single-loader');
 
-                element.style.opacity = "0";
-                element.style.filter = 'alpha(opacity=0)';
+                    element.style.opacity = "0";
+                    element.style.filter = 'alpha(opacity=0)';
 
-                setTimeout(function () {
-                    element.parentNode.removeChild(element);
-                }, 350);
+                    setTimeout(function () {
+                        element.parentNode.removeChild(element);
+                    }, 350);
+                })();
             }
         }
     }, {
@@ -40697,14 +40709,16 @@ var WorksPage = function (_React$Component) {
         value: function handleImageChange() {
             var galleryElement = document.getElementById('vorks');
             if (imagesLoaded(galleryElement)) {
-                var element = document.getElementById('works-loader');
+                (function () {
+                    var element = document.getElementById('works-loader');
 
-                element.style.opacity = "0";
-                element.style.filter = 'alpha(opacity=0)';
+                    element.style.opacity = "0";
+                    element.style.filter = 'alpha(opacity=0)';
 
-                setTimeout(function () {
-                    element.parentNode.removeChild(element);
-                }, 350);
+                    setTimeout(function () {
+                        element.parentNode.removeChild(element);
+                    }, 350);
+                })();
             }
         }
     }, {

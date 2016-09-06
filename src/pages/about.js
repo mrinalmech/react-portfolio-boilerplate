@@ -19,7 +19,7 @@ export default class AboutPage extends React.Component {
         const galleryElement = this.refs.gallery;
 
         if (imagesLoaded(galleryElement)) {
-            var element = document.getElementById('about-loader');
+            const element = document.getElementById('about-loader');
 
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';

@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import imagemin from 'gulp-imagemin';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
@@ -56,6 +57,12 @@ gulp.task('serve', ['transpile'], () => sync.init({
 }));
 
 gulp.task('js-watch', ['transpile'], () => sync.reload());
+
+gulp.task('images', () =>
+    gulp.src('public/assets/images/**/**/*.png')
+        .pipe(imagemin())
+        .pipe(gulp.dest('dist/images'))
+);
 
 gulp.task('watch', ['serve'], () => {
   gulp.watch('src/**/*', ['js-watch'])
