@@ -4,6 +4,16 @@ import jQuery from 'jquery';
 import BlogPost from '../components/blog-post'
 import Footer from '../components/footer';
 
+function imagesLoaded(parentNode) {
+    const imgElements = parentNode.querySelectorAll('img');
+    for (const img of imgElements) {
+        if (!img.complete) {
+            return false;
+        }
+    }
+    return true;
+}
+
 export default class BlogPage extends React.Component {
 
     constructor() {
@@ -25,10 +35,32 @@ export default class BlogPage extends React.Component {
         this._fetchBlogPosts();
     }
 
+    handleImageChange() {
+        const galleryElement = document.getElementById('blog');
+        if (imagesLoaded(galleryElement)) {
+            var element = document.getElementById('blog-loader');
+
+            element.style.opacity = "0";
+            element.style.filter = 'alpha(opacity=0)';
+
+            setTimeout(function() {
+                element.parentNode.removeChild(element);
+            }, 350);
+        }
+
+    }
+
+    renderImage(imageUrl) {
+        return (<img onLoad={this.handleImageChange.bind(this)} alt="" src={imageUrl} onError={this.handleImageChange.bind(this)}/>);
+    }
+
     render() {
         const blogPosts = this._getBlogPosts();
         return (
-            <div className="route-slider">
+            <div id="blog" className="route-slider">
+              <div id="blog-loader" className="secondary-loader">
+                  <img className="secondary-loading-img" src="assets/images/loading.png" alt="LOADING"/>
+              </div>
                 <section id="archive">
                     <div className="container">
                         {blogPosts}
@@ -36,13 +68,13 @@ export default class BlogPage extends React.Component {
                             <div className="nav-pages">
                                 <a className="link-prev" onClick={this.prev}>
                                     <div>
-                                        <span className={this.state.offset === 0 && 'inactive'}>Previous</span>
+                                        <span className={this.props.blogPageNo === 1 && 'inactive'}>Previous</span>
                                     </div>
                                 </a>
 
                                 <a title="Next" className="link-next" onClick={this.next}>
                                     <div>
-                                        <span className={this.state.offset + this.state.size >= this.state.completeBlogPosts.length && 'inactive'}>Next</span>
+                                        <span className={this.props.blogPageNo * this.state.size >= this.state.completeBlogPosts.length && 'inactive'}>Next</span>
                                     </div>
                                 </a>
 
@@ -59,28 +91,27 @@ export default class BlogPage extends React.Component {
 
     prev() {
 
-            this.setState({
-                blogPosts: this.state.completeBlogPosts.slice((this.props.blogPageNo - 2) * this.state.size, (this.props.blogPageNo - 1) * this.state.size)
-            });
-            window.scrollTo(0, 0);
-            this.props.decrementBlogPage();
+        this.setState({
+            blogPosts: this.state.completeBlogPosts.slice((this.props.blogPageNo - 2) * this.state.size, (this.props.blogPageNo - 1) * this.state.size)
+        });
+        window.scrollTo(0, 0);
+        this.props.decrementBlogPage();
 
     }
 
     next() {
 
-            this.setState({
-                blogPosts: this.state.completeBlogPosts.slice(this.props.blogPageNo * this.state.size, (this.props.blogPageNo + 1) * this.state.size)
-            });
-            window.scrollTo(0, 0);
-            this.props.incrementBlogPage();
-
+        this.setState({
+            blogPosts: this.state.completeBlogPosts.slice(this.props.blogPageNo * this.state.size, (this.props.blogPageNo + 1) * this.state.size)
+        });
+        window.scrollTo(0, 0);
+        this.props.incrementBlogPage();
 
     }
 
     _getBlogPosts() {
         return this.state.blogPosts.map((blogPost) => {
-            return <BlogPost {...blogPost} key={blogPost.id}/>
+            return <BlogPost {...blogPost} key={blogPost.id} renderImage={this.renderImage} handleImageChange={this.handleImageChange}/>
         });
     }
 
@@ -92,7 +123,7 @@ export default class BlogPage extends React.Component {
             success: (blogPosts) => {
                 this.setState({
                     completeBlogPosts: blogPosts,
-                    blogPosts: blogPosts.slice((this.props.blogPageNo-1)*this.state.size, (this.props.blogPageNo-1)*this.state.size + this.state.size)
+                    blogPosts: blogPosts.slice((this.props.blogPageNo - 1) * this.state.size, (this.props.blogPageNo - 1) * this.state.size + this.state.size)
                 })
             }
         });

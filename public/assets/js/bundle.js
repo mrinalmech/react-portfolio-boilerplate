@@ -38352,8 +38352,6 @@ var _pages = require('./redux/reducers/pages');
 
 var _pages2 = _interopRequireDefault(_pages);
 
-var _index = require('./redux/actions/index');
-
 var _reactRouter = require('react-router');
 
 var _layout = require('./layout/layout');
@@ -38420,11 +38418,19 @@ var app = _react2.default.createElement(
 
 (0, _jquery2.default)(function () {
     _reactDom2.default.render(app, document.getElementById('main'), function () {
+
+        /*  var element = document.getElementById('loader');
+           element.style.opacity = "0";
+          element.style.filter = 'alpha(opacity=0)';
+           setTimeout(function() {
+              element.parentNode.removeChild(element);
+          }, 350);*/
+
         console.timeEnd('react-app');
     });
 });
 
-},{"./layout/layout":271,"./pages/about":272,"./pages/blog-single":273,"./pages/services":275,"./pages/work-single":276,"./redux-pages/redux-blog":278,"./redux-pages/redux-works":279,"./redux/actions/index":280,"./redux/reducers/pages":281,"jquery":49,"react":252,"react-dom":59,"react-redux":62,"react-router":96,"redux":258}],266:[function(require,module,exports){
+},{"./layout/layout":271,"./pages/about":272,"./pages/blog-single":273,"./pages/services":275,"./pages/work-single":276,"./redux-pages/redux-blog":278,"./redux-pages/redux-works":279,"./redux/reducers/pages":281,"jquery":49,"react":252,"react-dom":59,"react-redux":62,"react-router":96,"redux":258}],266:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -38469,7 +38475,7 @@ var BlogPost = function (_React$Component) {
                     _react2.default.createElement(
                         _reactRouter.Link,
                         { to: '/blog/' + this.props.id },
-                        _react2.default.createElement('img', { src: this.props.imgUrl, alt: '' })
+                        this.props.renderImage(this.props.imgUrl)
                     )
                 ),
                 _react2.default.createElement(
@@ -38564,6 +38570,12 @@ var BlogPost = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = BlogPost;
+
+
+BlogPost.propTypes = {
+    renderImage: _react2.default.PropTypes.func.isRequired,
+    handleImageChange: _react2.default.PropTypes.func.isRequired
+};
 
 },{"react":252,"react-router":96}],267:[function(require,module,exports){
 "use strict";
@@ -38697,6 +38709,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function imagesLoaded(parentNode) {
+    var imgElements = parentNode.querySelectorAll('img');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var img = _step.value;
+
+            if (!img.complete) {
+                return false;
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return true;
+}
+
 var Footer = function (_Component) {
     _inherits(Footer, _Component);
 
@@ -38707,19 +38751,45 @@ var Footer = function (_Component) {
     }
 
     _createClass(Footer, [{
+        key: 'handleImageChange',
+        value: function handleImageChange() {
+            var galleryElement = this.refs.gallery;
+
+            if (imagesLoaded(galleryElement)) {
+                var element = document.getElementById('loader');
+
+                element.style.opacity = "0";
+                element.style.filter = 'alpha(opacity=0)';
+
+                setTimeout(function () {
+                    element.parentNode.removeChild(element);
+                }, 350);
+            }
+        }
+    }, {
+        key: 'renderImageWithTitle',
+        value: function renderImageWithTitle(imageUrl, title) {
+            return _react2.default.createElement('img', { onLoad: this.handleImageChange.bind(this), src: imageUrl, title: title, alt: '', onError: this.handleImageChange.bind(this) });
+        }
+    }, {
+        key: 'renderImage',
+        value: function renderImage(imageUrl) {
+            return _react2.default.createElement('img', { onLoad: this.handleImageChange.bind(this), src: imageUrl, alt: '', onError: this.handleImageChange.bind(this) });
+        }
+    }, {
         key: 'render',
         value: function render() {
 
             return _react2.default.createElement(
                 'section',
-                { id: 'header' },
+                { id: 'header', ref: 'gallery' },
                 _react2.default.createElement(
                     'div',
                     { className: 'topbar' },
                     _react2.default.createElement(
                         'a',
                         { className: 'hamburger', onClick: this.open },
-                        _react2.default.createElement('img', { src: 'assets/images/hamburger.png', alt: '' })
+                        this.renderImage("assets/images/hamburger.png")
                     ),
                     _react2.default.createElement(
                         'div',
@@ -38781,7 +38851,7 @@ var Footer = function (_Component) {
                                 _react2.default.createElement(
                                     _reactRouter.Link,
                                     { to: '/', title: 'home' },
-                                    _react2.default.createElement('img', { src: 'assets/images/logo.png', alt: '' })
+                                    this.renderImage("assets/images/logo.png")
                                 )
                             )
                         ),
@@ -38795,48 +38865,48 @@ var Footer = function (_Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'icon-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/html.png', alt: '', title: 'HTML5' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/css.png', alt: '', title: 'CSS3' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/sass.png', alt: '', title: 'Sass' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/compass.png', alt: '', title: 'Compass' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/bootstrap.png', alt: '', title: 'Bootstrap' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/js.png', alt: '', title: 'Javascript' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/ts.png', alt: '', title: 'Typescript' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/jquery.png', alt: '', title: 'JQuery' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/angular.png', alt: '', title: 'Angular' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/react.png', alt: '', title: 'React' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/redux.png', alt: '', title: 'Redux' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/reactrouter.png', alt: '', title: 'React Router' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/babel.png', alt: '', title: 'Babel' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/bower.png', alt: '', title: 'Bower' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/ps.png', alt: '', title: 'Photoshop' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/svg.png', alt: '', title: 'SVG' })
+                                    this.renderImageWithTitle("assets/images/icons/html.png", "HTML5"),
+                                    this.renderImageWithTitle("assets/images/icons/css.png", "CSS3"),
+                                    this.renderImageWithTitle("assets/images/icons/sass.png", "Sass"),
+                                    this.renderImageWithTitle("assets/images/icons/compass.png", "Compass"),
+                                    this.renderImageWithTitle("assets/images/icons/bootstrap.png", "Bootstrap"),
+                                    this.renderImageWithTitle("assets/images/icons/js.png", "Javascript"),
+                                    this.renderImageWithTitle("assets/images/icons/ts.png", "Typescript"),
+                                    this.renderImageWithTitle("assets/images/icons/jquery.png", "JQuery"),
+                                    this.renderImageWithTitle("assets/images/icons/angular.png", "Angular"),
+                                    this.renderImageWithTitle("assets/images/icons/react.png", "React"),
+                                    this.renderImageWithTitle("assets/images/icons/redux.png", "Redux"),
+                                    this.renderImageWithTitle("assets/images/icons/reactrouter.png", "React Router"),
+                                    this.renderImageWithTitle("assets/images/icons/babel.png", "Babel"),
+                                    this.renderImageWithTitle("assets/images/icons/bower.png", "Bower"),
+                                    this.renderImageWithTitle("assets/images/icons/ps.png", "Photoshop"),
+                                    this.renderImageWithTitle("assets/images/icons/svg.png", "SVG")
                                 ),
                                 'backend',
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'icon-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/php.png', alt: '', title: 'PHP' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/laravel.png', alt: '', title: 'Laravel' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/node.png', alt: '', title: 'Node.js' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/mysql.png', alt: '', title: 'MySQL' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/postgresql.png', alt: '', title: 'PostgreSQL' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/mongodb.png', alt: '', title: 'MongoDB' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/redis.png', alt: '', title: 'Redis' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/aws.png', alt: '', title: 'AWS' })
+                                    this.renderImageWithTitle("assets/images/icons/php.png", "PHP"),
+                                    this.renderImageWithTitle("assets/images/icons/laravel.png", "Laravel"),
+                                    this.renderImageWithTitle("assets/images/icons/node.png", "Node.js"),
+                                    this.renderImageWithTitle("assets/images/icons/aws.png", "AWS"),
+                                    this.renderImageWithTitle("assets/images/icons/mysql.png", "MySQL"),
+                                    this.renderImageWithTitle("assets/images/icons/postgresql.png", "PostgreSQL"),
+                                    this.renderImageWithTitle("assets/images/icons/mongodb.png", "MongoDB"),
+                                    this.renderImageWithTitle("assets/images/icons/redis.png", "Redis")
                                 ),
                                 'other',
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'icon-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/gulp.png', alt: '', title: 'Gulp' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/trello.png', alt: '', title: 'Trello' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/slack.png', alt: '', title: 'Slack' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/github.png', alt: '', title: 'Github' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/unity.png', alt: '', title: 'Unity' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/java.png', alt: '', title: 'Java' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/android.png', alt: '', title: 'Android' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/csharp.png', alt: '', title: 'C#' })
+                                    this.renderImageWithTitle("assets/images/icons/gulp.png", "Gulp"),
+                                    this.renderImageWithTitle("assets/images/icons/trello.png", "Trello"),
+                                    this.renderImageWithTitle("assets/images/icons/slack.png", "Slack"),
+                                    this.renderImageWithTitle("assets/images/icons/github.png", "Github"),
+                                    this.renderImageWithTitle("assets/images/icons/unity.png", "Unity"),
+                                    this.renderImageWithTitle("assets/images/icons/java.png", "Java"),
+                                    this.renderImageWithTitle("assets/images/icons/android.png", "Android"),
+                                    this.renderImageWithTitle("assets/images/icons/csharp.png", "C#")
                                 )
                             ),
                             _react2.default.createElement(
@@ -38845,38 +38915,38 @@ var Footer = function (_Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'icon-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/html.png', alt: '', title: 'HTML5' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/css.png', alt: '', title: 'CSS3' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/sass.png', alt: '', title: 'Sass' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/compass.png', alt: '', title: 'Compass' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/bootstrap.png', alt: '', title: 'Bootstrap' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/js.png', alt: '', title: 'Javascript' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/ts.png', alt: '', title: 'Typescript' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/jquery.png', alt: '', title: 'JQuery' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/angular.png', alt: '', title: 'Angular' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/react.png', alt: '', title: 'React' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/redux.png', alt: '', title: 'Redux' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/reactrouter.png', alt: '', title: 'React Router' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/babel.png', alt: '', title: 'Babel' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/bower.png', alt: '', title: 'Bower' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/ps.png', alt: '', title: 'Photoshop' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/svg.png', alt: '', title: 'SVG' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/php.png', alt: '', title: 'PHP' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/python.png', alt: '', title: 'Python' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/ruby.png', alt: '', title: 'Ruby' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/node.png', alt: '', title: 'Node.js' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/asp.png', alt: '', title: 'Asp.net' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/mysql.png', alt: '', title: 'MySQL' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/mongodb.png', alt: '', title: 'MongoDB' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/redis.png', alt: '', title: 'Redis' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/gulp.png', alt: '', title: 'Gulp' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/trello.png', alt: '', title: 'Trello' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/slack.png', alt: '', title: 'Slack' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/github.png', alt: '', title: 'Github' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/unity.png', alt: '', title: 'Unity' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/java.png', alt: '', title: 'Java' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/android.png', alt: '', title: 'Android' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/icons/csharp.png', alt: '', title: 'C#' })
+                                    this.renderImageWithTitle("assets/images/icons/html.png", "HTML5"),
+                                    this.renderImageWithTitle("assets/images/icons/css.png", "CSS3"),
+                                    this.renderImageWithTitle("assets/images/icons/sass.png", "Sass"),
+                                    this.renderImageWithTitle("assets/images/icons/compass.png", "Compass"),
+                                    this.renderImageWithTitle("assets/images/icons/bootstrap.png", "Bootstrap"),
+                                    this.renderImageWithTitle("assets/images/icons/js.png", "Javascript"),
+                                    this.renderImageWithTitle("assets/images/icons/ts.png", "Typescript"),
+                                    this.renderImageWithTitle("assets/images/icons/jquery.png", "JQuery"),
+                                    this.renderImageWithTitle("assets/images/icons/angular.png", "Angular"),
+                                    this.renderImageWithTitle("assets/images/icons/react.png", "React"),
+                                    this.renderImageWithTitle("assets/images/icons/redux.png", "Redux"),
+                                    this.renderImageWithTitle("assets/images/icons/reactrouter.png", "React Router"),
+                                    this.renderImageWithTitle("assets/images/icons/babel.png", "Babel"),
+                                    this.renderImageWithTitle("assets/images/icons/bower.png", "Bower"),
+                                    this.renderImageWithTitle("assets/images/icons/ps.png", "Photoshop"),
+                                    this.renderImageWithTitle("assets/images/icons/svg.png", "SVG"),
+                                    this.renderImageWithTitle("assets/images/icons/php.png", "PHP"),
+                                    this.renderImageWithTitle("assets/images/icons/python.png", "Python"),
+                                    this.renderImageWithTitle("assets/images/icons/ruby.png", "Ruby"),
+                                    this.renderImageWithTitle("assets/images/icons/node.png", "Node.js"),
+                                    this.renderImageWithTitle("assets/images/icons/asp.png", "Asp.net"),
+                                    this.renderImageWithTitle("assets/images/icons/mysql.png", "MySQL"),
+                                    this.renderImageWithTitle("assets/images/icons/mongodb.png", "MongoDB"),
+                                    this.renderImageWithTitle("assets/images/icons/redis.png", "Redis"),
+                                    this.renderImageWithTitle("assets/images/icons/gulp.png", "Gulp"),
+                                    this.renderImageWithTitle("assets/images/icons/trello.png", "Trello"),
+                                    this.renderImageWithTitle("assets/images/icons/slack.png", "Slack"),
+                                    this.renderImageWithTitle("assets/images/icons/github.png", "Github"),
+                                    this.renderImageWithTitle("assets/images/icons/unity.png", "Unity"),
+                                    this.renderImageWithTitle("assets/images/icons/java.png", "Java"),
+                                    this.renderImageWithTitle("assets/images/icons/android.png", "Android"),
+                                    this.renderImageWithTitle("assets/images/icons/csharp.png", "C#")
                                 )
                             )
                         ),
@@ -39040,7 +39110,7 @@ var Work = function (_React$Component) {
                     _react2.default.createElement(
                         'div',
                         { className: 'item' },
-                        _react2.default.createElement('img', { src: this.props.imgUrl, alt: '' }),
+                        this.props.renderImage(this.props.imgUrl),
                         _react2.default.createElement(
                             'h3',
                             null,
@@ -39064,8 +39134,10 @@ var Work = function (_React$Component) {
     }, {
         key: '_getStack',
         value: function _getStack() {
+            var _this2 = this;
+
             return this.props.stack.map(function (stackitem, i) {
-                return _react2.default.createElement('img', { src: "assets/images/icons/" + stackitem + ".png", alt: '', title: stackitem, key: i });
+                return _this2.props.renderImageWithKey("assets/images/icons/" + stackitem + ".png", stackitem, i);
             });
         }
     }]);
@@ -39074,6 +39146,13 @@ var Work = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Work;
+
+
+Work.propTypes = {
+    renderImage: _react2.default.PropTypes.func.isRequired,
+    renderImageWithKey: _react2.default.PropTypes.func.isRequired,
+    handleImageChange: _react2.default.PropTypes.func.isRequired
+};
 
 },{"react":252,"react-router":96}],271:[function(require,module,exports){
 'use strict';
@@ -39167,6 +39246,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function imagesLoaded(parentNode) {
+    var imgElements = parentNode.querySelectorAll('img');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var img = _step.value;
+
+            if (!img.complete) {
+                return false;
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return true;
+}
+
 var AboutPage = function (_React$Component) {
     _inherits(AboutPage, _React$Component);
 
@@ -39177,11 +39288,37 @@ var AboutPage = function (_React$Component) {
     }
 
     _createClass(AboutPage, [{
+        key: 'handleImageChange',
+        value: function handleImageChange() {
+            var galleryElement = this.refs.gallery;
+
+            if (imagesLoaded(galleryElement)) {
+                var element = document.getElementById('about-loader');
+
+                element.style.opacity = "0";
+                element.style.filter = 'alpha(opacity=0)';
+
+                setTimeout(function () {
+                    element.parentNode.removeChild(element);
+                }, 350);
+            }
+        }
+    }, {
+        key: 'renderImage',
+        value: function renderImage(imageUrl, title) {
+            return _react2.default.createElement('img', { onLoad: this.handleImageChange.bind(this), src: imageUrl, title: title, alt: '', onError: this.handleImageChange.bind(this) });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'route-slider' },
+                { className: 'route-slider', ref: 'gallery' },
+                _react2.default.createElement(
+                    'div',
+                    { id: 'about-loader', className: 'secondary-loader' },
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
+                ),
                 _react2.default.createElement(
                     'section',
                     { id: 'home-slider' },
@@ -39235,12 +39372,12 @@ var AboutPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'a',
                                         { href: 'http://www.iitd.ac.in', target: 'iit' },
-                                        _react2.default.createElement('img', { src: 'assets/images/about/iitd.png', alt: '', title: 'IIT Delhi 2009-14' })
+                                        this.renderImage("assets/images/about/iitd.png", "IIT Delhi 2009-14")
                                     ),
                                     _react2.default.createElement(
                                         'a',
                                         { href: 'http://www.iimcal.ac.in', target: 'iim' },
-                                        _react2.default.createElement('img', { src: 'assets/images/about/iimc.png', alt: '', title: 'IIM Calcutta 2014-16' })
+                                        this.renderImage("assets/images/about/iimc.png", "IIM Calcutta 2014-16")
                                     )
                                 ),
                                 _react2.default.createElement(
@@ -39254,7 +39391,7 @@ var AboutPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'a',
                                         { href: 'http://link.springer.com/content/pdf/10.1007%2F978-3-319-08599-9_6.pdf', target: 'pdf' },
-                                        _react2.default.createElement('img', { src: 'assets/images/about/icchp.png', alt: '', title: 'Edutactile presented at ICCHP 2014' })
+                                        this.renderImage("assets/images/about/icchp.png", "Edutactile presented at ICCHP 2014")
                                     )
                                 ),
                                 _react2.default.createElement(
@@ -39282,56 +39419,56 @@ var AboutPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'about-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/about/wc3.png', alt: '', title: 'Warcraft 3' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/me.png', alt: '', title: 'Mass Effect' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/bioshock.png', alt: '', title: 'Bioshock Infinite' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/psycho.png', alt: '', title: 'Psychonauts' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/gtav.png', alt: '', title: 'GTA V' })
+                                    this.renderImage("assets/images/about/wc3.png", "Warcraft 3"),
+                                    this.renderImage("assets/images/about/me.png", "Mass Effect"),
+                                    this.renderImage("assets/images/about/bioshock.png", "Bioshock Infinite"),
+                                    this.renderImage("assets/images/about/psycho.png", "Psychonauts"),
+                                    this.renderImage("assets/images/about/gtav.png", "GTA V")
                                 ),
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'about-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/about/tba.png', alt: '', title: 'Metallica by Metallica' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/mop.png', alt: '', title: 'Master of Puppets by Metallica' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/ram.png', alt: '', title: 'Random Access Memories by Daft Punk' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/rs.png', alt: '', title: 'Rubber Soul by The Beatles' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/sott.png', alt: '', title: 'Sign of the Times by Prince' })
+                                    this.renderImage("assets/images/about/tba.png", "Metallica by Metallica"),
+                                    this.renderImage("assets/images/about/mop.png", "Master of Puppets by Metallica"),
+                                    this.renderImage("assets/images/about/ram.png", "Random Access Memories by Daft Punk"),
+                                    this.renderImage("assets/images/about/rs.png", "Rubber Soul by The Beatles"),
+                                    this.renderImage("assets/images/about/sott.png", "Sign of the Times by Prince")
                                 ),
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'about-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/about/ah.png', alt: '', title: 'Annie Hall' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/ews.png', alt: '', title: 'Everybody Wants Some!!' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/ma.png', alt: '', title: 'Mistress America' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/mk.png', alt: '', title: 'Moonrise Kingdom' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/china.png', alt: '', title: 'Chinatown' })
+                                    this.renderImage("assets/images/about/ah.png", "Annie Hall"),
+                                    this.renderImage("assets/images/about/ews.png", "Everybody Wants Some!!"),
+                                    this.renderImage("assets/images/about/ma.png", "Mistress America"),
+                                    this.renderImage("assets/images/about/mk.png", "Moonrise Kingdom"),
+                                    this.renderImage("assets/images/about/china.png", "Chinatown")
                                 ),
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'about-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/about/detective.png', alt: '', title: 'True Detective' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/metal.png', alt: '', title: 'Metalocalypse' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/silicon.png', alt: '', title: 'Silicon Valley' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/simpsons.png', alt: '', title: 'The Simpsons' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/cowboy.png', alt: '', title: 'Cowboy Bebop' })
+                                    this.renderImage("assets/images/about/detective.png", "True Detective"),
+                                    this.renderImage("assets/images/about/metal.png", "Metalocalypse"),
+                                    this.renderImage("assets/images/about/silicon.png", "Silicon Valley"),
+                                    this.renderImage("assets/images/about/simpsons.png", "The Simpsons"),
+                                    this.renderImage("assets/images/about/cowboy.png", "Cowboy Bebop")
                                 ),
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'about-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/about/midnight.png', alt: '', title: 'Midnight\'s Children by Salman Rushdie' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/hundred.png', alt: '', title: '100 Years of Solitude by Gabriel Garcia Marquez' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/tree.png', alt: '', title: 'Tree of Smoke by Denis Johnson' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/billy.png', alt: '', title: 'Billy Lynn\'s Long Halftime Walk by Ben Fountain' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/sisters.png', alt: '', title: 'The Sisters Brothers by Patrick DeWitt' })
+                                    this.renderImage("assets/images/about/midnight.png", "Midnight's Children by Salman Rushdie"),
+                                    this.renderImage("assets/images/about/hundred.png", "100 Years of Solitude by Gabriel Garcia Marquez"),
+                                    this.renderImage("assets/images/about/tree.png", "Tree of Smoke by Denis Johnson"),
+                                    this.renderImage("assets/images/about/billy.png", "Billy Lynn's Long Halftime Walk by Ben Fountain"),
+                                    this.renderImage("assets/images/about/sisters.png", "The Sisters Brothers by Patrick DeWitt")
                                 ),
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'about-holder' },
-                                    _react2.default.createElement('img', { src: 'assets/images/about/david.png', alt: '', title: 'David Boring by Daniel Clowes' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/allstar.png', alt: '', title: 'All Star Superman by Grant Morrison' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/casanova.png', alt: '', title: 'Casanova by Matt Fraction' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/starman.png', alt: '', title: 'Starman by James Robinson' }),
-                                    _react2.default.createElement('img', { src: 'assets/images/about/hitman.png', alt: '', title: 'Hitman by Garth Ennis' })
+                                    this.renderImage("assets/images/about/david.png", "David Boring by Daniel Clowes"),
+                                    this.renderImage("assets/images/about/allstar.png", "All Star Superman by Grant Morrison"),
+                                    this.renderImage("assets/images/about/casanova.png", "Casanova by Matt Fraction"),
+                                    this.renderImage("assets/images/about/starman.png", "Starman by James Robinson"),
+                                    this.renderImage("assets/images/about/hitman.png", "Hitman by Garth Ennis")
                                 )
                             )
                         )
@@ -39378,6 +39515,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function imagesLoaded(parentNode) {
+    var imgElements = parentNode.querySelectorAll('img');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var img = _step.value;
+
+            if (!img.complete) {
+                return false;
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return true;
+}
+
 var BlogSingle = function (_React$Component) {
     _inherits(BlogSingle, _React$Component);
 
@@ -39403,11 +39572,37 @@ var BlogSingle = function (_React$Component) {
             this._fetchBlogPost();
         }
     }, {
+        key: 'handleImageChange',
+        value: function handleImageChange() {
+            var galleryElement = this.refs.gallery;
+
+            if (imagesLoaded(galleryElement)) {
+                var element = document.getElementById('blog-single-loader');
+
+                element.style.opacity = "0";
+                element.style.filter = 'alpha(opacity=0)';
+
+                setTimeout(function () {
+                    element.parentNode.removeChild(element);
+                }, 350);
+            }
+        }
+    }, {
+        key: 'renderImage',
+        value: function renderImage(imageUrl) {
+            return _react2.default.createElement('img', { onLoad: this.handleImageChange.bind(this), alt: '', src: imageUrl, onError: this.handleImageChange.bind(this) });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'route-slider' },
+                { className: 'route-slider', ref: 'gallery' },
+                _react2.default.createElement(
+                    'div',
+                    { id: 'blog-single-loader', className: 'secondary-loader' },
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
+                ),
                 _react2.default.createElement(
                     'section',
                     { id: 'archive' },
@@ -39420,7 +39615,7 @@ var BlogSingle = function (_React$Component) {
                             _react2.default.createElement(
                                 'div',
                                 { className: 'desktop-12 columns' },
-                                _react2.default.createElement('img', { src: this.state.blogPost.imgUrl, alt: '' })
+                                this.renderImage(this.state.blogPost.imgUrl)
                             ),
                             _react2.default.createElement(
                                 'div',
@@ -39547,6 +39742,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function imagesLoaded(parentNode) {
+    var imgElements = parentNode.querySelectorAll('img');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var img = _step.value;
+
+            if (!img.complete) {
+                return false;
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return true;
+}
+
 var BlogPage = function (_React$Component) {
     _inherits(BlogPage, _React$Component);
 
@@ -39573,12 +39800,37 @@ var BlogPage = function (_React$Component) {
             this._fetchBlogPosts();
         }
     }, {
+        key: 'handleImageChange',
+        value: function handleImageChange() {
+            var galleryElement = document.getElementById('blog');
+            if (imagesLoaded(galleryElement)) {
+                var element = document.getElementById('blog-loader');
+
+                element.style.opacity = "0";
+                element.style.filter = 'alpha(opacity=0)';
+
+                setTimeout(function () {
+                    element.parentNode.removeChild(element);
+                }, 350);
+            }
+        }
+    }, {
+        key: 'renderImage',
+        value: function renderImage(imageUrl) {
+            return _react2.default.createElement('img', { onLoad: this.handleImageChange.bind(this), alt: '', src: imageUrl, onError: this.handleImageChange.bind(this) });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var blogPosts = this._getBlogPosts();
             return _react2.default.createElement(
                 'div',
-                { className: 'route-slider' },
+                { id: 'blog', className: 'route-slider' },
+                _react2.default.createElement(
+                    'div',
+                    { id: 'blog-loader', className: 'secondary-loader' },
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
+                ),
                 _react2.default.createElement(
                     'section',
                     { id: 'archive' },
@@ -39600,7 +39852,7 @@ var BlogPage = function (_React$Component) {
                                         null,
                                         _react2.default.createElement(
                                             'span',
-                                            { className: this.state.offset === 0 && 'inactive' },
+                                            { className: this.props.blogPageNo === 1 && 'inactive' },
                                             'Previous'
                                         )
                                     )
@@ -39613,7 +39865,7 @@ var BlogPage = function (_React$Component) {
                                         null,
                                         _react2.default.createElement(
                                             'span',
-                                            { className: this.state.offset + this.state.size >= this.state.completeBlogPosts.length && 'inactive' },
+                                            { className: this.props.blogPageNo * this.state.size >= this.state.completeBlogPosts.length && 'inactive' },
                                             'Next'
                                         )
                                     )
@@ -39649,23 +39901,25 @@ var BlogPage = function (_React$Component) {
     }, {
         key: '_getBlogPosts',
         value: function _getBlogPosts() {
+            var _this2 = this;
+
             return this.state.blogPosts.map(function (blogPost) {
-                return _react2.default.createElement(_blogPost2.default, _extends({}, blogPost, { key: blogPost.id }));
+                return _react2.default.createElement(_blogPost2.default, _extends({}, blogPost, { key: blogPost.id, renderImage: _this2.renderImage, handleImageChange: _this2.handleImageChange }));
             });
         }
     }, {
         key: '_fetchBlogPosts',
         value: function _fetchBlogPosts() {
-            var _this2 = this;
+            var _this3 = this;
 
             _jquery2.default.ajax({
                 method: 'GET',
                 dataType: "json",
                 url: 'api/blogposts.json',
                 success: function success(blogPosts) {
-                    _this2.setState({
+                    _this3.setState({
                         completeBlogPosts: blogPosts,
-                        blogPosts: blogPosts.slice((_this2.props.blogPageNo - 1) * _this2.state.size, (_this2.props.blogPageNo - 1) * _this2.state.size + _this2.state.size)
+                        blogPosts: blogPosts.slice((_this3.props.blogPageNo - 1) * _this3.state.size, (_this3.props.blogPageNo - 1) * _this3.state.size + _this3.state.size)
                     });
                 }
             });
@@ -39709,6 +39963,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function imagesLoaded(parentNode) {
+    var imgElements = parentNode.querySelectorAll('img');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var img = _step.value;
+
+            if (!img.complete) {
+                return false;
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return true;
+}
+
 var ServicesPage = function (_React$Component) {
     _inherits(ServicesPage, _React$Component);
 
@@ -39719,11 +40005,37 @@ var ServicesPage = function (_React$Component) {
     }
 
     _createClass(ServicesPage, [{
+        key: 'handleImageChange',
+        value: function handleImageChange() {
+            var galleryElement = this.refs.gallery;
+
+            if (imagesLoaded(galleryElement)) {
+                var element = document.getElementById('services-loader');
+
+                element.style.opacity = "0";
+                element.style.filter = 'alpha(opacity=0)';
+
+                setTimeout(function () {
+                    element.parentNode.removeChild(element);
+                }, 350);
+            }
+        }
+    }, {
+        key: 'renderImage',
+        value: function renderImage(imageUrl, title) {
+            return _react2.default.createElement('img', { onLoad: this.handleImageChange.bind(this), src: imageUrl, title: title, alt: '', onError: this.handleImageChange.bind(this) });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
                 'div',
-                { className: 'route-slider' },
+                { className: 'route-slider', ref: 'gallery' },
+                _react2.default.createElement(
+                    'div',
+                    { id: 'services-loader', className: 'secondary-loader' },
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
+                ),
                 _react2.default.createElement(
                     'section',
                     { id: 'about', className: 'page' },
@@ -39758,7 +40070,7 @@ var ServicesPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'desktop-3 tablet-6 columns' },
-                                    _react2.default.createElement('img', { src: 'assets/images/services/frontend.png', alt: '' })
+                                    this.renderImage("assets/images/services/frontend.png", "")
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -39776,22 +40088,22 @@ var ServicesPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'icon-holder' },
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/html.png', alt: '', title: 'HTML5' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/css.png', alt: '', title: 'CSS3' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/sass.png', alt: '', title: 'Sass' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/compass.png', alt: '', title: 'Compass' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/bootstrap.png', alt: '', title: 'Bootstrap' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/js.png', alt: '', title: 'Javascript' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/ts.png', alt: '', title: 'Typescript' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/jquery.png', alt: '', title: 'JQuery' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/angular.png', alt: '', title: 'Angular' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/react.png', alt: '', title: 'React' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/redux.png', alt: '', title: 'Redux' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/reactrouter.png', alt: '', title: 'React Router' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/babel.png', alt: '', title: 'Babel' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/bower.png', alt: '', title: 'Bower' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/ps.png', alt: '', title: 'Photoshop' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/svg.png', alt: '', title: 'SVG' })
+                                        this.renderImage("assets/images/icons/html.png", "HTML5"),
+                                        this.renderImage("assets/images/icons/css.png", "CSS3"),
+                                        this.renderImage("assets/images/icons/sass.png", "Sass"),
+                                        this.renderImage("assets/images/icons/compass.png", "Compass"),
+                                        this.renderImage("assets/images/icons/bootstrap.png", "Bootstrap"),
+                                        this.renderImage("assets/images/icons/js.png", "Javascript"),
+                                        this.renderImage("assets/images/icons/ts.png", "Typescript"),
+                                        this.renderImage("assets/images/icons/jquery.png", "JQuery"),
+                                        this.renderImage("assets/images/icons/angular.png", "Angular"),
+                                        this.renderImage("assets/images/icons/react.png", "React"),
+                                        this.renderImage("assets/images/icons/redux.png", "Redux"),
+                                        this.renderImage("assets/images/icons/reactrouter.png", "React Router"),
+                                        this.renderImage("assets/images/icons/babel.png", "Babel"),
+                                        this.renderImage("assets/images/icons/bower.png", "Bower"),
+                                        this.renderImage("assets/images/icons/ps.png", "Photoshop"),
+                                        this.renderImage("assets/images/icons/svg.png", "SVG")
                                     )
                                 ),
                                 _react2.default.createElement('div', { className: 'clear' })
@@ -39802,7 +40114,7 @@ var ServicesPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'desktop-3 offset-3 tablet-6 tablet-offset-0 columns' },
-                                    _react2.default.createElement('img', { src: 'assets/images/services/backend.png', alt: '' })
+                                    this.renderImage("assets/images/services/backend.png", "")
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -39820,10 +40132,10 @@ var ServicesPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'icon-holder' },
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/php.png', alt: '', title: 'PHP' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/laravel.png', alt: '', title: 'Laravel' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/node.png', alt: '', title: 'Node.js' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/aws.png', alt: '', title: 'AWS' })
+                                        this.renderImage("assets/images/icons/php.png", "PHP"),
+                                        this.renderImage("assets/images/icons/laravel.png", "Laravel"),
+                                        this.renderImage("assets/images/icons/node.png", "Node.js"),
+                                        this.renderImage("assets/images/icons/aws.png", "AWS")
                                     )
                                 ),
                                 _react2.default.createElement('div', { className: 'clear' })
@@ -39834,7 +40146,7 @@ var ServicesPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'desktop-3 push-6 tablet-6 tablet-push-0 columns' },
-                                    _react2.default.createElement('img', { src: 'assets/images/services/database.png', alt: '' })
+                                    this.renderImage("assets/images/services/database.png", "")
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -39852,10 +40164,10 @@ var ServicesPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'icon-holder' },
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/mysql.png', alt: '', title: 'MySQL' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/postgresql.png', alt: '', title: 'PostgreSQL' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/mongodb.png', alt: '', title: 'MongoDB' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/redis.png', alt: '', title: 'Redis' })
+                                        this.renderImage("assets/images/icons/mysql.png", "MySQL"),
+                                        this.renderImage("assets/images/icons/postgresql.png", "PostgreSQL"),
+                                        this.renderImage("assets/images/icons/mongodb.png", "MongoDB"),
+                                        this.renderImage("assets/images/icons/redis.png", "Redis")
                                     )
                                 ),
                                 _react2.default.createElement('div', { className: 'clear' })
@@ -39866,7 +40178,7 @@ var ServicesPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'desktop-3 offset-3 tablet-6 tablet-offset-0 columns' },
-                                    _react2.default.createElement('img', { src: 'assets/images/services/mobile.png', alt: '' })
+                                    this.renderImage("assets/images/services/mobile.png", "")
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -39884,9 +40196,9 @@ var ServicesPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'icon-holder' },
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/react.png', alt: '', title: 'React Native' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/android.png', alt: '', title: 'Android' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/unity.png', alt: '', title: 'Unity' })
+                                        this.renderImage("assets/images/icons/react.png", "React Native"),
+                                        this.renderImage("assets/images/icons/android.png", "Android"),
+                                        this.renderImage("assets/images/icons/unity.png", "Unity")
                                     )
                                 ),
                                 _react2.default.createElement('div', { className: 'clear' })
@@ -39897,7 +40209,7 @@ var ServicesPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'desktop-3 tablet-6 columns' },
-                                    _react2.default.createElement('img', { src: 'assets/images/services/games.png', alt: '' })
+                                    this.renderImage("assets/images/services/games.png", "")
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -39915,7 +40227,7 @@ var ServicesPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'icon-holder' },
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/unity.png', alt: '', title: 'Unity' })
+                                        this.renderImage("assets/images/icons/unity.png", "Unity")
                                     )
                                 ),
                                 _react2.default.createElement('div', { className: 'clear' })
@@ -39926,7 +40238,7 @@ var ServicesPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'desktop-3 offset-3 tablet-6 tablet-offset-0 columns' },
-                                    _react2.default.createElement('img', { src: 'assets/images/services/desktop.png', alt: '' })
+                                    this.renderImage("assets/images/services/desktop.png", "")
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -39944,9 +40256,9 @@ var ServicesPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'icon-holder' },
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/unity.png', alt: '', title: 'Unity' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/java.png', alt: '', title: 'Java' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/csharp.png', alt: '', title: 'C#' })
+                                        this.renderImage("assets/images/icons/unity.png", "Unity"),
+                                        this.renderImage("assets/images/icons/java.png", "Java"),
+                                        this.renderImage("assets/images/icons/csharp.png", "C#")
                                     )
                                 ),
                                 _react2.default.createElement('div', { className: 'clear' })
@@ -39957,7 +40269,7 @@ var ServicesPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'desktop-3 push-6 tablet-6 tablet-push-0 columns' },
-                                    _react2.default.createElement('img', { src: 'assets/images/services/flow.png', alt: '' })
+                                    this.renderImage("assets/images/services/flow.png", "")
                                 ),
                                 _react2.default.createElement(
                                     'div',
@@ -39975,10 +40287,10 @@ var ServicesPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'div',
                                         { className: 'icon-holder' },
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/trello.png', alt: '', title: 'Trello' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/github.png', alt: '', title: 'Github' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/gulp.png', alt: '', title: 'Gulp' }),
-                                        _react2.default.createElement('img', { src: 'assets/images/icons/slack.png', alt: '', title: 'Slack' })
+                                        this.renderImage("assets/images/icons/trello.png", "Trello"),
+                                        this.renderImage("assets/images/icons/github.png", "Github"),
+                                        this.renderImage("assets/images/icons/gulp.png", "Gulp"),
+                                        this.renderImage("assets/images/icons/slack.png", "Slack")
                                     )
                                 ),
                                 _react2.default.createElement('div', { className: 'clear' })
@@ -40025,6 +40337,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function imagesLoaded(parentNode) {
+    var imgElements = parentNode.querySelectorAll('img');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var img = _step.value;
+
+            if (!img.complete) {
+                return false;
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return true;
+}
+
 var WorkSingle = function (_React$Component) {
     _inherits(WorkSingle, _React$Component);
 
@@ -40050,6 +40394,32 @@ var WorkSingle = function (_React$Component) {
             this._fetchWork();
         }
     }, {
+        key: 'handleImageChange',
+        value: function handleImageChange() {
+            var galleryElement = this.refs.gallery;
+
+            if (imagesLoaded(galleryElement)) {
+                var element = document.getElementById('work-single-loader');
+
+                element.style.opacity = "0";
+                element.style.filter = 'alpha(opacity=0)';
+
+                setTimeout(function () {
+                    element.parentNode.removeChild(element);
+                }, 350);
+            }
+        }
+    }, {
+        key: 'renderImageWithKey',
+        value: function renderImageWithKey(imageUrl, title, i) {
+            return _react2.default.createElement('img', { src: imageUrl, title: title, alt: '', key: i, onLoad: this.handleImageChange.bind(this), onError: this.handleImageChange.bind(this) });
+        }
+    }, {
+        key: 'renderImage',
+        value: function renderImage(imageUrl) {
+            return _react2.default.createElement('img', { src: imageUrl, alt: '', onLoad: this.handleImageChange.bind(this), onError: this.handleImageChange.bind(this) });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var stack = this._getStack();
@@ -40057,7 +40427,12 @@ var WorkSingle = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { className: 'route-slider' },
+                { className: 'route-slider', ref: 'gallery' },
+                _react2.default.createElement(
+                    'div',
+                    { id: 'work-single-loader', className: 'secondary-loader' },
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
+                ),
                 _react2.default.createElement(
                     'section',
                     { id: 'works', className: 'page single' },
@@ -40125,7 +40500,7 @@ var WorkSingle = function (_React$Component) {
                                         _react2.default.createElement(
                                             'a',
                                             { href: this.state.work.clientUrl, target: this.state.work.clientUrl },
-                                            _react2.default.createElement('img', { src: this.state.work.clientLogo, alt: '' })
+                                            this.renderImage(this.state.work.clientLogo)
                                         ),
                                         _react2.default.createElement(
                                             'p',
@@ -40186,21 +40561,25 @@ var WorkSingle = function (_React$Component) {
     }, {
         key: '_getStack',
         value: function _getStack() {
+            var _this3 = this;
+
             if (typeof this.state.work.stack != 'undefined') {
                 return this.state.work.stack.map(function (stackitem, i) {
-                    return _react2.default.createElement('img', { src: "assets/images/icons/" + stackitem + ".png", alt: '', title: stackitem, key: i });
+                    return _this3.renderImageWithKey("assets/images/icons/" + stackitem + ".png", stackitem, i);
                 });
             } else return null;
         }
     }, {
         key: '_getGallery',
         value: function _getGallery() {
+            var _this4 = this;
+
             if (typeof this.state.work.gallery != 'undefined') {
                 return this.state.work.gallery.map(function (galleryitem, i) {
                     return _react2.default.createElement(
                         'div',
                         { className: 'galleryImg', key: i },
-                        _react2.default.createElement('img', { src: galleryitem.url, alt: '' }),
+                        _this4.renderImage(galleryitem.url),
                         _react2.default.createElement(
                             'div',
                             { className: 'overlay' },
@@ -40256,6 +40635,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+function imagesLoaded(parentNode) {
+    var imgElements = parentNode.querySelectorAll('img');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var img = _step.value;
+
+            if (!img.complete) {
+                return false;
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return true;
+}
+
 var WorksPage = function (_React$Component) {
     _inherits(WorksPage, _React$Component);
 
@@ -40282,12 +40693,42 @@ var WorksPage = function (_React$Component) {
             this._fetchWorks();
         }
     }, {
+        key: 'handleImageChange',
+        value: function handleImageChange() {
+            var galleryElement = document.getElementById('vorks');
+            if (imagesLoaded(galleryElement)) {
+                var element = document.getElementById('works-loader');
+
+                element.style.opacity = "0";
+                element.style.filter = 'alpha(opacity=0)';
+
+                setTimeout(function () {
+                    element.parentNode.removeChild(element);
+                }, 350);
+            }
+        }
+    }, {
+        key: 'renderImage',
+        value: function renderImage(imageUrl) {
+            return _react2.default.createElement('img', { onLoad: this.handleImageChange.bind(this), alt: '', src: imageUrl, onError: this.handleImageChange.bind(this) });
+        }
+    }, {
+        key: 'renderImageWithKey',
+        value: function renderImageWithKey(imageUrl, title, i) {
+            return _react2.default.createElement('img', { src: imageUrl, title: title, alt: '', key: i, onLoad: this.handleImageChange.bind(this), onError: this.handleImageChange.bind(this) });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var works = this._getWorks();
             return _react2.default.createElement(
                 'div',
-                { className: 'route-slider' },
+                { id: 'vorks', className: 'route-slider' },
+                _react2.default.createElement(
+                    'div',
+                    { id: 'works-loader', className: 'secondary-loader' },
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
+                ),
                 _react2.default.createElement(
                     'section',
                     { id: 'works', className: '' },
@@ -40356,23 +40797,25 @@ var WorksPage = function (_React$Component) {
     }, {
         key: '_getWorks',
         value: function _getWorks() {
+            var _this2 = this;
+
             return this.state.works.map(function (work) {
-                return _react2.default.createElement(_work2.default, _extends({}, work, { key: work.id }));
+                return _react2.default.createElement(_work2.default, _extends({}, work, { key: work.id, renderImage: _this2.renderImage, renderImageWithKey: _this2.renderImageWithKey, handleImageChange: _this2.handleImageChange }));
             });
         }
     }, {
         key: '_fetchWorks',
         value: function _fetchWorks() {
-            var _this2 = this;
+            var _this3 = this;
 
             _jquery2.default.ajax({
                 method: 'GET',
                 dataType: "json",
                 url: 'api/works.json',
                 success: function success(works) {
-                    _this2.setState({
+                    _this3.setState({
                         completeWorks: works,
-                        works: works.slice((_this2.props.worksPageNo - 1) * _this2.state.size, _this2.props.worksPageNo * _this2.state.size)
+                        works: works.slice((_this3.props.worksPageNo - 1) * _this3.state.size, _this3.props.worksPageNo * _this3.state.size)
                     });
                 }
             });

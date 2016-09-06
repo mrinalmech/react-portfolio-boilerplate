@@ -215,13 +215,13 @@
     "clientDesc": "My portfolio website",
     "clientLogo": "assets/images/portfolio/mrinalmech/logo.png",
     "clientUrl": "http://www.mrinalmech.com",
-    "stack": ["react", "reactrouter", "redux", "jquery", "babel", "php", "laravel", "postgresql", "aws", "gulp"],
+    "stack": ["react", "reactrouter", "redux", "jquery", "babel", "aws", "gulp"],
     "gallery": [{
         "url": "assets/images/portfolio/mrinalmech/gallery01.png",
         "caption": "Fully responsive layout on a variety of devices. A custom CSS template was used."
     }, {
         "url": "assets/images/portfolio/mrinalmech/gallery04.png",
-        "caption": "Data loaded via a Laravel/PHP RESTful API extracting data from a Postgresql database."
+        "caption": "Data loaded via AJAX requests to a JSON file."
     }, {
         "url": "assets/images/portfolio/mrinalmech/gallery02.png",
         "caption": "Pagination with Redux states to remember last viewed pages."

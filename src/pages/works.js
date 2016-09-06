@@ -4,6 +4,16 @@ import jQuery from 'jquery';
 import Work from '../components/work'
 import Footer from '../components/footer';
 
+function imagesLoaded(parentNode) {
+    const imgElements = parentNode.querySelectorAll('img');
+    for (const img of imgElements) {
+        if (!img.complete) {
+            return false;
+        }
+    }
+    return true;
+}
+
 export default class WorksPage extends React.Component {
 
     constructor() {
@@ -25,11 +35,36 @@ export default class WorksPage extends React.Component {
         this._fetchWorks();
     }
 
+    handleImageChange() {
+        const galleryElement = document.getElementById('vorks');
+        if (imagesLoaded(galleryElement)) {
+            var element = document.getElementById('works-loader');
+
+            element.style.opacity = "0";
+            element.style.filter = 'alpha(opacity=0)';
+
+            setTimeout(function() {
+                element.parentNode.removeChild(element);
+            }, 350);
+        }
+
+    }
+
+    renderImage(imageUrl) {
+        return (<img onLoad={this.handleImageChange.bind(this)} alt="" src={imageUrl} onError={this.handleImageChange.bind(this)}/>);
+    }
+
+    renderImageWithKey(imageUrl, title, i) {
+        return (<img src={imageUrl} title={title} alt="" key={i} onLoad={this.handleImageChange.bind(this)} onError={this.handleImageChange.bind(this)}/>);
+    }
+
     render() {
         const works = this._getWorks();
         return (
-            <div className="route-slider">
-
+            <div id="vorks" className="route-slider">
+                <div id="works-loader" className="secondary-loader">
+                    <img className="secondary-loading-img" src="assets/images/loading.png" alt="LOADING"/>
+                </div>
                 <section id="works" className="">
                     <div className="container">
                         {works}
@@ -78,7 +113,7 @@ export default class WorksPage extends React.Component {
 
     _getWorks() {
         return this.state.works.map((work) => {
-            return <Work {...work} key={work.id}/>
+            return <Work {...work} key={work.id} renderImage={this.renderImage} renderImageWithKey={this.renderImageWithKey} handleImageChange={this.handleImageChange}/>
         });
     }
 

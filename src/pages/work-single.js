@@ -3,6 +3,16 @@ import jQuery from 'jquery';
 
 import Footer from '../components/footer';
 
+function imagesLoaded(parentNode) {
+    const imgElements = parentNode.querySelectorAll('img');
+    for (const img of imgElements) {
+        if (!img.complete) {
+            return false;
+        }
+    }
+    return true;
+}
+
 export default class WorkSingle extends React.Component {
     constructor() {
         super();
@@ -20,12 +30,41 @@ export default class WorkSingle extends React.Component {
         this._fetchWork();
     }
 
+    handleImageChange() {
+        const galleryElement = this.refs.gallery;
+
+        if (imagesLoaded(galleryElement)) {
+            var element = document.getElementById('work-single-loader');
+
+            element.style.opacity = "0";
+            element.style.filter = 'alpha(opacity=0)';
+
+            setTimeout(function() {
+                element.parentNode.removeChild(element);
+            }, 350);
+        }
+
+    }
+
+    renderImageWithKey(imageUrl, title, i) {
+        return (<img src={imageUrl} title={title} alt="" key={i} onLoad={this.handleImageChange.bind(this)} onError={this.handleImageChange.bind(this)}/>);
+    }
+
+    renderImage(imageUrl) {
+        return (<img src={imageUrl} alt="" onLoad={this.handleImageChange.bind(this)} onError={this.handleImageChange.bind(this)}/>);
+    }
+
     render() {
         const stack = this._getStack();
         const gallery = this._getGallery();
 
         return (
-            <div className="route-slider">
+            <div className="route-slider" ref="gallery">
+
+                <div id="work-single-loader" className="secondary-loader">
+                    <img className="secondary-loading-img" src="assets/images/loading.png" alt="LOADING"/>
+                </div>
+
                 <section id="works" className="page single">
                     <div className="container">
 
@@ -52,7 +91,7 @@ export default class WorkSingle extends React.Component {
                                 <div className="desktop-3 tablet-6 mobile-half columns">
                                     <div className="box-info">
                                         <h4 className="border-top">Client</h4>
-                                        <a href={this.state.work.clientUrl} target={this.state.work.clientUrl}><img src={this.state.work.clientLogo} alt=""/></a>
+                                        <a href={this.state.work.clientUrl} target={this.state.work.clientUrl}>{this.renderImage(this.state.work.clientLogo)}</a>
 
                                         <p>{this.state.work.clientDesc}</p>
                                     </div>
@@ -104,7 +143,7 @@ export default class WorkSingle extends React.Component {
     _getStack() {
         if (typeof this.state.work.stack != 'undefined') {
             return this.state.work.stack.map((stackitem, i) => {
-                return <img src={"assets/images/icons/" + stackitem + ".png"} alt="" title={stackitem} key={i}/>
+                return this.renderImageWithKey("assets/images/icons/" + stackitem + ".png", stackitem, i)
             });
         } else
             return null;
@@ -115,7 +154,7 @@ export default class WorkSingle extends React.Component {
             return this.state.work.gallery.map((galleryitem, i) => {
                 return (
                     <div className="galleryImg" key={i}>
-                        <img src={galleryitem.url} alt=""/>
+                        {this.renderImage(galleryitem.url)}
                         <div className="overlay">
                             <p>{galleryitem.caption}</p>
                         </div>

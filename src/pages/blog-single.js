@@ -4,6 +4,16 @@ import {Link} from 'react-router';
 
 import Footer from '../components/footer';
 
+function imagesLoaded(parentNode) {
+    const imgElements = parentNode.querySelectorAll('img');
+    for (const img of imgElements) {
+        if (!img.complete) {
+            return false;
+        }
+    }
+    return true;
+}
+
 export default class BlogSingle extends React.Component {
     constructor() {
         super();
@@ -21,16 +31,39 @@ export default class BlogSingle extends React.Component {
         this._fetchBlogPost();
     }
 
+    handleImageChange() {
+        const galleryElement = this.refs.gallery;
+
+        if (imagesLoaded(galleryElement)) {
+            var element = document.getElementById('blog-single-loader');
+
+            element.style.opacity = "0";
+            element.style.filter = 'alpha(opacity=0)';
+
+            setTimeout(function() {
+                element.parentNode.removeChild(element);
+            }, 350);
+        }
+
+    }
+
+    renderImage(imageUrl) {
+        return (<img onLoad={this.handleImageChange.bind(this)} alt="" src={imageUrl} onError={this.handleImageChange.bind(this)}/>);
+    }
+
     render() {
         return (
-            <div className="route-slider">
+            <div className="route-slider" ref="gallery">
+                <div id="blog-single-loader" className="secondary-loader">
+                    <img className="secondary-loading-img" src="assets/images/loading.png" alt="LOADING"/>
+                </div>
                 <section id="archive">
                     <div className="container">
 
                         <div className="entry">
 
                             <div className="desktop-12 columns">
-                                <img src={this.state.blogPost.imgUrl} alt=""/>
+                                {this.renderImage(this.state.blogPost.imgUrl)}
                             </div>
 
                             <div className="desktop-3 tablet-12 columns">

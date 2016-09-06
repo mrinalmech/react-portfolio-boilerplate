@@ -1,15 +1,50 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router';
 
+function imagesLoaded(parentNode) {
+    const imgElements = parentNode.querySelectorAll('img');
+    for (const img of imgElements) {
+        if (!img.complete) {
+            return false;
+        }
+    }
+    return true;
+}
+
 export default class Footer extends Component {
+
+    handleImageChange() {
+        const galleryElement = this.refs.gallery;
+
+        if (imagesLoaded(galleryElement)) {
+            var element = document.getElementById('loader');
+
+            element.style.opacity = "0";
+            element.style.filter = 'alpha(opacity=0)';
+
+            setTimeout(function() {
+                element.parentNode.removeChild(element);
+            }, 350);
+        }
+
+    }
+
+    renderImageWithTitle(imageUrl, title) {
+        return (<img onLoad={this.handleImageChange.bind(this)} src={imageUrl} title={title} alt="" onError={this.handleImageChange.bind(this)}/>);
+    }
+
+    renderImage(imageUrl) {
+        return (<img onLoad={this.handleImageChange.bind(this)} src={imageUrl} alt="" onError={this.handleImageChange.bind(this)}/>);
+    }
+
     render() {
 
         return (
-            <section id="header">
+            <section id="header" ref="gallery">
                 <div className="topbar">
 
                     <a className="hamburger" onClick={this.open}>
-                        <img src="assets/images/hamburger.png" alt=""/>
+                        {this.renderImage("assets/images/hamburger.png")}
                     </a>
 
                     <div className="container">
@@ -42,7 +77,7 @@ export default class Footer extends Component {
                         <div className="desktop-6 columns">
                             <h1>
                                 <Link to="/" title="home">
-                                    <img src="assets/images/logo.png" alt=""/>
+                                    {this.renderImage("assets/images/logo.png")}
                                 </Link>
                             </h1>
                         </div>
@@ -50,80 +85,80 @@ export default class Footer extends Component {
                             <p id="big-screen" className="site-desc">
                                 frontend
                                 <div className="icon-holder">
-                                    <img src="assets/images/icons/html.png" alt="" title="HTML5"/>
-                                    <img src="assets/images/icons/css.png" alt="" title="CSS3"/>
-                                    <img src="assets/images/icons/sass.png" alt="" title="Sass"/>
-                                    <img src="assets/images/icons/compass.png" alt="" title="Compass"/>
-                                    <img src="assets/images/icons/bootstrap.png" alt="" title="Bootstrap"/>
-                                    <img src="assets/images/icons/js.png" alt="" title="Javascript"/>
-                                    <img src="assets/images/icons/ts.png" alt="" title="Typescript"/>
-                                    <img src="assets/images/icons/jquery.png" alt="" title="JQuery"/>
-                                    <img src="assets/images/icons/angular.png" alt="" title="Angular"/>
-                                    <img src="assets/images/icons/react.png" alt="" title="React"/>
-                                    <img src="assets/images/icons/redux.png" alt="" title="Redux"/>
-                                    <img src="assets/images/icons/reactrouter.png" alt="" title="React Router"/>
-                                    <img src="assets/images/icons/babel.png" alt="" title="Babel"/>
-                                    <img src="assets/images/icons/bower.png" alt="" title="Bower"/>
-                                    <img src="assets/images/icons/ps.png" alt="" title="Photoshop"/>
-                                    <img src="assets/images/icons/svg.png" alt="" title="SVG"/>
+                                    {this.renderImageWithTitle("assets/images/icons/html.png", "HTML5")}
+                                    {this.renderImageWithTitle("assets/images/icons/css.png", "CSS3")}
+                                    {this.renderImageWithTitle("assets/images/icons/sass.png", "Sass")}
+                                    {this.renderImageWithTitle("assets/images/icons/compass.png", "Compass")}
+                                    {this.renderImageWithTitle("assets/images/icons/bootstrap.png", "Bootstrap")}
+                                    {this.renderImageWithTitle("assets/images/icons/js.png", "Javascript")}
+                                    {this.renderImageWithTitle("assets/images/icons/ts.png", "Typescript")}
+                                    {this.renderImageWithTitle("assets/images/icons/jquery.png", "JQuery")}
+                                    {this.renderImageWithTitle("assets/images/icons/angular.png", "Angular")}
+                                    {this.renderImageWithTitle("assets/images/icons/react.png", "React")}
+                                    {this.renderImageWithTitle("assets/images/icons/redux.png", "Redux")}
+                                    {this.renderImageWithTitle("assets/images/icons/reactrouter.png", "React Router")}
+                                    {this.renderImageWithTitle("assets/images/icons/babel.png", "Babel")}
+                                    {this.renderImageWithTitle("assets/images/icons/bower.png", "Bower")}
+                                    {this.renderImageWithTitle("assets/images/icons/ps.png", "Photoshop")}
+                                    {this.renderImageWithTitle("assets/images/icons/svg.png", "SVG")}
                                 </div>
                                 backend
                                 <div className="icon-holder">
-                                    <img src="assets/images/icons/php.png" alt="" title="PHP"/>
-                                    <img src="assets/images/icons/laravel.png" alt="" title="Laravel"/>
-                                    <img src="assets/images/icons/node.png" alt="" title="Node.js"/>
-                                    <img src="assets/images/icons/mysql.png" alt="" title="MySQL"/>
-                                    <img src="assets/images/icons/postgresql.png" alt="" title="PostgreSQL"/>
-                                    <img src="assets/images/icons/mongodb.png" alt="" title="MongoDB"/>
-                                    <img src="assets/images/icons/redis.png" alt="" title="Redis"/>
-                                    <img src="assets/images/icons/aws.png" alt="" title="AWS"/>
+                                    {this.renderImageWithTitle("assets/images/icons/php.png", "PHP")}
+                                    {this.renderImageWithTitle("assets/images/icons/laravel.png", "Laravel")}
+                                    {this.renderImageWithTitle("assets/images/icons/node.png", "Node.js")}
+                                    {this.renderImageWithTitle("assets/images/icons/aws.png", "AWS")}
+                                    {this.renderImageWithTitle("assets/images/icons/mysql.png", "MySQL")}
+                                    {this.renderImageWithTitle("assets/images/icons/postgresql.png", "PostgreSQL")}
+                                    {this.renderImageWithTitle("assets/images/icons/mongodb.png", "MongoDB")}
+                                    {this.renderImageWithTitle("assets/images/icons/redis.png", "Redis")}
                                 </div>
                                 other
                                 <div className="icon-holder">
-                                    <img src="assets/images/icons/gulp.png" alt="" title="Gulp"/>
-                                    <img src="assets/images/icons/trello.png" alt="" title="Trello"/>
-                                    <img src="assets/images/icons/slack.png" alt="" title="Slack"/>
-                                    <img src="assets/images/icons/github.png" alt="" title="Github"/>
-                                    <img src="assets/images/icons/unity.png" alt="" title="Unity"/>
-                                    <img src="assets/images/icons/java.png" alt="" title="Java"/>
-                                    <img src="assets/images/icons/android.png" alt="" title="Android"/>
-                                    <img src="assets/images/icons/csharp.png" alt="" title="C#"/>
+                                    {this.renderImageWithTitle("assets/images/icons/gulp.png", "Gulp")}
+                                    {this.renderImageWithTitle("assets/images/icons/trello.png", "Trello")}
+                                    {this.renderImageWithTitle("assets/images/icons/slack.png", "Slack")}
+                                    {this.renderImageWithTitle("assets/images/icons/github.png", "Github")}
+                                    {this.renderImageWithTitle("assets/images/icons/unity.png", "Unity")}
+                                    {this.renderImageWithTitle("assets/images/icons/java.png", "Java")}
+                                    {this.renderImageWithTitle("assets/images/icons/android.png", "Android")}
+                                    {this.renderImageWithTitle("assets/images/icons/csharp.png", "C#")}
                                 </div>
                             </p>
                             <p id="small-screen" className="site-desc">
                                 <div className="icon-holder">
-                                    <img src="assets/images/icons/html.png" alt="" title="HTML5"/>
-                                    <img src="assets/images/icons/css.png" alt="" title="CSS3"/>
-                                    <img src="assets/images/icons/sass.png" alt="" title="Sass"/>
-                                    <img src="assets/images/icons/compass.png" alt="" title="Compass"/>
-                                    <img src="assets/images/icons/bootstrap.png" alt="" title="Bootstrap"/>
-                                    <img src="assets/images/icons/js.png" alt="" title="Javascript"/>
-                                    <img src="assets/images/icons/ts.png" alt="" title="Typescript"/>
-                                    <img src="assets/images/icons/jquery.png" alt="" title="JQuery"/>
-                                    <img src="assets/images/icons/angular.png" alt="" title="Angular"/>
-                                    <img src="assets/images/icons/react.png" alt="" title="React"/>
-                                    <img src="assets/images/icons/redux.png" alt="" title="Redux"/>
-                                    <img src="assets/images/icons/reactrouter.png" alt="" title="React Router"/>
-                                    <img src="assets/images/icons/babel.png" alt="" title="Babel"/>
-                                    <img src="assets/images/icons/bower.png" alt="" title="Bower"/>
-                                    <img src="assets/images/icons/ps.png" alt="" title="Photoshop"/>
-                                    <img src="assets/images/icons/svg.png" alt="" title="SVG"/>
-                                    <img src="assets/images/icons/php.png" alt="" title="PHP"/>
-                                    <img src="assets/images/icons/python.png" alt="" title="Python"/>
-                                    <img src="assets/images/icons/ruby.png" alt="" title="Ruby"/>
-                                    <img src="assets/images/icons/node.png" alt="" title="Node.js"/>
-                                    <img src="assets/images/icons/asp.png" alt="" title="Asp.net"/>
-                                    <img src="assets/images/icons/mysql.png" alt="" title="MySQL"/>
-                                    <img src="assets/images/icons/mongodb.png" alt="" title="MongoDB"/>
-                                    <img src="assets/images/icons/redis.png" alt="" title="Redis"/>
-                                    <img src="assets/images/icons/gulp.png" alt="" title="Gulp"/>
-                                    <img src="assets/images/icons/trello.png" alt="" title="Trello"/>
-                                    <img src="assets/images/icons/slack.png" alt="" title="Slack"/>
-                                    <img src="assets/images/icons/github.png" alt="" title="Github"/>
-                                    <img src="assets/images/icons/unity.png" alt="" title="Unity"/>
-                                    <img src="assets/images/icons/java.png" alt="" title="Java"/>
-                                    <img src="assets/images/icons/android.png" alt="" title="Android"/>
-                                    <img src="assets/images/icons/csharp.png" alt="" title="C#"/>
+                                    {this.renderImageWithTitle("assets/images/icons/html.png", "HTML5")}
+                                    {this.renderImageWithTitle("assets/images/icons/css.png", "CSS3")}
+                                    {this.renderImageWithTitle("assets/images/icons/sass.png", "Sass")}
+                                    {this.renderImageWithTitle("assets/images/icons/compass.png", "Compass")}
+                                    {this.renderImageWithTitle("assets/images/icons/bootstrap.png", "Bootstrap")}
+                                    {this.renderImageWithTitle("assets/images/icons/js.png", "Javascript")}
+                                    {this.renderImageWithTitle("assets/images/icons/ts.png", "Typescript")}
+                                    {this.renderImageWithTitle("assets/images/icons/jquery.png", "JQuery")}
+                                    {this.renderImageWithTitle("assets/images/icons/angular.png", "Angular")}
+                                    {this.renderImageWithTitle("assets/images/icons/react.png", "React")}
+                                    {this.renderImageWithTitle("assets/images/icons/redux.png", "Redux")}
+                                    {this.renderImageWithTitle("assets/images/icons/reactrouter.png", "React Router")}
+                                    {this.renderImageWithTitle("assets/images/icons/babel.png", "Babel")}
+                                    {this.renderImageWithTitle("assets/images/icons/bower.png", "Bower")}
+                                    {this.renderImageWithTitle("assets/images/icons/ps.png", "Photoshop")}
+                                    {this.renderImageWithTitle("assets/images/icons/svg.png", "SVG")}
+                                    {this.renderImageWithTitle("assets/images/icons/php.png", "PHP")}
+                                    {this.renderImageWithTitle("assets/images/icons/python.png", "Python")}
+                                    {this.renderImageWithTitle("assets/images/icons/ruby.png", "Ruby")}
+                                    {this.renderImageWithTitle("assets/images/icons/node.png", "Node.js")}
+                                    {this.renderImageWithTitle("assets/images/icons/asp.png", "Asp.net")}
+                                    {this.renderImageWithTitle("assets/images/icons/mysql.png", "MySQL")}
+                                    {this.renderImageWithTitle("assets/images/icons/mongodb.png", "MongoDB")}
+                                    {this.renderImageWithTitle("assets/images/icons/redis.png", "Redis")}
+                                    {this.renderImageWithTitle("assets/images/icons/gulp.png", "Gulp")}
+                                    {this.renderImageWithTitle("assets/images/icons/trello.png", "Trello")}
+                                    {this.renderImageWithTitle("assets/images/icons/slack.png", "Slack")}
+                                    {this.renderImageWithTitle("assets/images/icons/github.png", "Github")}
+                                    {this.renderImageWithTitle("assets/images/icons/unity.png", "Unity")}
+                                    {this.renderImageWithTitle("assets/images/icons/java.png", "Java")}
+                                    {this.renderImageWithTitle("assets/images/icons/android.png", "Android")}
+                                    {this.renderImageWithTitle("assets/images/icons/csharp.png", "C#")}
                                 </div>
                             </p>
                         </div>

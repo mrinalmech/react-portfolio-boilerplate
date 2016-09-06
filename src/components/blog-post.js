@@ -14,7 +14,7 @@ export default class BlogPost extends React.Component {
 
                 <div className="desktop-12 columns">
                     <Link to={'/blog/' + this.props.id}>
-                        <img src={this.props.imgUrl} alt=""/>
+                      {this.props.renderImage(this.props.imgUrl)}
                     </Link>
                 </div>
 
@@ -69,3 +69,8 @@ export default class BlogPost extends React.Component {
     }
 
 }
+
+BlogPost.propTypes = {
+    renderImage: React.PropTypes.func.isRequired,
+    handleImageChange: React.PropTypes.func.isRequired
+};
