@@ -5,4 +5,4 @@ Boilerplate for a portfolio site in React. It implements all of the regulars of 
 
 **Redux** - I had implemented pagination for the works and blog section but it would revert to the first page if you would navigate elsewhere. To maintain the last viewed page I used Redux to maintain the states. Later on when the number of projects and blogs become too much I'll probably convert the pagination to route based with individual 'pages' being called from the server. 
 
-**Loading** - I implemented the loading screens using image events. Images emit events upon fully loading so I wrapped up all the images on the site in a custom component. A function would lsiten to these image events and would fade out the loading overlay when all the images nested within a DOM element were fully loaded.
+**Loading** - I implemented the loading screens using image events. Images emit events upon fully loading so I wrapped up all the images on the site in a custom component. A function would listen to these image events and would fade out the loading overlay when all the images nested within a DOM element were fully loaded.
