@@ -39,7 +39,7 @@ export default class ServicesPage extends React.Component {
             <div className="route-slider" ref="gallery">
 
                 <div id="services-loader" className="secondary-loader">
-                    <img className="secondary-loading-img" src="assets/images/loading.svg" alt="LOADING"/>
+                    <img className="secondary-loading-img" src="assets/images/loading.png" alt="LOADING"/>
                 </div>
 
                 <section id="about" className="page">
@@ -48,6 +48,13 @@ export default class ServicesPage extends React.Component {
 
                         <div className="desktop-12 columns">
                             <div className="border-top"></div>
+                        </div>
+
+                        <div className="clear"></div>
+
+                        <div className="desktop-12 tablet-12 columns">
+                            <p className="page-desc">Applications have thousands of moving parts. A person who has command over the breadth of the stack is always an asset. See what I can do to help you.
+                            </p>
                         </div>
                     </div>
 
@@ -86,7 +93,7 @@ export default class ServicesPage extends React.Component {
                             </div>
 
                             <div className="item">
-                                <div className="desktop-3 tablet-6 columns">
+                                <div className="desktop-3 offset-3 tablet-6 tablet-offset-0 columns">
                                     {this.renderImage("assets/images/services/backend.png", "")}
                                 </div>
                                 <div className="desktop-6 tablet-6 columns">
@@ -105,10 +112,10 @@ export default class ServicesPage extends React.Component {
                             </div>
 
                             <div className="item">
-                                <div className="desktop-3 tablet-6 columns">
+                                <div className="desktop-3 push-6 tablet-6 tablet-push-0 columns">
                                     {this.renderImage("assets/images/services/database.png", "")}
                                 </div>
-                                <div className="desktop-6 tablet-6 columns">
+                                <div className="desktop-6 pull-3 tablet-6 tablet-pull-0 columns">
                                     <h4>database</h4>
                                     <p>
                                         I have knowledge of databases both relational and non-relational. My master's specialization in databases has given me a good idea about database design and implementation to ensure optimum memory usage, fast operation times and data consistency.
@@ -124,7 +131,7 @@ export default class ServicesPage extends React.Component {
                             </div>
 
                             <div className="item">
-                                <div className="desktop-3 tablet-6 columns">
+                                <div className="desktop-3 offset-3 tablet-6 tablet-offset-0 columns">
                                     {this.renderImage("assets/images/services/mobile.png", "")}
                                 </div>
                                 <div className="desktop-6 tablet-6 columns">
@@ -155,7 +162,7 @@ export default class ServicesPage extends React.Component {
                             </div>
 
                             <div className="item">
-                                <div className="desktop-3 tablet-6 columns">
+                                <div className="desktop-3 offset-3 tablet-6 tablet-offset-0 columns">
                                     {this.renderImage("assets/images/services/desktop.png", "")}
                                 </div>
                                 <div className="desktop-6 tablet-6 columns">
@@ -171,10 +178,10 @@ export default class ServicesPage extends React.Component {
                             </div>
 
                             <div className="item">
-                                <div className="desktop-3 tablet-6 columns">
+                                <div className="desktop-3 push-6 tablet-6 tablet-push-0 columns">
                                     {this.renderImage("assets/images/services/flow.png", "")}
                                 </div>
-                                <div className="desktop-6 tablet-6 columns">
+                                <div className="desktop-6 pull-3 tablet-6 tablet-pull-0 columns">
                                     <h4>workflow</h4>
                                     <p>Good technical skills can only ensure so much. I am well-versed in modern day project management techniques thanks to my MBA education. To ensure greater productivity I use Slack/Skype for team communication, Trello for kanban, Git for version control and Gulp as a build system.
                                     </p>

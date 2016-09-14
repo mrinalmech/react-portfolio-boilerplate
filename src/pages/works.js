@@ -63,7 +63,7 @@ export default class WorksPage extends React.Component {
         return (
             <div id="vorks" className="route-slider">
                 <div id="works-loader" className="secondary-loader">
-                    <img className="secondary-loading-img" src="assets/images/loading.svg" alt="LOADING"/>
+                    <img className="secondary-loading-img" src="assets/images/loading.png" alt="LOADING"/>
                 </div>
                 <section id="works" className="">
                     <div className="container">
