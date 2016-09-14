@@ -319,7 +319,7 @@ b, strong { font-weight: bold; }
 
 	.page p.page-desc {
 		color: #222;
-	/*	font-family: 'Roboto Slab', Georgia, serif;*/
+		font-family: 'Roboto Slab', Georgia, serif;
 		font-size: 34px;
 		line-height: 60px;
 		font-weight: 300;
@@ -655,7 +655,7 @@ b, strong { font-weight: bold; }
 		.box-about h3 { margin-bottom: 50px; }
 
 		.box-about p.tagline {
-		/*	font-family: 'Roboto Slab', Georgia, serif;*/
+			font-family: 'Roboto Slab', Georgia, serif;
 			font-size: 24px;
 			line-height: 44px;
 			font-weight: 300;
@@ -1226,7 +1226,7 @@ b, strong { font-weight: bold; }
 	}
 
 	#archive .entry h4 {
-	/*	font-family: 'Roboto Slab', Georgia, serif;*/
+		font-family: 'Roboto Slab', Georgia, serif;
 		font-size: 26px;
 		line-height: 40px;
 		font-weight: 300;
@@ -1287,7 +1287,7 @@ b, strong { font-weight: bold; }
 	}
 
 		#archive .entry blockquote p {
-		/*	font-family: 'Roboto Slab', Georgia, serif;*/
+			font-family: 'Roboto Slab', Georgia, serif;
 			font-size: 36px;
 			line-height: 60px;
 			font-style: italic;

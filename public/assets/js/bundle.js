@@ -38758,7 +38758,7 @@ var Footer = function (_Component) {
             if (imagesLoaded(galleryElement)) {
                 (function () {
                     var element = document.getElementById('loader');
-                    console.log('reached');
+
                     element.style.opacity = "0";
                     element.style.filter = 'alpha(opacity=0)';
 
@@ -38853,7 +38853,7 @@ var Footer = function (_Component) {
                                 _react2.default.createElement(
                                     _reactRouter.Link,
                                     { to: '/', title: 'home' },
-                                    this.renderImage("assets/images/newlogo.png")
+                                    this.renderImage("assets/images/logo.png")
                                 )
                             )
                         ),
@@ -38863,7 +38863,7 @@ var Footer = function (_Component) {
                             _react2.default.createElement(
                                 'p',
                                 { id: 'big-screen', className: 'site-desc' },
-                                'FRONTEND',
+                                'frontend',
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'icon-holder' },
@@ -38884,7 +38884,7 @@ var Footer = function (_Component) {
                                     this.renderImageWithTitle("assets/images/icons/ps.png", "Photoshop"),
                                     this.renderImageWithTitle("assets/images/icons/svg.png", "SVG")
                                 ),
-                                'BACKEND',
+                                'backend',
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'icon-holder' },
@@ -38897,7 +38897,7 @@ var Footer = function (_Component) {
                                     this.renderImageWithTitle("assets/images/icons/mongodb.png", "MongoDB"),
                                     this.renderImageWithTitle("assets/images/icons/redis.png", "Redis")
                                 ),
-                                'OTHER',
+                                'other',
                                 _react2.default.createElement(
                                     'div',
                                     { className: 'icon-holder' },
@@ -39321,7 +39321,7 @@ var AboutPage = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { id: 'about-loader', className: 'secondary-loader' },
-                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.svg', alt: 'LOADING' })
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
                 ),
                 _react2.default.createElement(
                     'section',
@@ -39363,17 +39363,7 @@ var AboutPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'p',
                                     null,
-                                    'I have a bachelor\'s and master\'s in Computer Science from the extremely prestigious and selective Indian Institute of Technology Delhi and an MBA from the equally prestigious and selective Indian Institute of Management Calcutta. For a more detailed CV please click ',
-                                    _react2.default.createElement(
-                                        'u',
-                                        null,
-                                        _react2.default.createElement(
-                                            'a',
-                                            { href: 'assets/images/MrinalCV.pdf', target: 'cv' },
-                                            'here'
-                                        )
-                                    ),
-                                    '.'
+                                    'I have a bachelor\'s and master\'s in Computer Science from the extremely prestigious and selective Indian Institute of Technology Delhi and an MBA from the equally prestigious and selective Indian Institute of Management Calcutta. For a more detailed CV please click here.'
                                 ),
                                 _react2.default.createElement(
                                     'p',
@@ -39411,13 +39401,13 @@ var AboutPage = function (_React$Component) {
                                 _react2.default.createElement(
                                     'p',
                                     null,
-                                    'Apart from coding I enjoy reading books, watching movies, playing video games and listening to music.'
+                                    'Apart from coding I enjoy reading books, watching movies, playing video games and listening to music. Some of my favorites are listed on the right.'
                                 )
                             )
                         ),
                         _react2.default.createElement(
                             'div',
-                            { className: 'desktop-6 tablet-12 nested columns' },
+                            { className: 'desktop-6 tablet-12 columns' },
                             _react2.default.createElement(
                                 'div',
                                 { className: 'box-about' },
@@ -39427,60 +39417,63 @@ var AboutPage = function (_React$Component) {
                                     _react2.default.createElement(
                                         'span',
                                         { className: 'underline' },
-                                        'contact'
+                                        'some of my most favorite things in the world'
                                     )
                                 ),
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'desktop-3 tablet-6 mobile-half columns' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'box-contact' },
-                                        _react2.default.createElement(
-                                            'h4',
-                                            null,
-                                            _react2.default.createElement(
-                                                'span',
-                                                { className: 'underline' },
-                                                'Address'
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'p',
-                                            null,
-                                            'Mumbai, Maharashtra',
-                                            _react2.default.createElement('br', null),
-                                            'India'
-                                        )
-                                    )
+                                    { className: 'about-holder' },
+                                    this.renderImage("assets/images/about/wc3.png", "Warcraft 3"),
+                                    this.renderImage("assets/images/about/me.png", "Mass Effect"),
+                                    this.renderImage("assets/images/about/bioshock.png", "Bioshock Infinite"),
+                                    this.renderImage("assets/images/about/psycho.png", "Psychonauts"),
+                                    this.renderImage("assets/images/about/gtav.png", "GTA V")
                                 ),
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'desktop-3 tablet-6 mobile-half columns' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'box-contact' },
-                                        _react2.default.createElement(
-                                            'h4',
-                                            null,
-                                            _react2.default.createElement(
-                                                'span',
-                                                { className: 'underline' },
-                                                'Email'
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'p',
-                                            null,
-                                            _react2.default.createElement(
-                                                'a',
-                                                { href: 'mailto:typebig@gmail.com' },
-                                                'mrinalmech@gmail.com'
-                                            )
-                                        )
-                                    )
+                                    { className: 'about-holder' },
+                                    this.renderImage("assets/images/about/tba.png", "Metallica by Metallica"),
+                                    this.renderImage("assets/images/about/mop.png", "Master of Puppets by Metallica"),
+                                    this.renderImage("assets/images/about/ram.png", "Random Access Memories by Daft Punk"),
+                                    this.renderImage("assets/images/about/rs.png", "Rubber Soul by The Beatles"),
+                                    this.renderImage("assets/images/about/sott.png", "Sign of the Times by Prince")
                                 ),
-                                _react2.default.createElement('div', { className: 'clear' })
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'about-holder' },
+                                    this.renderImage("assets/images/about/ah.png", "Annie Hall"),
+                                    this.renderImage("assets/images/about/ews.png", "Everybody Wants Some!!"),
+                                    this.renderImage("assets/images/about/ma.png", "Mistress America"),
+                                    this.renderImage("assets/images/about/mk.png", "Moonrise Kingdom"),
+                                    this.renderImage("assets/images/about/china.png", "Chinatown")
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'about-holder' },
+                                    this.renderImage("assets/images/about/detective.png", "True Detective"),
+                                    this.renderImage("assets/images/about/metal.png", "Metalocalypse"),
+                                    this.renderImage("assets/images/about/silicon.png", "Silicon Valley"),
+                                    this.renderImage("assets/images/about/simpsons.png", "The Simpsons"),
+                                    this.renderImage("assets/images/about/cowboy.png", "Cowboy Bebop")
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'about-holder' },
+                                    this.renderImage("assets/images/about/midnight.png", "Midnight's Children by Salman Rushdie"),
+                                    this.renderImage("assets/images/about/hundred.png", "100 Years of Solitude by Gabriel Garcia Marquez"),
+                                    this.renderImage("assets/images/about/tree.png", "Tree of Smoke by Denis Johnson"),
+                                    this.renderImage("assets/images/about/billy.png", "Billy Lynn's Long Halftime Walk by Ben Fountain"),
+                                    this.renderImage("assets/images/about/sisters.png", "The Sisters Brothers by Patrick DeWitt")
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'about-holder' },
+                                    this.renderImage("assets/images/about/david.png", "David Boring by Daniel Clowes"),
+                                    this.renderImage("assets/images/about/allstar.png", "All Star Superman by Grant Morrison"),
+                                    this.renderImage("assets/images/about/casanova.png", "Casanova by Matt Fraction"),
+                                    this.renderImage("assets/images/about/starman.png", "Starman by James Robinson"),
+                                    this.renderImage("assets/images/about/hitman.png", "Hitman by Garth Ennis")
+                                )
                             )
                         )
                     )
@@ -39614,7 +39607,7 @@ var BlogSingle = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { id: 'blog-single-loader', className: 'secondary-loader' },
-                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.svg', alt: 'LOADING' })
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
                 ),
                 _react2.default.createElement(
                     'section',
@@ -39684,7 +39677,7 @@ var BlogSingle = function (_React$Component) {
                                     ),
                                     _react2.default.createElement(
                                         'p',
-                                        { className: 'white-space' },
+                                        null,
                                         this.state.blogPost.secondpara
                                     )
                                 )
@@ -39844,7 +39837,7 @@ var BlogPage = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { id: 'blog-loader', className: 'secondary-loader' },
-                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.svg', alt: 'LOADING' })
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
                 ),
                 _react2.default.createElement(
                     'section',
@@ -40051,7 +40044,7 @@ var ServicesPage = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { id: 'services-loader', className: 'secondary-loader' },
-                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.svg', alt: 'LOADING' })
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
                 ),
                 _react2.default.createElement(
                     'section',
@@ -40063,6 +40056,16 @@ var ServicesPage = function (_React$Component) {
                             'div',
                             { className: 'desktop-12 columns' },
                             _react2.default.createElement('div', { className: 'border-top' })
+                        ),
+                        _react2.default.createElement('div', { className: 'clear' }),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'desktop-12 tablet-12 columns' },
+                            _react2.default.createElement(
+                                'p',
+                                { className: 'page-desc' },
+                                'Applications have thousands of moving parts. A person who has command over the breadth of the stack is always an asset. See what I can do to help you.'
+                            )
                         )
                     ),
                     _react2.default.createElement(
@@ -40120,7 +40123,7 @@ var ServicesPage = function (_React$Component) {
                                 { className: 'item' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'desktop-3 tablet-6 columns' },
+                                    { className: 'desktop-3 offset-3 tablet-6 tablet-offset-0 columns' },
                                     this.renderImage("assets/images/services/backend.png", "")
                                 ),
                                 _react2.default.createElement(
@@ -40152,12 +40155,12 @@ var ServicesPage = function (_React$Component) {
                                 { className: 'item' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'desktop-3 tablet-6 columns' },
+                                    { className: 'desktop-3 push-6 tablet-6 tablet-push-0 columns' },
                                     this.renderImage("assets/images/services/database.png", "")
                                 ),
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'desktop-6 tablet-6 columns' },
+                                    { className: 'desktop-6 pull-3 tablet-6 tablet-pull-0 columns' },
                                     _react2.default.createElement(
                                         'h4',
                                         null,
@@ -40184,7 +40187,7 @@ var ServicesPage = function (_React$Component) {
                                 { className: 'item' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'desktop-3 tablet-6 columns' },
+                                    { className: 'desktop-3 offset-3 tablet-6 tablet-offset-0 columns' },
                                     this.renderImage("assets/images/services/mobile.png", "")
                                 ),
                                 _react2.default.createElement(
@@ -40244,7 +40247,7 @@ var ServicesPage = function (_React$Component) {
                                 { className: 'item' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'desktop-3 tablet-6 columns' },
+                                    { className: 'desktop-3 offset-3 tablet-6 tablet-offset-0 columns' },
                                     this.renderImage("assets/images/services/desktop.png", "")
                                 ),
                                 _react2.default.createElement(
@@ -40275,12 +40278,12 @@ var ServicesPage = function (_React$Component) {
                                 { className: 'item' },
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'desktop-3 tablet-6 columns' },
+                                    { className: 'desktop-3 push-6 tablet-6 tablet-push-0 columns' },
                                     this.renderImage("assets/images/services/flow.png", "")
                                 ),
                                 _react2.default.createElement(
                                     'div',
-                                    { className: 'desktop-6 tablet-6 columns' },
+                                    { className: 'desktop-6 pull-3 tablet-6 tablet-pull-0 columns' },
                                     _react2.default.createElement(
                                         'h4',
                                         null,
@@ -40440,7 +40443,7 @@ var WorkSingle = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { id: 'work-single-loader', className: 'secondary-loader' },
-                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.svg', alt: 'LOADING' })
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
                 ),
                 _react2.default.createElement(
                     'section',
@@ -40738,7 +40741,7 @@ var WorksPage = function (_React$Component) {
                 _react2.default.createElement(
                     'div',
                     { id: 'works-loader', className: 'secondary-loader' },
-                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.svg', alt: 'LOADING' })
+                    _react2.default.createElement('img', { className: 'secondary-loading-img', src: 'assets/images/loading.png', alt: 'LOADING' })
                 ),
                 _react2.default.createElement(
                     'section',
