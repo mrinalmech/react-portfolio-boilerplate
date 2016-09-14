@@ -55,7 +55,7 @@ export default class BlogSingle extends React.Component {
         return (
             <div className="route-slider" ref="gallery">
                 <div id="blog-single-loader" className="secondary-loader">
-                    <img className="secondary-loading-img" src="assets/images/loading.png" alt="LOADING"/>
+                    <img className="secondary-loading-img" src="assets/images/loading.svg" alt="LOADING"/>
                 </div>
                 <section id="archive">
                     <div className="container">
@@ -90,7 +90,7 @@ export default class BlogSingle extends React.Component {
                                         <p className="quote">{this.state.blogPost.quote}</p>
                                     </blockquote>
 
-                                    <p>{this.state.blogPost.secondpara}</p>
+                                    <p className="white-space">{this.state.blogPost.secondpara}</p>
 
                                 </div>
                             </div>

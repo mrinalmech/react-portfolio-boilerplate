@@ -3,7 +3,7 @@ const initialState = {
     worksPage: 1
 }
 
-const pages = (state, action) => {
+export const pages = (state, action) => {
     if (typeof state === 'undefined') {
         return initialState
     }
@@ -22,4 +22,4 @@ const pages = (state, action) => {
     }
 }
 
-export default pages
+//export default pages
