@@ -6,7 +6,7 @@ const testState = {
     worksPage: 2
 }
 
-describe('pages', function() {
+describe('pages',  function() {
 
     it('should return the initial state', function() {
         expect(pages(undefined, {})).toEqual(fromJS({blogPage: 1, worksPage: 1}));
