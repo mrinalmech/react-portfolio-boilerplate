@@ -18,7 +18,7 @@ export default class Footer extends Component {
 
         if (imagesLoaded(galleryElement)) {
             const element = document.getElementById('loader');
-
+console.log('reached');
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';
 
@@ -77,13 +77,13 @@ export default class Footer extends Component {
                         <div className="desktop-6 columns">
                             <h1>
                                 <Link to="/" title="home">
-                                    {this.renderImage("assets/images/logo.png")}
+                                    {this.renderImage("assets/images/newlogo.png")}
                                 </Link>
                             </h1>
                         </div>
                         <div className="desktop-6 columns">
                             <p id="big-screen" className="site-desc">
-                                frontend
+                                FRONTEND
                                 <div className="icon-holder">
                                     {this.renderImageWithTitle("assets/images/icons/html.png", "HTML5")}
                                     {this.renderImageWithTitle("assets/images/icons/css.png", "CSS3")}
@@ -102,7 +102,7 @@ export default class Footer extends Component {
                                     {this.renderImageWithTitle("assets/images/icons/ps.png", "Photoshop")}
                                     {this.renderImageWithTitle("assets/images/icons/svg.png", "SVG")}
                                 </div>
-                                backend
+                                BACKEND
                                 <div className="icon-holder">
                                     {this.renderImageWithTitle("assets/images/icons/php.png", "PHP")}
                                     {this.renderImageWithTitle("assets/images/icons/laravel.png", "Laravel")}
@@ -113,7 +113,7 @@ export default class Footer extends Component {
                                     {this.renderImageWithTitle("assets/images/icons/mongodb.png", "MongoDB")}
                                     {this.renderImageWithTitle("assets/images/icons/redis.png", "Redis")}
                                 </div>
-                                other
+                                OTHER
                                 <div className="icon-holder">
                                     {this.renderImageWithTitle("assets/images/icons/gulp.png", "Gulp")}
                                     {this.renderImageWithTitle("assets/images/icons/trello.png", "Trello")}

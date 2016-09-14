@@ -59,7 +59,7 @@ export default class BlogPage extends React.Component {
         return (
             <div id="blog" className="route-slider">
               <div id="blog-loader" className="secondary-loader">
-                  <img className="secondary-loading-img" src="assets/images/loading.png" alt="LOADING"/>
+                  <img className="secondary-loading-img" src="assets/images/loading.svg" alt="LOADING"/>
               </div>
                 <section id="archive">
                     <div className="container">
