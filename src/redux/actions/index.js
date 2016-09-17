@@ -13,3 +13,17 @@ export const worksPageIncrement = () => {
 export const worksPageDecrement = () => {
     return {type: 'WORKS_PAGE_DECREMENT'}
 }
+
+export const setWorks = (works) =>{
+  return {
+    type: 'SET_WORKS',
+    works: works
+  }
+}
+
+export const setCompleteWorks = (completeWorks) =>{
+  return {
+    type: 'SET_COMPLETE_WORKS',
+    completeWorks: completeWorks
+  }
+}

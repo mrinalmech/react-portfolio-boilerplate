@@ -18,7 +18,6 @@ export default class Footer extends Component {
 
         if (imagesLoaded(galleryElement)) {
             const element = document.getElementById('loader');
-console.log('reached');
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';
 

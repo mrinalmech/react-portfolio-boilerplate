@@ -40684,12 +40684,6 @@ var WorksPage = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (WorksPage.__proto__ || Object.getPrototypeOf(WorksPage)).call(this));
 
-        _this.state = {
-            works: [],
-            completeWorks: [],
-            size: 4
-        };
-
         _this.prev = _this.prev.bind(_this);
         _this.next = _this.next.bind(_this);
 
@@ -40774,7 +40768,7 @@ var WorksPage = function (_React$Component) {
                                         null,
                                         _react2.default.createElement(
                                             'span',
-                                            { className: this.props.worksPageNo * this.state.size >= this.state.completeWorks.length && 'inactive' },
+                                            { className: this.props.worksPageNo * this.props.worksSize >= this.props.completeWorks.length && 'inactive' },
                                             'Next'
                                         )
                                     )
@@ -40790,18 +40784,16 @@ var WorksPage = function (_React$Component) {
     }, {
         key: 'prev',
         value: function prev() {
-            this.setState({
-                works: this.state.completeWorks.slice((this.props.worksPageNo - 2) * this.state.size, (this.props.worksPageNo - 1) * this.state.size)
-            });
+            this.props.setWorks(this.props.completeWorks.slice((this.props.worksPageNo - 2) * this.props.worksSize, (this.props.worksPageNo - 1) * this.props.worksSize));
             window.scrollTo(0, 0);
             this.props.decrementWorksPage();
         }
     }, {
         key: 'next',
         value: function next() {
-            this.setState({
-                works: this.state.completeWorks.slice(this.props.worksPageNo * this.state.size, (this.props.worksPageNo + 1) * this.state.size)
-            });
+
+            this.props.setWorks(this.props.completeWorks.slice(this.props.worksPageNo * this.props.worksSize, (this.props.worksPageNo + 1) * this.props.worksSize));
+
             window.scrollTo(0, 0);
             this.props.incrementWorksPage();
         }
@@ -40810,7 +40802,7 @@ var WorksPage = function (_React$Component) {
         value: function _getWorks() {
             var _this2 = this;
 
-            return this.state.works.map(function (work) {
+            return this.props.works.map(function (work) {
                 return _react2.default.createElement(_work2.default, _extends({}, work, { key: work.id, renderImage: _this2.renderImage, renderImageWithKey: _this2.renderImageWithKey, handleImageChange: _this2.handleImageChange }));
             });
         }
@@ -40824,10 +40816,8 @@ var WorksPage = function (_React$Component) {
                 dataType: "json",
                 url: 'api/works.json',
                 success: function success(works) {
-                    _this3.setState({
-                        completeWorks: works,
-                        works: works.slice((_this3.props.worksPageNo - 1) * _this3.state.size, _this3.props.worksPageNo * _this3.state.size)
-                    });
+                    _this3.props.setCompleteWorks(works);
+                    _this3.props.setWorks(works.slice((_this3.props.worksPageNo - 1) * _this3.props.worksSize, _this3.props.worksPageNo * _this3.props.worksSize));
                 }
             });
         }
@@ -40841,8 +40831,13 @@ exports.default = WorksPage;
 
 WorksPage.propTypes = {
     worksPageNo: _react2.default.PropTypes.number.isRequired,
+    works: _react2.default.PropTypes.array.isRequired,
+    completeWorks: _react2.default.PropTypes.array.isRequired,
+    worksSize: _react2.default.PropTypes.number.isRequired,
     incrementWorksPage: _react2.default.PropTypes.func.isRequired,
-    decrementWorksPage: _react2.default.PropTypes.func.isRequired
+    decrementWorksPage: _react2.default.PropTypes.func.isRequired,
+    setWorks: _react2.default.PropTypes.func.isRequired,
+    setCompleteWorks: _react2.default.PropTypes.func.isRequired
 };
 
 },{"../components/footer":267,"../components/work":270,"jquery":49,"react":252}],278:[function(require,module,exports){
@@ -40902,7 +40897,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    worksPageNo: state.worksPage
+    worksPageNo: state.worksPage,
+    works: state.works,
+    completeWorks: state.completeWorks,
+    worksSize: state.worksSize
   };
 };
 
@@ -40913,6 +40911,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     decrementWorksPage: function decrementWorksPage() {
       dispatch((0, _index.worksPageDecrement)());
+    },
+    setWorks: function setWorks(works) {
+      dispatch((0, _index.setWorks)(works));
+    },
+    setCompleteWorks: function setCompleteWorks(completeWorks) {
+      dispatch((0, _index.setCompleteWorks)(completeWorks));
     }
   };
 };
@@ -40925,22 +40929,36 @@ exports.default = ReduxWorksPage;
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 var blogPageIncrement = exports.blogPageIncrement = function blogPageIncrement() {
-    return { type: 'BLOG_PAGE_INCREMENT' };
+  return { type: 'BLOG_PAGE_INCREMENT' };
 };
 
 var blogPageDecrement = exports.blogPageDecrement = function blogPageDecrement() {
-    return { type: 'BLOG_PAGE_DECREMENT' };
+  return { type: 'BLOG_PAGE_DECREMENT' };
 };
 
 var worksPageIncrement = exports.worksPageIncrement = function worksPageIncrement() {
-    return { type: 'WORKS_PAGE_INCREMENT' };
+  return { type: 'WORKS_PAGE_INCREMENT' };
 };
 
 var worksPageDecrement = exports.worksPageDecrement = function worksPageDecrement() {
-    return { type: 'WORKS_PAGE_DECREMENT' };
+  return { type: 'WORKS_PAGE_DECREMENT' };
+};
+
+var setWorks = exports.setWorks = function setWorks(works) {
+  return {
+    type: 'SET_WORKS',
+    works: works
+  };
+};
+
+var setCompleteWorks = exports.setCompleteWorks = function setCompleteWorks(completeWorks) {
+  return {
+    type: 'SET_COMPLETE_WORKS',
+    completeWorks: completeWorks
+  };
 };
 
 },{}],281:[function(require,module,exports){
@@ -40951,7 +40969,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 var initialState = {
     blogPage: 1,
-    worksPage: 1
+    worksPage: 1,
+    works: [],
+    completeWorks: [],
+    worksSize: 4
 };
 
 var pages = function pages(state, action) {
@@ -40961,13 +40982,25 @@ var pages = function pages(state, action) {
 
     switch (action.type) {
         case 'BLOG_PAGE_INCREMENT':
-            return Object.assign({}, state, { blogPage: state.blogPage + 1 });
+            return Object.assign({}, state, {
+                blogPage: state.blogPage + 1
+            });
         case 'BLOG_PAGE_DECREMENT':
-            return Object.assign({}, state, { blogPage: state.blogPage - 1 });
+            return Object.assign({}, state, {
+                blogPage: state.blogPage - 1
+            });
         case 'WORKS_PAGE_INCREMENT':
-            return Object.assign({}, state, { worksPage: state.worksPage + 1 });
+            return Object.assign({}, state, {
+                worksPage: state.worksPage + 1
+            });
         case 'WORKS_PAGE_DECREMENT':
-            return Object.assign({}, state, { worksPage: state.worksPage - 1 });
+            return Object.assign({}, state, {
+                worksPage: state.worksPage - 1
+            });
+        case 'SET_WORKS':
+            return Object.assign({}, state, { works: action.works });
+        case 'SET_COMPLETE_WORKS':
+            return Object.assign({}, state, { completeWorks: action.completeWorks });
         default:
             return state;
     }

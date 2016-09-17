@@ -20,12 +20,6 @@ export default class WorksPage extends React.Component {
 
         super();
 
-        this.state = {
-            works: [],
-            completeWorks: [],
-            size: 4
-        };
-
         this.prev = this.prev.bind(this);
         this.next = this.next.bind(this);
 
@@ -79,7 +73,7 @@ export default class WorksPage extends React.Component {
 
                                 <a title="Next" className="link-next" onClick={this.next}>
                                     <div>
-                                        <span className={this.props.worksPageNo * this.state.size >= this.state.completeWorks.length && 'inactive'}>Next</span>
+                                        <span className={this.props.worksPageNo * this.props.worksSize >= this.props.completeWorks.length && 'inactive'}>Next</span>
                                     </div>
                                 </a>
 
@@ -96,23 +90,21 @@ export default class WorksPage extends React.Component {
     }
 
     prev() {
-        this.setState({
-            works: this.state.completeWorks.slice((this.props.worksPageNo - 2) * this.state.size, (this.props.worksPageNo - 1) * this.state.size)
-        });
+        this.props.setWorks(this.props.completeWorks.slice((this.props.worksPageNo - 2) * this.props.worksSize, (this.props.worksPageNo - 1) * this.props.worksSize))
         window.scrollTo(0, 0);
         this.props.decrementWorksPage();
     }
 
     next() {
-        this.setState({
-            works: this.state.completeWorks.slice(this.props.worksPageNo * this.state.size, (this.props.worksPageNo + 1) * this.state.size)
-        });
+
+        this.props.setWorks(this.props.completeWorks.slice(this.props.worksPageNo * this.props.worksSize, (this.props.worksPageNo + 1) * this.props.worksSize))
+
         window.scrollTo(0, 0);
         this.props.incrementWorksPage();
     }
 
     _getWorks() {
-        return this.state.works.map((work) => {
+        return this.props.works.map((work) => {
             return <Work {...work} key={work.id} renderImage={this.renderImage} renderImageWithKey={this.renderImageWithKey} handleImageChange={this.handleImageChange}/>
         });
     }
@@ -123,10 +115,8 @@ export default class WorksPage extends React.Component {
             dataType: "json",
             url: 'api/works.json',
             success: (works) => {
-                this.setState({
-                    completeWorks: works,
-                    works: works.slice((this.props.worksPageNo - 1) * this.state.size, (this.props.worksPageNo) * this.state.size)
-                })
+                this.props.setCompleteWorks(works);
+                this.props.setWorks(works.slice((this.props.worksPageNo - 1) * this.props.worksSize, (this.props.worksPageNo) * this.props.worksSize));
             }
         });
     }
@@ -134,6 +124,11 @@ export default class WorksPage extends React.Component {
 
 WorksPage.propTypes = {
     worksPageNo: React.PropTypes.number.isRequired,
+    works: React.PropTypes.array.isRequired,
+    completeWorks: React.PropTypes.array.isRequired,
+    worksSize: React.PropTypes.number.isRequired,
     incrementWorksPage: React.PropTypes.func.isRequired,
-    decrementWorksPage: React.PropTypes.func.isRequired
+    decrementWorksPage: React.PropTypes.func.isRequired,
+    setWorks: React.PropTypes.func.isRequired,
+    setCompleteWorks: React.PropTypes.func.isRequired
 };
