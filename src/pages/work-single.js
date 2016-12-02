@@ -74,7 +74,7 @@ export default class WorkSingle extends React.Component {
                                 <div className="desktop-3 tablet-12 columns">
                                     <div className="box-info">
                                         <h3 className="border-top">{this.state.work.name}</h3>
-                                        <p className="project-desc">2013</p>
+                                        <p className="project-desc">{this.state.work.date}</p>
                                         <p>{this.state.work.desc}
                                         </p>
                                     </div>

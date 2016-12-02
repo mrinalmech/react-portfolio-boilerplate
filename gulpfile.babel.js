@@ -9,7 +9,10 @@ import browserSync from 'browser-sync';
 import watchify from 'watchify';
 import babelify from 'babelify';
 import uglify from 'gulp-uglify';
+import uglifycss from 'gulp-uglifycss';
 import ifElse from 'gulp-if-else';
+
+process.env.NODE_ENV === 'production'
 
 watchify.args.debug = true;
 
@@ -40,8 +43,6 @@ function bundle() {
     .pipe(gulp.dest('public/assets/js'));
 }
 
-gulp.task('default', ['transpile']);
-
 gulp.task('transpile', ['lint'], () => bundle());
 
 gulp.task('lint', () => {
@@ -50,22 +51,41 @@ gulp.task('lint', () => {
       .pipe(eslint.format())
 });
 
+gulp.task('js-watch', ['transpile'], () => sync.reload());
+
+//CSS minification
+gulp.task('css-minify',() =>
+gulp.src('src/css/**/*.css',{base:'src/css'})
+    .pipe(uglifycss())
+    .pipe(gulp.dest('public/assets/css'))
+);
+
+gulp.task('css-watch', ['css-minify'], () => sync.reload());
+
+//Image minification
+gulp.task('img-minify', () =>
+    gulp.src('src/images/**/*.png',{base:'src/images'})
+        .pipe(imagemin())
+        .pipe(gulp.dest('public/assets/images'))
+);
+
+gulp.task('img-watch', ['img-minify'], () => sync.reload());
+
+//Server
 gulp.task('serve', ['transpile'], () => sync.init({
   server: 'public',
   port: process.env.PORT || 8000,
   host: process.env.IP || 'localhost'
 }));
 
-gulp.task('js-watch', ['transpile'], () => sync.reload());
+//Default
+gulp.task('default', ['transpile']);
 
-gulp.task('images', () =>
-    gulp.src('public/assets/images/**/**/*.png')
-        .pipe(imagemin())
-        .pipe(gulp.dest('dist/images'))
-);
-
+//Watch
 gulp.task('watch', ['serve'], () => {
-  gulp.watch('src/**/*', ['js-watch'])
+  gulp.watch('src/**/*.js', ['js-watch'])
+  gulp.watch('src/css/**/*.css', ['css-watch'])
+  gulp.watch('src/images/**/*.png', ['img-watch'])
   gulp.watch('public/assets/style.css', sync.reload)
   gulp.watch('public/index.html', sync.reload)
 });

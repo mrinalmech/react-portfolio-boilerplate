@@ -26,7 +26,12 @@ export default class Footer extends Component {
                             </li>
                             <li>
                                 <a href="https://github.com/mrinalmech" className="hoverMe" target="Github">
-                                    <img src="assets/images/social/github.png" alt="" title="Github"/>
+                                    <img src="assets/images/social/github.png" alt="" title="GitHub"/>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="http://stackoverflow.com/users/2227831/mrinalmech" className="hoverMe" target="Stackoverflow">
+                                    <img src="assets/images/social/stackoverflow.png" alt="" title="Stack Overflow"/>
                                 </a>
                             </li>
                             <li>

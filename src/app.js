@@ -50,16 +50,6 @@ const app = (
 
 jQuery(function() {
     ReactDOM.render(app, document.getElementById('main'), function() {
-
-      /*  var element = document.getElementById('loader');
-
-        element.style.opacity = "0";
-        element.style.filter = 'alpha(opacity=0)';
-
-        setTimeout(function() {
-            element.parentNode.removeChild(element);
-        }, 350);*/
-
         console.timeEnd('react-app');
     });
 })

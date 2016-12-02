@@ -11,7 +11,7 @@ function imagesLoaded(parentNode) {
     return true;
 }
 
-export default class Footer extends Component {
+export default class Header extends Component {
 
     handleImageChange() {
         const galleryElement = this.refs.gallery;

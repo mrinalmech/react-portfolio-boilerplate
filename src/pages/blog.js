@@ -58,9 +58,9 @@ export default class BlogPage extends React.Component {
         const blogPosts = this._getBlogPosts();
         return (
             <div id="blog" className="route-slider">
-              <div id="blog-loader" className="secondary-loader">
-                  <img className="secondary-loading-img" src="assets/images/loading.svg" alt="LOADING"/>
-              </div>
+                <div id="blog-loader" className="secondary-loader">
+                    <img className="secondary-loading-img" src="assets/images/loading.svg" alt="LOADING"/>
+                </div>
                 <section id="archive">
                     <div className="container">
                         {blogPosts}
@@ -91,9 +91,9 @@ export default class BlogPage extends React.Component {
 
     prev() {
 
-        this.setState({
-            blogPosts: this.state.completeBlogPosts.slice((this.props.blogPageNo - 2) * this.state.size, (this.props.blogPageNo - 1) * this.state.size)
-        });
+        this.setState((prevState) => ({
+            blogPosts: prevState.completeBlogPosts.slice((this.props.blogPageNo - 2) * prevState.size, (this.props.blogPageNo - 1) * prevState.size)
+        }));
         window.scrollTo(0, 0);
         this.props.decrementBlogPage();
 
@@ -101,9 +101,9 @@ export default class BlogPage extends React.Component {
 
     next() {
 
-        this.setState({
-            blogPosts: this.state.completeBlogPosts.slice(this.props.blogPageNo * this.state.size, (this.props.blogPageNo + 1) * this.state.size)
-        });
+        this.setState((prevState) => ({
+            blogPosts: prevState.completeBlogPosts.slice(this.props.blogPageNo * prevState.size, (this.props.blogPageNo + 1) * prevState.size)
+        }));
         window.scrollTo(0, 0);
         this.props.incrementBlogPage();
 
