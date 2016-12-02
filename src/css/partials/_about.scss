@@ -1,0 +1,35 @@
+/* About */
+
+.box-about h3 {
+    /*  font-family: 'AltHazer', sans-serif;*/
+    color: #000;
+    font-size: 32px;
+    border-bottom: 1px solid #000;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+.box-about>p {
+    margin-top: 10px;
+}
+.about-headline {
+    /*font-family: 'Roboto Slab', Georgia, serif;*/
+    margin-top: 5px;
+}
+.button.full {
+    /*  font-family: 'AltHazer', sans-serif;*/
+    color: #fff;
+    font-size: 32px;
+    line-height: 26px;
+}
+.underline {
+    border-bottom: 0px solid #000;
+}
+.edu-holder>a {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+.about-holder>img {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    border: 1px solid black;    
+}

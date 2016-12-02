@@ -3,16 +3,7 @@ import jQuery from 'jquery';
 import {Link} from 'react-router';
 
 import Footer from '../components/footer';
-
-function imagesLoaded(parentNode) {
-    const imgElements = parentNode.querySelectorAll('img');
-    for (const img of imgElements) {
-        if (!img.complete) {
-            return false;
-        }
-    }
-    return true;
-}
+import {imagesLoaded} from '../util/util';
 
 export default class BlogSingle extends React.Component {
     constructor() {

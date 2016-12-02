@@ -1,0 +1,20 @@
+/* Footer */
+
+#footer ul#social li {
+    display: inline-block !important;
+}
+#footer ul#social li a {
+    padding: 0;
+    margin-right: 15px;
+    display: inline;
+    border: none !important;
+}
+#footer ul#social li a>img {
+    opacity: 0.8
+}
+#footer ul#social li a>img:hover {
+    opacity: 1
+}
+#social {
+    margin-top: 25px;
+}

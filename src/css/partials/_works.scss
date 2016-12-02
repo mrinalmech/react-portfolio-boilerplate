@@ -1,0 +1,80 @@
+/*Works*/
+
+.icon-holder> img {
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-bottom: 0 !important;
+}
+.item>img {
+    border: 1px solid black;
+}
+.box-info>a>img {
+    float: left;
+    height: 80px;
+    width: 80px;
+    border: 1px solid black;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 20px !important;
+}
+h3>.icon-holder {
+    float: right;
+}
+.box-info>.icon-holder, .columns>.icon-holder {
+    margin-top: 15px;
+}
+#works.single .box-info {
+    margin-bottom: 20px;
+}
+#works.single .galleryImg {
+    position: relative;
+    line-height: 0.5;
+    margin-bottom: 5px;
+    border: 1px solid black;
+}
+.galleryImg> img {
+    margin-bottom: 0 !important;
+}
+.box-info>.border-top {
+    padding-top: 10px !important;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    -webkit-transition: all 300ms ease-out;
+    -moz-transition: all 300ms ease-out;
+    -o-transition: all 300ms ease-out;
+    -ms-transition: all 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
+    color: white;
+}
+.overlay>p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    margin: 0;
+    margin-right: 10%;
+    /*font-family: 'Roboto Slab', Georgia, serif;*/
+    font-size: 34px;
+    font-style: italic;
+    line-height: 1.5;
+    font-weight: 300;
+    width: 80%;
+    text-align: center;
+}
+.galleryImg:hover .overlay {
+    opacity: 0.9;
+}
+.link-prev, .link-next {
+    cursor: pointer;
+}
+.inactive {
+    display: none !important;
+}

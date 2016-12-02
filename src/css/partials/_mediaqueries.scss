@@ -1,0 +1,52 @@
+/*Media queries*/
+
+@media screen and (max-width:1300px) {
+    .icon-holder> img {
+        width: 20px;
+        height: 20px;
+    }
+    h3>.icon-holder>img {
+        width: 14.5px;
+        height: 14.5px;
+    }
+    .box-info>a>img {
+        width: 70px;
+        height: 70px;
+    }
+    .overlay>p {
+        font-size: 27px;
+    }
+}
+@media screen and (max-width:959px) {
+    ul#nav> li a {
+        font-size: 24px;
+    }
+    #big-screen {
+        display: none;
+    }
+    .box-info>a>img {
+        width: 60px;
+        height: 60px;
+    }
+    .overlay>p {
+        font-size: 24px;
+    }
+}
+@media screen and (min-width:959px) {
+    #small-screen {
+        display: none;
+    }
+}
+@media screen and (min-width: 767px) {
+    .hamburger, .sidenav {
+        display: none;
+    }
+}
+@media screen and (max-width:480px) {
+    .site-desc>.icon-holder, .columns>.icon-holder {
+        display: none;
+    }
+    .overlay>p {
+        font-size: 16px;
+    }
+}

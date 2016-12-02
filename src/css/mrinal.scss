@@ -1,0 +1,16 @@
+@font-face {
+    font-family: AltHazer;
+    src: url("../fonts/alt_hazer.ttf");
+}
+
+@import "partials/loading";
+@import "partials/topnav";
+@import "partials/header";
+@import "partials/services";
+@import "partials/blog";
+@import "partials/about";
+@import "partials/works";
+@import "partials/footer";
+@import "partials/mediaqueries";
+@import "partials/sidebar";
+@import "partials/reactrouteranims";

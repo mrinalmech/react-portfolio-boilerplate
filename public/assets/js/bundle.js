@@ -38827,6 +38827,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouter = require('react-router');
 
+var _util = require('../util/util');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -38834,38 +38836,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function imagesLoaded(parentNode) {
-    var imgElements = parentNode.querySelectorAll('img');
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var img = _step.value;
-
-            if (!img.complete) {
-                return false;
-            }
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-
-    return true;
-}
 
 var Header = function (_Component) {
     _inherits(Header, _Component);
@@ -38881,7 +38851,7 @@ var Header = function (_Component) {
         value: function handleImageChange() {
             var galleryElement = this.refs.gallery;
 
-            if (imagesLoaded(galleryElement)) {
+            if ((0, _util.imagesLoaded)(galleryElement)) {
                 (function () {
                     var element = document.getElementById('loader');
                     element.style.opacity = "0";
@@ -39094,7 +39064,7 @@ var Header = function (_Component) {
 
 exports.default = Header;
 
-},{"react":257,"react-router":101}],274:[function(require,module,exports){
+},{"../util/util":287,"react":257,"react-router":101}],274:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39365,6 +39335,8 @@ var _footer = require('../components/footer');
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _util = require('../util/util');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39372,38 +39344,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function imagesLoaded(parentNode) {
-    var imgElements = parentNode.querySelectorAll('img');
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var img = _step.value;
-
-            if (!img.complete) {
-                return false;
-            }
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-
-    return true;
-}
 
 var AboutPage = function (_React$Component) {
     _inherits(AboutPage, _React$Component);
@@ -39419,7 +39359,7 @@ var AboutPage = function (_React$Component) {
         value: function handleImageChange() {
             var galleryElement = this.refs.gallery;
 
-            if (imagesLoaded(galleryElement)) {
+            if ((0, _util.imagesLoaded)(galleryElement)) {
                 (function () {
                     var element = document.getElementById('about-loader');
 
@@ -39620,7 +39560,7 @@ var AboutPage = function (_React$Component) {
 
 exports.default = AboutPage;
 
-},{"../components/footer":272,"react":257,"react-router":101}],278:[function(require,module,exports){
+},{"../components/footer":272,"../util/util":287,"react":257,"react-router":101}],278:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39643,6 +39583,8 @@ var _footer = require('../components/footer');
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _util = require('../util/util');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39650,38 +39592,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function imagesLoaded(parentNode) {
-    var imgElements = parentNode.querySelectorAll('img');
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var img = _step.value;
-
-            if (!img.complete) {
-                return false;
-            }
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-
-    return true;
-}
 
 var BlogSingle = function (_React$Component) {
     _inherits(BlogSingle, _React$Component);
@@ -39712,7 +39622,7 @@ var BlogSingle = function (_React$Component) {
         value: function handleImageChange() {
             var galleryElement = this.refs.gallery;
 
-            if (imagesLoaded(galleryElement)) {
+            if ((0, _util.imagesLoaded)(galleryElement)) {
                 (function () {
                     var element = document.getElementById('blog-single-loader');
 
@@ -39845,7 +39755,7 @@ var BlogSingle = function (_React$Component) {
 
 exports.default = BlogSingle;
 
-},{"../components/footer":272,"jquery":49,"react":257,"react-router":101}],279:[function(require,module,exports){
+},{"../components/footer":272,"../util/util":287,"jquery":49,"react":257,"react-router":101}],279:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -39872,6 +39782,8 @@ var _footer = require('../components/footer');
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _util = require('../util/util');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -39879,38 +39791,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function imagesLoaded(parentNode) {
-    var imgElements = parentNode.querySelectorAll('img');
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var img = _step.value;
-
-            if (!img.complete) {
-                return false;
-            }
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-
-    return true;
-}
 
 var BlogPage = function (_React$Component) {
     _inherits(BlogPage, _React$Component);
@@ -39941,7 +39821,7 @@ var BlogPage = function (_React$Component) {
         key: 'handleImageChange',
         value: function handleImageChange() {
             var galleryElement = document.getElementById('blog');
-            if (imagesLoaded(galleryElement)) {
+            if ((0, _util.imagesLoaded)(galleryElement)) {
                 (function () {
                     var element = document.getElementById('blog-loader');
 
@@ -40084,7 +39964,7 @@ BlogPage.propTypes = {
     decrementBlogPage: _react2.default.PropTypes.func.isRequired
 };
 
-},{"../components/blog-post":271,"../components/footer":272,"jquery":49,"react":257}],280:[function(require,module,exports){
+},{"../components/blog-post":271,"../components/footer":272,"../util/util":287,"jquery":49,"react":257}],280:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40101,6 +39981,8 @@ var _footer = require('../components/footer');
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _util = require('../util/util');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40108,38 +39990,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function imagesLoaded(parentNode) {
-    var imgElements = parentNode.querySelectorAll('img');
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var img = _step.value;
-
-            if (!img.complete) {
-                return false;
-            }
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-
-    return true;
-}
 
 var ServicesPage = function (_React$Component) {
     _inherits(ServicesPage, _React$Component);
@@ -40155,7 +40005,7 @@ var ServicesPage = function (_React$Component) {
         value: function handleImageChange() {
             var galleryElement = this.refs.gallery;
 
-            if (imagesLoaded(galleryElement)) {
+            if ((0, _util.imagesLoaded)(galleryElement)) {
                 (function () {
                     var element = document.getElementById('services-loader');
 
@@ -40446,7 +40296,7 @@ var ServicesPage = function (_React$Component) {
 
 exports.default = ServicesPage;
 
-},{"../components/footer":272,"react":257}],281:[function(require,module,exports){
+},{"../components/footer":272,"../util/util":287,"react":257}],281:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40467,6 +40317,8 @@ var _footer = require('../components/footer');
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _util = require('../util/util');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40474,38 +40326,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function imagesLoaded(parentNode) {
-    var imgElements = parentNode.querySelectorAll('img');
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var img = _step.value;
-
-            if (!img.complete) {
-                return false;
-            }
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-
-    return true;
-}
 
 var WorkSingle = function (_React$Component) {
     _inherits(WorkSingle, _React$Component);
@@ -40536,7 +40356,7 @@ var WorkSingle = function (_React$Component) {
         value: function handleImageChange() {
             var galleryElement = this.refs.gallery;
 
-            if (imagesLoaded(galleryElement)) {
+            if ((0, _util.imagesLoaded)(galleryElement)) {
                 (function () {
                     var element = document.getElementById('work-single-loader');
 
@@ -40740,7 +40560,7 @@ var WorkSingle = function (_React$Component) {
 
 exports.default = WorkSingle;
 
-},{"../components/footer":272,"jquery":49,"react":257}],282:[function(require,module,exports){
+},{"../components/footer":272,"../util/util":287,"jquery":49,"react":257}],282:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -40767,6 +40587,8 @@ var _footer = require('../components/footer');
 
 var _footer2 = _interopRequireDefault(_footer);
 
+var _util = require('../util/util');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -40774,38 +40596,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-function imagesLoaded(parentNode) {
-    var imgElements = parentNode.querySelectorAll('img');
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
-
-    try {
-        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var img = _step.value;
-
-            if (!img.complete) {
-                return false;
-            }
-        }
-    } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
-            }
-        } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
-            }
-        }
-    }
-
-    return true;
-}
 
 var WorksPage = function (_React$Component) {
     _inherits(WorksPage, _React$Component);
@@ -40830,7 +40620,7 @@ var WorksPage = function (_React$Component) {
         key: 'handleImageChange',
         value: function handleImageChange() {
             var galleryElement = document.getElementById('vorks');
-            if (imagesLoaded(galleryElement)) {
+            if ((0, _util.imagesLoaded)(galleryElement)) {
                 (function () {
                     var element = document.getElementById('works-loader');
 
@@ -40971,7 +40761,7 @@ WorksPage.propTypes = {
     setCompleteWorks: _react2.default.PropTypes.func.isRequired
 };
 
-},{"../components/footer":272,"../components/work":275,"jquery":49,"react":257}],283:[function(require,module,exports){
+},{"../components/footer":272,"../components/work":275,"../util/util":287,"jquery":49,"react":257}],283:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -41138,6 +40928,45 @@ var pages = function pages(state, action) {
 };
 
 exports.default = pages;
+
+},{}],287:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.imagesLoaded = imagesLoaded;
+function imagesLoaded(parentNode) {
+    var imgElements = parentNode.querySelectorAll('img');
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = imgElements[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var img = _step.value;
+
+            if (!img.complete) {
+                return false;
+            }
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
+    }
+
+    return true;
+}
 
 },{}]},{},[270])
 //# sourceMappingURL=bundle.js.map

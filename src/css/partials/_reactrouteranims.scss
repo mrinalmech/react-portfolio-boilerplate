@@ -1,0 +1,33 @@
+/*React router animations*/
+
+.route-slider {
+    position: absolute;
+    width: 100%;
+    background-color: white;
+}
+.pageSlider-leave {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+}
+.pageSlider-leave.pageSlider-leave-active {
+    transform: translate3d(100%, 0, 0);
+    -webkit-transition: all 200ms;
+    -moz-transition: all 600ms;
+    -o-transition: all 600ms;
+    -ms-transition: all 600ms;
+    transition: all 600ms;
+    opacity: 0.01;
+}
+.pageSlider-enter {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0.01;
+}
+.pageSlider-enter.pageSlider-enter-active {
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 200ms;
+    -moz-transition: all 600ms;
+    -o-transition: all 600ms;
+    -ms-transition: all 600ms;
+    transition: all 600ms;
+    opacity: 1;
+}

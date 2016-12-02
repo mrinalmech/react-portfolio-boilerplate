@@ -10,6 +10,7 @@ import watchify from 'watchify';
 import babelify from 'babelify';
 import uglify from 'gulp-uglify';
 import uglifycss from 'gulp-uglifycss';
+import sass from 'gulp-sass';
 import ifElse from 'gulp-if-else';
 
 process.env.NODE_ENV === 'production'
@@ -53,16 +54,22 @@ gulp.task('lint', () => {
 
 gulp.task('js-watch', ['transpile'], () => sync.reload());
 
-//CSS minification
+//CSS
 gulp.task('css-minify',() =>
 gulp.src('src/css/**/*.css',{base:'src/css'})
     .pipe(uglifycss())
     .pipe(gulp.dest('public/assets/css'))
 );
 
+gulp.task('sass', () => {
+  return gulp.src('src/css/mrinal.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('src/css'));
+});
+
 gulp.task('css-watch', ['css-minify'], () => sync.reload());
 
-//Image minification
+//Image
 gulp.task('img-minify', () =>
     gulp.src('src/images/**/*.png',{base:'src/images'})
         .pipe(imagemin())
@@ -85,7 +92,7 @@ gulp.task('default', ['transpile']);
 gulp.task('watch', ['serve'], () => {
   gulp.watch('src/**/*.js', ['js-watch'])
   gulp.watch('src/css/**/*.css', ['css-watch'])
+  gulp.watch('src/css/**/*.scss', ['sass'])
   gulp.watch('src/images/**/*.png', ['img-watch'])
-  gulp.watch('public/assets/style.css', sync.reload)
   gulp.watch('public/index.html', sync.reload)
 });

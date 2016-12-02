@@ -2,16 +2,7 @@ import React from 'react';
 import jQuery from 'jquery';
 
 import Footer from '../components/footer';
-
-function imagesLoaded(parentNode) {
-    const imgElements = parentNode.querySelectorAll('img');
-    for (const img of imgElements) {
-        if (!img.complete) {
-            return false;
-        }
-    }
-    return true;
-}
+import {imagesLoaded} from '../util/util';
 
 export default class WorkSingle extends React.Component {
     constructor() {

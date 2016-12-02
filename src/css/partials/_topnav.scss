@@ -1,0 +1,16 @@
+/* Top navigation */
+
+ul#nav> li a {
+    color: #000;
+    /*font-family: 'AltHazer', sans-serif;*/
+    font-size: 32px;
+    letter-spacing: 2px;
+}
+ul#nav> li.active {
+    background: #111;
+    margin: 0;
+}
+ul#nav> li.active a {
+    color: white;
+    border-bottom: none;
+}

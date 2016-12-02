@@ -1,16 +1,7 @@
 import React from 'react';
 
 import Footer from '../components/footer';
-
-function imagesLoaded(parentNode) {
-    const imgElements = parentNode.querySelectorAll('img');
-    for (const img of imgElements) {
-        if (!img.complete) {
-            return false;
-        }
-    }
-    return true;
-}
+import {imagesLoaded} from '../util/util';
 
 export default class ServicesPage extends React.Component {
 
