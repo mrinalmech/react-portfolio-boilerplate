@@ -12,8 +12,9 @@ import uglify from 'gulp-uglify';
 import uglifycss from 'gulp-uglifycss';
 import sass from 'gulp-sass';
 import ifElse from 'gulp-if-else';
+import historyFallback from 'connect-history-api-fallback';
 
-process.env.NODE_ENV === 'production'
+process.env.NODE_ENV = 'production'
 
 watchify.args.debug = true;
 
@@ -79,20 +80,23 @@ gulp.task('img-minify', () =>
 gulp.task('img-watch', ['img-minify'], () => sync.reload());
 
 //Server
-gulp.task('serve', ['transpile'], () => sync.init({
-  server: 'public',
-  port: process.env.PORT || 8000,
+gulp.task('serve', ['css-watch','transpile'], () => sync.init({
+  server: {
+     baseDir: './public',
+     middleware: [historyFallback()]
+   },
+  notify: false,
+  port: process.env.PORT || 80,
   host: process.env.IP || 'localhost'
 }));
 
 //Default
-gulp.task('default', ['transpile']);
+gulp.task('default', ['css-watch','transpile']);
 
 //Watch
 gulp.task('watch', ['serve'], () => {
   gulp.watch('src/**/*.js', ['js-watch'])
   gulp.watch('src/css/**/*.css', ['css-watch'])
   gulp.watch('src/css/**/*.scss', ['sass'])
-  gulp.watch('src/images/**/*.png', ['img-watch'])
   gulp.watch('public/index.html', sync.reload)
 });

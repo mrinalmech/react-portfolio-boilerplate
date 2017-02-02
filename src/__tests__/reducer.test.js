@@ -1,5 +1,6 @@
-import {pages} from '../redux/reducers/pages'
 import {fromJS} from 'immutable';
+
+import pages from '../redux/reducers/pages'
 
 const testState = {
     blogPage: 2,

@@ -34,7 +34,7 @@ export default class BlogPage extends React.Component {
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';
 
-            setTimeout(function() {
+            setTimeout(() => {
                 element.parentNode.removeChild(element);
             }, 350);
         }
@@ -50,7 +50,7 @@ export default class BlogPage extends React.Component {
         return (
             <div id="blog" className="route-slider">
                 <div id="blog-loader" className="secondary-loader">
-                    <img className="secondary-loading-img" src="assets/images/loading.svg" alt="LOADING"/>
+                    <img className="secondary-loading-img" src="/assets/images/loading.svg" alt="LOADING"/>
                 </div>
                 <section id="archive">
                     <div className="container">
@@ -107,17 +107,12 @@ export default class BlogPage extends React.Component {
     }
 
     _fetchBlogPosts() {
-        jQuery.ajax({
-            method: 'GET',
-            dataType: "json",
-            url: 'api/blogposts.json',
-            success: (blogPosts) => {
-                this.setState({
-                    completeBlogPosts: blogPosts,
-                    blogPosts: blogPosts.slice((this.props.blogPageNo - 1) * this.state.size, (this.props.blogPageNo - 1) * this.state.size + this.state.size)
-                })
-            }
-        });
+        jQuery.get('api/blogposts.json').then((blogPosts) => {
+            this.setState({
+                completeBlogPosts: blogPosts,
+                blogPosts: blogPosts.slice((this.props.blogPageNo - 1) * this.state.size, (this.props.blogPageNo - 1) * this.state.size + this.state.size)
+            })
+        })
     }
 }
 

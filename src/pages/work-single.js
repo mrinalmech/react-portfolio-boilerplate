@@ -17,7 +17,7 @@ export default class WorkSingle extends React.Component {
         this._fetchWork();
     }
 
-    componentWillReceiveProps(newProps) {
+    componentWillReceiveProps() {
         this._fetchWork();
     }
 
@@ -30,7 +30,7 @@ export default class WorkSingle extends React.Component {
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';
 
-            setTimeout(function() {
+            setTimeout(() => {
                 element.parentNode.removeChild(element);
             }, 350);
         }
@@ -53,7 +53,7 @@ export default class WorkSingle extends React.Component {
             <div className="route-slider" ref="gallery">
 
                 <div id="work-single-loader" className="secondary-loader">
-                    <img className="secondary-loading-img" src="assets/images/loading.svg" alt="LOADING"/>
+                    <img className="secondary-loading-img" src="/assets/images/loading.svg" alt="LOADING"/>
                 </div>
 
                 <section id="works" className="page single">
@@ -119,22 +119,17 @@ export default class WorkSingle extends React.Component {
     }
 
     _fetchWork() {
-        jQuery.ajax({
-            method: 'GET',
-            dataType: "json",
-            url: 'api/works.json',
-            success: (works) => {
-                const work = works.find(work => (work.id === parseInt(this.props.params.id, 10)));
-                this.setState({work});
-            }
-        });
+        jQuery.get('/api/works.json').then((works) => {
+            const work = works.find(work => (work.id === parseInt(this.props.params.id, 10)));
+            this.setState({work});
+        })
 
     }
 
     _getStack() {
         if (typeof this.state.work.stack != 'undefined') {
             return this.state.work.stack.map((stackitem, i) => {
-                return this.renderImageWithKey("assets/images/icons/" + stackitem + ".png", stackitem, i)
+                return this.renderImageWithKey("/assets/images/icons/" + stackitem + ".png", stackitem, i)
             });
         } else
             return null;

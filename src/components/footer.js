@@ -16,27 +16,27 @@ export default class Footer extends Component {
                         <ul id="social">
                             <li>
                                 <a href="https://www.facebook.com/mrinal.mech.98" className="hoverMe" target="Facebook">
-                                    <img src="assets/images/social/facebook.png" alt="" title="Facebook"/>
+                                    <img src="/assets/images/social/facebook.png" alt="" title="Facebook"/>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://twitter.com/mrinalmech" className="hoverMe" target="Twitter">
-                                    <img src="assets/images/social/twitter.png" alt="" title="Twitter"/>
+                                    <img src="/assets/images/social/twitter.png" alt="" title="Twitter"/>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://github.com/mrinalmech" className="hoverMe" target="Github">
-                                    <img src="assets/images/social/github.png" alt="" title="GitHub"/>
+                                    <img src="/assets/images/social/github.png" alt="" title="GitHub"/>
                                 </a>
                             </li>
                             <li>
                                 <a href="http://stackoverflow.com/users/2227831/mrinalmech" className="hoverMe" target="Stackoverflow">
-                                    <img src="assets/images/social/stackoverflow.png" alt="" title="Stack Overflow"/>
+                                    <img src="/assets/images/social/stackoverflow.png" alt="" title="Stack Overflow"/>
                                 </a>
                             </li>
                             <li>
                                 <a href="https://in.linkedin.com/in/mrinal-mech-25a204101" className="hoverMe" target="LinkedIn">
-                                    <img src="assets/images/social/linkedin.png" alt="" title="LinkedIn"/>
+                                    <img src="/assets/images/social/linkedin.png" alt="" title="LinkedIn"/>
                                 </a>
                             </li>
                         </ul>

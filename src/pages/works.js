@@ -28,7 +28,7 @@ export default class WorksPage extends React.Component {
             element.style.opacity = "0";
             element.style.filter = 'alpha(opacity=0)';
 
-            setTimeout(function() {
+            setTimeout(() => {
                 element.parentNode.removeChild(element);
             }, 350);
         }
@@ -48,7 +48,7 @@ export default class WorksPage extends React.Component {
         return (
             <div id="vorks" className="route-slider">
                 <div id="works-loader" className="secondary-loader">
-                    <img className="secondary-loading-img" src="assets/images/loading.svg" alt="LOADING"/>
+                    <img className="secondary-loading-img" src="/assets/images/loading.svg" alt="LOADING"/>
                 </div>
                 <section id="works" className="">
                     <div className="container">
@@ -101,15 +101,10 @@ export default class WorksPage extends React.Component {
     }
 
     _fetchWorks() {
-        jQuery.ajax({
-            method: 'GET',
-            dataType: "json",
-            url: 'api/works.json',
-            success: (works) => {
-                this.props.setCompleteWorks(works);
-                this.props.setWorks(works.slice((this.props.worksPageNo - 1) * this.props.worksSize, (this.props.worksPageNo) * this.props.worksSize));
-            }
-        });
+        jQuery.get('api/works.json').then((works) => {
+            this.props.setCompleteWorks(works);
+            this.props.setWorks(works.slice((this.props.worksPageNo - 1) * this.props.worksSize, (this.props.worksPageNo) * this.props.worksSize));
+        })
     }
 }
 

@@ -1,15 +1,10 @@
 const initialState = {
     blogPage: 1,
     worksPage: 1,
-    works: [],
-    completeWorks: [],
     worksSize: 4
 }
 
-const pages = (state, action) => {
-    if (typeof state === 'undefined') {
-        return initialState
-    }
+const pages = (state = initialState, action) => {
 
     switch (action.type) {
         case 'BLOG_PAGE_INCREMENT':
@@ -28,10 +23,6 @@ const pages = (state, action) => {
             return Object.assign({}, state, {
                 worksPage: state.worksPage - 1
             })
-        case 'SET_WORKS':
-            return Object.assign({}, state, {works: action.works})
-        case 'SET_COMPLETE_WORKS':
-            return Object.assign({}, state, {completeWorks: action.completeWorks})
         default:
             return state
     }

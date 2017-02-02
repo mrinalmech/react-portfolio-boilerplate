@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import Link from 'react-router/lib/Link';
 
 export default class Work extends React.Component {
 
@@ -29,7 +29,7 @@ export default class Work extends React.Component {
 
     _getStack() {
         return this.props.stack.map((stackitem, i) => {
-            return this.props.renderImageWithKey("assets/images/icons/" + stackitem + ".png", stackitem, i)
+            return this.props.renderImageWithKey("/assets/images/icons/" + stackitem + ".png", stackitem, i)
         });
     }
 
