@@ -37,35 +37,6 @@
     }]
 
 },{
-    "id": 2,
-    "name": "Trumed",
-    "date": "January 2017",
-    "task": "Full Stack Web Development",
-    "desc": "Trumed wanted an application which provides mapping and data visualization for various medical facilities across the United States (data pulled via an API). I built the responsive cross-browser cross-device frontend using Bootstrap and React as well as build the backend API and databases which were all deployed to an Amazon EC2 instance.",
-    "imgUrl": "/assets/images/portfolio/trumed/thumb.png",
-    "client": "Trumed",
-    "clientDesc": "Trumed is an open and free web application which provides mapping and data visualization of medical facilities across the United States.",
-    "clientLogo": "/assets/images/portfolio/trumed/logo.png",
-    "clientUrl": "http://www.trumedhealth.com",
-    "stack": ["react", "reactrouter", "redux", "sass", "bootstrap", "babel", "node", "mongodb", "gulp", "browserify", "aws"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/trumed/1.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/trumed/2.png",
-        "caption": "Google Maps and Google StreetView API integration."
-    }, {
-        "url": "/assets/images/portfolio/trumed/3.png",
-        "caption": "Responsive animated charts for data visualization."
-    }, {
-        "url": "/assets/images/portfolio/trumed/4.png",
-        "caption": "File upload to Amazon S3."
-    }, {
-        "url": "/assets/images/portfolio/trumed/5.png",
-        "caption": "CRUD REST API for users built in Node/Express."
-    }]
-
-}, {
     "id": 3,
     "name": "Ultimate Photography Bundle",
     "date": "January 2017",
