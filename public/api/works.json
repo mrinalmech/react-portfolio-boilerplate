@@ -1,4 +1,33 @@
 [{
+    "id": 17,
+    "name": "Vantage Wealth Management",
+    "date": "May 2017",
+    "task": "Frontend Web Development",
+    "desc": "I was provided the PSD designs for the new website of Vantage Wealth Management LLC, a financial advisory firm which I converted into a responsive cross-device site with scroll based animations etc.",
+    "imgUrl": "/assets/images/portfolio/vantage/thumb.png",
+    "client": "Vantage Wealth Management",
+    "clientDesc": "Vantage Wealth Management LLC is a financial services firm with offices in San Mateo and San Jose",
+    "clientLogo": "/assets/images/portfolio/vantage/logo.png",
+    "clientUrl": "http://www.vantagewealthmgmt.com",
+    "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp"],
+    "gallery": [{
+        "url": "/assets/images/portfolio/vantage/1.png",
+        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+    }, {
+        "url": "/assets/images/portfolio/vantage/2.png",
+        "caption": "Scroll linked animations."
+    }, {
+        "url": "/assets/images/portfolio/vantage/4.png",
+        "caption": "Google Maps API integration."
+    }, {
+        "url": "/assets/images/portfolio/vantage/3.png",
+        "caption": "Modern CSS3 like Flexbox for layout and alignment."
+    }, {
+        "url": "/assets/images/portfolio/vantage/5.png",
+        "caption": "Bootstrap based modal."
+    }]
+
+},{
     "id": 1,
     "name": "Barcode",
     "date": "January 2017",
