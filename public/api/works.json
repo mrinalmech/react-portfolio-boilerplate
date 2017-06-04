@@ -1,450 +1,476 @@
 [{
-    "id": 17,
-    "name": "Vantage Wealth Management",
-    "date": "May 2017",
-    "task": "Frontend Web Development",
-    "desc": "I was provided the PSD designs for the new website of Vantage Wealth Management LLC, a financial advisory firm which I converted into a responsive cross-device site with scroll based animations etc.",
-    "imgUrl": "/assets/images/portfolio/vantage/thumb.png",
-    "client": "Vantage Wealth Management",
-    "clientDesc": "Vantage Wealth Management LLC is a financial services firm with offices in San Mateo and San Jose",
-    "clientLogo": "/assets/images/portfolio/vantage/logo.png",
-    "clientUrl": "http://www.vantagewealthmgmt.com",
-    "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/vantage/1.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/vantage/2.png",
-        "caption": "Scroll linked animations."
-    }, {
-        "url": "/assets/images/portfolio/vantage/4.png",
-        "caption": "Google Maps API integration."
-    }, {
-        "url": "/assets/images/portfolio/vantage/3.png",
-        "caption": "Modern CSS3 like Flexbox for layout and alignment."
-    }, {
-        "url": "/assets/images/portfolio/vantage/5.png",
-        "caption": "Bootstrap based modal."
-    }]
-
-},{
-    "id": 1,
-    "name": "Barcode",
-    "date": "January 2017",
-    "task": "Full Stack Web Development",
-    "desc": "Barcode wanted an online marketplace for listing and booking gyms with features like Google Maps integration, Stripe payment integration, social media login etc. I was given the design psds which I converted to a responsive cross-browser cross-device frontend as well as built the backend API and databases which were all deployed to an Amazon EC2 instance.",
-    "imgUrl": "/assets/images/portfolio/barcode/thumb.png",
-    "client": "Barcode",
-    "clientDesc": "Barcode is an online marketplace and network enabling people to list and book gyms",
-    "clientLogo": "/assets/images/portfolio/barcode/logo.png",
-    "clientUrl": "http://barcodegym.com",
-    "stack": ["react", "reactrouter", "redux", "sass", "bootstrap", "babel", "node", "mongodb", "gulp", "browserify", "aws"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/barcode/1.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/barcode/2.png",
-        "caption": "Google Autocomplete API integration."
-    }, {
-        "url": "/assets/images/portfolio/barcode/3.png",
-        "caption": "Google Maps API integration."
-    }, {
-        "url": "/assets/images/portfolio/barcode/4.png",
-        "caption": "Social media login with Passport."
-    }, {
-        "url": "/assets/images/portfolio/barcode/5.png",
-        "caption": "Stripe API integration for payments."
-    }, {
-        "url": "/assets/images/portfolio/barcode/6.png",
-        "caption": "File upload to Amazon S3."
-    }, {
-        "url": "/assets/images/portfolio/barcode/7.png",
-        "caption": "Form validation."
-    }, {
-        "url": "/assets/images/portfolio/barcode/8.png",
-        "caption": "CRUD REST API for users and gyms built in Node/Express."
-    }]
-
-},{
-    "id": 3,
-    "name": "Ultimate Photography Bundle",
-    "date": "January 2017",
-    "task": "Frontend Web Development",
-    "desc": "Ultimate Bundles required their psd design for their 'Ultimate Photography' Bundle to be converted to an HTML page along with proper styling in BEM format as well as responsiveness.",
-    "imgUrl": "/assets/images/portfolio/photography/thumb.png",
-    "client": "Ultimate Bundles",
-    "clientDesc": "Ultimate Bundles is a company that puts out e-book bundles on a range of topics.",
-    "clientLogo": "/assets/images/portfolio/photography/logo.png",
-    "clientUrl": "http://ultimate-bundles.com/",
-    "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/photography/1.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/photography/2.png",
-        "caption": "Modern CSS3 like Flexbox for layout and alignment."
-    }, {
-        "url": "/assets/images/portfolio/photography/3.png",
-        "caption": "PSD to HTML with BEM format CSS (precompiled in Sass)."
-    }]
+  "id": 18,
+  "name": "Blackbird",
+  "date": "April 2017",
+  "task": "Frontend Web Development",
+  "desc": "I was provided the Zeplin designs for the new public facing website of Blackbird, a San Francisco based airline startup. I converted the designs to a responsive cross-device site with scroll based video playback and built it twice, once in React for a quick turnaround and then using static HTML files for integration with AbeCMS for content management.",
+  "imgUrl": "/assets/images/portfolio/blackbird/thumb.png",
+  "client": "Blackbird",
+  "clientDesc": "Blackbird is a company arranging private flight experiences at budget airline prices based out of San Francisco.",
+  "clientLogo": "/assets/images/portfolio/blackbird/logo.png",
+  "clientUrl": "https://www.flyblackbird.com",
+  "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp", "redux", "react", "reactrouter"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/blackbird/1.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/blackbird/2.png",
+    "caption": "Scroll linked video playback."
+  }, {
+    "url": "/assets/images/portfolio/blackbird/3.png",
+    "caption": "Bootstrap based modal."
+  }, {
+    "url": "/assets/images/portfolio/blackbird/4.png",
+    "caption": "Linked with AbeCMS for content management."
+  }]
 
 }, {
-    "id": 4,
-    "name": "Conquer Your Clutter Bundle",
-    "date": "December 2016",
-    "task": "Frontend Web Development",
-    "desc": "Ultimate Bundles required their psd design for their 'Conquer Your Clutter' Bundle to be converted to an HTML page along with proper styling in BEM format as well as responsiveness.",
-    "imgUrl": "/assets/images/portfolio/clutter/thumb.png",
-    "client": "Ultimate Bundles",
-    "clientDesc": "Ultimate Bundles is a company that puts out e-book bundles on a range of topics.",
-    "clientLogo": "/assets/images/portfolio/clutter/logo.png",
-    "clientUrl": "http://ultimate-bundles.com/",
-    "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/clutter/1.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/clutter/2.png",
-        "caption": "Modern CSS3 like Flexbox for layout and alignment."
-    }, {
-        "url": "/assets/images/portfolio/clutter/3.png",
-        "caption": "PSD to HTML with BEM format CSS (precompiled in Sass)."
-    }]
+  "id": 17,
+  "name": "Vantage Wealth Management",
+  "date": "May 2017",
+  "task": "Frontend Web Development",
+  "desc": "I was provided the PSD designs for the new website of Vantage Wealth Management LLC, a financial advisory firm which I converted into a responsive cross-device site with scroll based animations etc.",
+  "imgUrl": "/assets/images/portfolio/vantage/thumb.png",
+  "client": "Vantage Wealth Management",
+  "clientDesc": "Vantage Wealth Management LLC is a financial services firm with offices in San Mateo and San Jose",
+  "clientLogo": "/assets/images/portfolio/vantage/logo.png",
+  "clientUrl": "http://www.vantagewealthmgmt.com",
+  "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/vantage/1.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/vantage/2.png",
+    "caption": "Scroll linked animations."
+  }, {
+    "url": "/assets/images/portfolio/vantage/4.png",
+    "caption": "Google Maps API integration."
+  }, {
+    "url": "/assets/images/portfolio/vantage/3.png",
+    "caption": "Modern CSS3 like Flexbox for layout and alignment."
+  }, {
+    "url": "/assets/images/portfolio/vantage/5.png",
+    "caption": "Bootstrap based modal."
+  }]
 
 }, {
-    "id": 5,
-    "name": "Christmas Bundle",
-    "date": "October 2016",
-    "task": "Frontend Web Development",
-    "desc": "Ultimate Bundles required their psd design for their Christmas Bundle to be converted to an HTML page along with proper styling in BEM format as well as responsiveness.",
-    "imgUrl": "/assets/images/portfolio/christmas/thumb.png",
-    "client": "Ultimate Bundles",
-    "clientDesc": "Ultimate Bundles is a company that puts out e-book bundles on a range of topics.",
-    "clientLogo": "/assets/images/portfolio/christmas/logo.png",
-    "clientUrl": "http://ultimate-bundles.com/",
-    "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/christmas/1.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/christmas/2.png",
-        "caption": "Bootstrap plugins to achieve functionality like collapses."
-    }, {
-        "url": "/assets/images/portfolio/christmas/3.png",
-        "caption": "PSD to HTML with BEM format CSS (precompiled in Sass)."
-    }]
+  "id": 1,
+  "name": "Barcode",
+  "date": "January 2017",
+  "task": "Full Stack Web Development",
+  "desc": "Barcode wanted an online marketplace for listing and booking gyms with features like Google Maps integration, Stripe payment integration, social media login etc. I was given the design psds which I converted to a responsive cross-browser cross-device frontend as well as built the backend API and databases which were all deployed to an Amazon EC2 instance.",
+  "imgUrl": "/assets/images/portfolio/barcode/thumb.png",
+  "client": "Barcode",
+  "clientDesc": "Barcode is an online marketplace and network enabling people to list and book gyms",
+  "clientLogo": "/assets/images/portfolio/barcode/logo.png",
+  "clientUrl": "http://barcodegym.com",
+  "stack": ["react", "reactrouter", "redux", "sass", "bootstrap", "babel", "node", "mongodb", "gulp", "browserify", "aws"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/barcode/1.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/barcode/2.png",
+    "caption": "Google Autocomplete API integration."
+  }, {
+    "url": "/assets/images/portfolio/barcode/3.png",
+    "caption": "Google Maps API integration."
+  }, {
+    "url": "/assets/images/portfolio/barcode/4.png",
+    "caption": "Social media login with Passport."
+  }, {
+    "url": "/assets/images/portfolio/barcode/5.png",
+    "caption": "Stripe API integration for payments."
+  }, {
+    "url": "/assets/images/portfolio/barcode/6.png",
+    "caption": "File upload to Amazon S3."
+  }, {
+    "url": "/assets/images/portfolio/barcode/7.png",
+    "caption": "Form validation."
+  }, {
+    "url": "/assets/images/portfolio/barcode/8.png",
+    "caption": "CRUD REST API for users and gyms built in Node/Express."
+  }]
 
 }, {
-    "id": 6,
-    "name": "Floorplan Web Application",
-    "date": "October 2016",
-    "task": "Full Stack Web Development",
-    "desc": "MediaHub needed a web application for the creation and viewing of floorplans with support for maps, 360° panorama images and videos. ",
-    "imgUrl": "/assets/images/portfolio/floorplan/thumb.png",
-    "client": "MediaHub",
-    "clientDesc": "MediaHub is a software consultancy based out of Australia",
-    "clientLogo": "/assets/images/portfolio/floorplan/logo.png",
-    "clientUrl": "http://floorplanner.online/",
-    "stack": ["react", "reactrouter", "redux", "materialui", "jquery", "sass", "bootstrap", "babel", "php", "mysql", "gulp", "browserify"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/floorplan/4.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/floorplan/5.png",
-        "caption": "MaterialUI was used to adhere to Google's material design principles."
-    }, {
-        "url": "/assets/images/portfolio/floorplan/2.png",
-        "caption": "Embedded Youtube and Vimeo videos."
-    }, {
-        "url": "/assets/images/portfolio/floorplan/1.png",
-        "caption": "Google Maps API integration."
-    }, {
-        "url": "/assets/images/portfolio/floorplan/3.png",
-        "caption": "Google VRView for 360° panorama images."
-    }, {
-        "url": "/assets/images/portfolio/floorplan/6.png",
-        "caption": "Custom CMS with complete CRUD functionalities using a REST API coded in PHP."
-    }, {
-        "url": "/assets/images/portfolio/floorplan/7.png",
-        "caption": "Interface for creating a floorplan."
-    }]
+  "id": 3,
+  "name": "Ultimate Photography Bundle",
+  "date": "January 2017",
+  "task": "Frontend Web Development",
+  "desc": "Ultimate Bundles required their psd design for their 'Ultimate Photography' Bundle to be converted to an HTML page along with proper styling in BEM format as well as responsiveness.",
+  "imgUrl": "/assets/images/portfolio/photography/thumb.png",
+  "client": "Ultimate Bundles",
+  "clientDesc": "Ultimate Bundles is a company that puts out e-book bundles on a range of topics.",
+  "clientLogo": "/assets/images/portfolio/photography/logo.png",
+  "clientUrl": "http://ultimate-bundles.com/",
+  "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/photography/1.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/photography/2.png",
+    "caption": "Modern CSS3 like Flexbox for layout and alignment."
+  }, {
+    "url": "/assets/images/portfolio/photography/3.png",
+    "caption": "PSD to HTML with BEM format CSS (precompiled in Sass)."
+  }]
 
 }, {
-    "id": 7,
-    "name": "Veam",
-    "date": "October 2016",
-    "task": "Hybrid App Development",
-    "desc": "Veam needed a hybrid social media application with features like sending video messages, adding friends, likes/dislikes etc. ",
-    "imgUrl": "/assets/images/portfolio/veam/thumb.png",
-    "client": "Veam",
-    "clientDesc": "Veam is a social media startup based out of Canada",
-    "clientLogo": "/assets/images/portfolio/veam/logo.png",
-    "clientUrl": "http://veam.meteorapp.com/",
-    "stack": ["angular", "ts", "babel", "meteor", "cordova", "mongodb"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/veam/1.png",
-        "caption": "Hybrid application built in Meteor with Angular 2 in frontend and Cordova for video capture, contacts access, sms invites etc."
-    }, {
-        "url": "/assets/images/portfolio/veam/2.png",
-        "caption": "Form validation using Angular 2's forms module. Authentication handled using Meteor."
-    }, {
-        "url": "/assets/images/portfolio/veam/3.png",
-        "caption": "Social media feed with contacts and search."
-    }, {
-        "url": "/assets/images/portfolio/veam/4.png",
-        "caption": "Profile pop-up for checking statistics and editing."
-    }, {
-        "url": "/assets/images/portfolio/veam/5.png",
-        "caption": "Colored icons for notifications."
-    }, {
-        "url": "/assets/images/portfolio/veam/6.png",
-        "caption": "Notifications with colored markers for unread ones."
-    }, {
-        "url": "/assets/images/portfolio/veam/7.png",
-        "caption": "Video capture using Cordova plugin."
-    }]
+  "id": 4,
+  "name": "Conquer Your Clutter Bundle",
+  "date": "December 2016",
+  "task": "Frontend Web Development",
+  "desc": "Ultimate Bundles required their psd design for their 'Conquer Your Clutter' Bundle to be converted to an HTML page along with proper styling in BEM format as well as responsiveness.",
+  "imgUrl": "/assets/images/portfolio/clutter/thumb.png",
+  "client": "Ultimate Bundles",
+  "clientDesc": "Ultimate Bundles is a company that puts out e-book bundles on a range of topics.",
+  "clientLogo": "/assets/images/portfolio/clutter/logo.png",
+  "clientUrl": "http://ultimate-bundles.com/",
+  "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/clutter/1.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/clutter/2.png",
+    "caption": "Modern CSS3 like Flexbox for layout and alignment."
+  }, {
+    "url": "/assets/images/portfolio/clutter/3.png",
+    "caption": "PSD to HTML with BEM format CSS (precompiled in Sass)."
+  }]
 
 }, {
-    "id": 8,
-    "name": "Kairos Website",
-    "date": "August 2016",
-    "task": "Full Stack Web Development",
-    "desc": "Kairos needed a new website for their company with features like portfolio display/filtering, CMS capabilities etc. I built the site from the ground up handling everything from the layout to the database design.",
-    "imgUrl": "/assets/images/portfolio/kairos/thumb.png",
-    "client": "Kairos",
-    "clientDesc": "Kairos is a not-for-profit consultancy company based out of Austria",
-    "clientLogo": "/assets/images/portfolio/kairos/logo.png",
-    "clientUrl": "http://kairos.sunlight-project.org",
-    "stack": ["angular", "sass", "compass", "bootstrap", "bower", "babel", "php", "mysql", "gulp"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/kairos/gallery01.png",
-        "caption": "Fully responsive layout on a variety of devices. Pure.css was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/kairos/gallery07.png",
-        "caption": "Projects page populated by HTTP requests to a REST API in PHP which fetches the data from a MySQL database."
-    }, {
-        "url": "/assets/images/portfolio/kairos/gallery08.png",
-        "caption": "Contacts page populated by HTTP requests to a REST API in PHP which fetches the data from a MySQL database."
-    }, {
-        "url": "/assets/images/portfolio/kairos/gallery02.png",
-        "caption": "Bootstrap based lightbox modal and gallery for images."
-    }, {
-        "url": "/assets/images/portfolio/kairos/gallery03.png",
-        "caption": "Angular filters to sort/filter the data on various parameters."
-    }, {
-        "url": "/assets/images/portfolio/kairos/gallery04.png",
-        "caption": "Full dual language support with the click of a button using state parameters."
-    }, {
-        "url": "/assets/images/portfolio/kairos/gallery05.png",
-        "caption": "Custom CMS with complete CRUD functionalities using a REST API coded in PHP."
-    }, {
-        "url": "/assets/images/portfolio/kairos/gallery06.png",
-        "caption": "Image upload and retrieval via PHP."
-    }, {
-        "url": "/assets/images/portfolio/kairos/gallery09.png",
-        "caption": "SQL database design."
-    }]
-}, {
-    "id": 9,
-    "name": "ELiquid Canada Website",
-    "date": "August 2016",
-    "task": "Full Stack Web Development",
-    "desc": "ELiquid needed a new website for their ecommerce company. I was provided the initial design which I converted to an Angular 2 SPA implementing standard ecommerce website functionalities like product filtering, CRUD functionalities for sellers/admins etc. I also handled the database design as well as building a RESTful API for the frontend to communicate with the database.",
-    "imgUrl": "/assets/images/portfolio/eliquid/thumb.png",
-    "client": "ELiquid Canada",
-    "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
-    "clientLogo": "/assets/images/portfolio/eliquid/logo.png",
-    "clientUrl": "http://eliquidscanada.com",
-    "stack": ["angular", "ts", "babel", "php", "mysql"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/eliquid/gallery01.png",
-        "caption": "Home page populated by a RESTful API coded in PHP."
-    }, {
-        "url": "/assets/images/portfolio/eliquid/gallery02.png",
-        "caption": "Angular filters for filtering products according to various criteria."
-    }, {
-        "url": "/assets/images/portfolio/eliquid/gallery03.png",
-        "caption": "Filters in action displaying products of a certain company."
-    }, {
-        "url": "/assets/images/portfolio/eliquid/gallery04.png",
-        "caption": "Product pages populated via route ids in the url."
-    }, {
-        "url": "/assets/images/portfolio/eliquid/gallery05.png",
-        "caption": "Sliding wishlist/cart functionality."
-    }, {
-        "url": "/assets/images/portfolio/eliquid/gallery06.png",
-        "caption": "CRUD functionality using a RESTful API coded in PHP and a MySQL database."
-    }, {
-        "url": "/assets/images/portfolio/eliquid/gallery07.png",
-        "caption": "Orders interface for each seller ordered by buyer and buyer type."
-    }, {
-        "url": "/assets/images/portfolio/eliquid/gallery08.png",
-        "caption": "Interface for website admin to change lists displayed on the home page."
-    }, {
-        "url": "/assets/images/portfolio/eliquid/gallery09.png",
-        "caption": "SQL database design."
-    }]
+  "id": 5,
+  "name": "Christmas Bundle",
+  "date": "October 2016",
+  "task": "Frontend Web Development",
+  "desc": "Ultimate Bundles required their psd design for their Christmas Bundle to be converted to an HTML page along with proper styling in BEM format as well as responsiveness.",
+  "imgUrl": "/assets/images/portfolio/christmas/thumb.png",
+  "client": "Ultimate Bundles",
+  "clientDesc": "Ultimate Bundles is a company that puts out e-book bundles on a range of topics.",
+  "clientLogo": "/assets/images/portfolio/christmas/logo.png",
+  "clientUrl": "http://ultimate-bundles.com/",
+  "stack": ["html", "css", "jquery", "sass", "bootstrap", "gulp"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/christmas/1.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/christmas/2.png",
+    "caption": "Bootstrap plugins to achieve functionality like collapses."
+  }, {
+    "url": "/assets/images/portfolio/christmas/3.png",
+    "caption": "PSD to HTML with BEM format CSS (precompiled in Sass)."
+  }]
 
 }, {
-    "id": 10,
-    "name": "Workplace Savings Calculator",
-    "date": "March 2016",
-    "task": "Desktop Software Development",
-    "desc": "Global Workplace Analytics had an Excel calculator that calculated savings for remote work and telecommunication which they wanted to convert to a mobile and desktop version. I handled the design and development of this multi-platform application.",
-    "imgUrl": "/assets/images/portfolio/gwa/thumb.png",
-    "client": "Global Workplace Analytics",
-    "clientDesc": "GWA is a management consultancy company that create and communicate strategies for the workplace",
-    "clientLogo": "/assets/images/portfolio/gwa/logo.png",
-    "clientUrl": "http://globalworkplaceanalytics.com/",
-    "stack": ["unity", "csharp"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/gwa/gallery01.png",
-        "caption": "Minimalist main UI with an input slider and a radial progress bar for output."
-    }, {
-        "url": "/assets/images/portfolio/gwa/gallery02.png",
-        "caption": "Panel slides away to reveal more detailed output parameters."
-    }, {
-        "url": "/assets/images/portfolio/gwa/gallery03.png",
-        "caption": "Tabbed structure for the various inputs on the left."
-    }, {
-        "url": "/assets/images/portfolio/gwa/gallery04.png",
-        "caption": "Color changes to indicate positive/negative effects."
-    }, {
-        "url": "/assets/images/portfolio/gwa/gallery05.png",
-        "caption": "Panels for each output parameter to see dependent inputs."
-    }]
+  "id": 6,
+  "name": "Floorplan Web Application",
+  "date": "October 2016",
+  "task": "Full Stack Web Development",
+  "desc": "MediaHub needed a web application for the creation and viewing of floorplans with support for maps, 360° panorama images and videos. ",
+  "imgUrl": "/assets/images/portfolio/floorplan/thumb.png",
+  "client": "MediaHub",
+  "clientDesc": "MediaHub is a software consultancy based out of Australia",
+  "clientLogo": "/assets/images/portfolio/floorplan/logo.png",
+  "clientUrl": "http://floorplanner.online/",
+  "stack": ["react", "reactrouter", "redux", "materialui", "jquery", "sass", "bootstrap", "babel", "php", "mysql", "gulp", "browserify"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/floorplan/4.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/floorplan/5.png",
+    "caption": "MaterialUI was used to adhere to Google's material design principles."
+  }, {
+    "url": "/assets/images/portfolio/floorplan/2.png",
+    "caption": "Embedded Youtube and Vimeo videos."
+  }, {
+    "url": "/assets/images/portfolio/floorplan/1.png",
+    "caption": "Google Maps API integration."
+  }, {
+    "url": "/assets/images/portfolio/floorplan/3.png",
+    "caption": "Google VRView for 360° panorama images."
+  }, {
+    "url": "/assets/images/portfolio/floorplan/6.png",
+    "caption": "Custom CMS with complete CRUD functionalities using a REST API coded in PHP."
+  }, {
+    "url": "/assets/images/portfolio/floorplan/7.png",
+    "caption": "Interface for creating a floorplan."
+  }]
 
 }, {
-    "id": 11,
-    "name": "Socilab",
-    "date": "April 2016",
-    "task": "Frontend Web Development",
-    "desc": "Socilab wanted a frontend overhaul for their social anlytics website. I implemented a new responsive design as well as additional frontend functionalities and visualizations.",
-    "imgUrl": "/assets/images/portfolio/socilab/thumb.png",
-    "client": "Socilab",
-    "clientDesc": "Socilab is a platform for social network analysis using LinkedIn networks",
-    "clientLogo": "/assets/images/portfolio/socilab/logo.png",
-    "clientUrl": "http://socilab.com/",
-    "stack": ["angular", "bootstrap", "sass", "compass", "node", "mongodb", "gulp"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/socilab/gallery03.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/socilab/gallery01.png",
-        "caption": "Minimalist home page with a carousel stating the various functionalities of the site."
-    }, {
-        "url": "/assets/images/portfolio/socilab/gallery02.png",
-        "caption": "Minimalist contact form for consulting work. Email script was made using Node.js"
-    }, {
-        "url": "/assets/images/portfolio/socilab/gallery04.png",
-        "caption": "Visual metrics of the user's nework is displayed in a graphical form using the LinkedIn API."
-    }, {
-        "url": "/assets/images/portfolio/socilab/gallery05.png",
-        "caption": "LinkedIn API provides for a messaging functionality."
-    }]
+  "id": 7,
+  "name": "Veam",
+  "date": "October 2016",
+  "task": "Hybrid App Development",
+  "desc": "Veam needed a hybrid social media application with features like sending video messages, adding friends, likes/dislikes etc. ",
+  "imgUrl": "/assets/images/portfolio/veam/thumb.png",
+  "client": "Veam",
+  "clientDesc": "Veam is a social media startup based out of Canada",
+  "clientLogo": "/assets/images/portfolio/veam/logo.png",
+  "clientUrl": "http://veam.meteorapp.com/",
+  "stack": ["angular", "ts", "babel", "meteor", "cordova", "mongodb"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/veam/1.png",
+    "caption": "Hybrid application built in Meteor with Angular 2 in frontend and Cordova for video capture, contacts access, sms invites etc."
+  }, {
+    "url": "/assets/images/portfolio/veam/2.png",
+    "caption": "Form validation using Angular 2's forms module. Authentication handled using Meteor."
+  }, {
+    "url": "/assets/images/portfolio/veam/3.png",
+    "caption": "Social media feed with contacts and search."
+  }, {
+    "url": "/assets/images/portfolio/veam/4.png",
+    "caption": "Profile pop-up for checking statistics and editing."
+  }, {
+    "url": "/assets/images/portfolio/veam/5.png",
+    "caption": "Colored icons for notifications."
+  }, {
+    "url": "/assets/images/portfolio/veam/6.png",
+    "caption": "Notifications with colored markers for unread ones."
+  }, {
+    "url": "/assets/images/portfolio/veam/7.png",
+    "caption": "Video capture using Cordova plugin."
+  }]
 
 }, {
-    "id": 12,
-    "name": "American Steel",
-    "date": "June 2016",
-    "task": "Game Development",
-    "desc": "American Steel is a 2d run and gun shooter (Contra, Megaman et al.) with a visual aesthetic reminiscent of 80s Saturday morning cartoons (He-man, Centurions et al.). I am handling the entire programming aspect including artificial intelligence, physics, gameplay programming etc.",
-    "imgUrl": "/assets/images/portfolio/americansteel/thumb.png",
-    "client": "Macondo Games (personal)",
-    "clientDesc": "American Steel is a 2d run and gun shooter with a visual aesthetic reminiscent of 80s Saturday morning cartoons (that I am developing)",
-    "clientLogo": "/assets/images/portfolio/americansteel/logo.png",
-    "clientUrl": "http://www.macondogames.com/#games",
-    "stack": ["unity", "csharp", "trello"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/americansteel/gallery01.png",
-        "caption": "Level Selection Screen done in an 80s aesthetic."
-    }, {
-        "url": "/assets/images/portfolio/americansteel/gallery03.png",
-        "caption": "The first boss fight in the game"
-    }, {
-        "url": "/assets/images/portfolio/americansteel/gallery02.png",
-        "caption": "Project management via Trello."
-    }, {
-        "url": "/assets/images/portfolio/americansteel/gallery04.png",
-        "caption": "Animation using Unity's Mecanim animation system."
-    }]
+  "id": 8,
+  "name": "Kairos Website",
+  "date": "August 2016",
+  "task": "Full Stack Web Development",
+  "desc": "Kairos needed a new website for their company with features like portfolio display/filtering, CMS capabilities etc. I built the site from the ground up handling everything from the layout to the database design.",
+  "imgUrl": "/assets/images/portfolio/kairos/thumb.png",
+  "client": "Kairos",
+  "clientDesc": "Kairos is a not-for-profit consultancy company based out of Austria",
+  "clientLogo": "/assets/images/portfolio/kairos/logo.png",
+  "clientUrl": "http://kairos.sunlight-project.org",
+  "stack": ["angular", "sass", "compass", "bootstrap", "bower", "babel", "php", "mysql", "gulp"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/kairos/gallery01.png",
+    "caption": "Fully responsive layout on a variety of devices. Pure.css was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/kairos/gallery07.png",
+    "caption": "Projects page populated by HTTP requests to a REST API in PHP which fetches the data from a MySQL database."
+  }, {
+    "url": "/assets/images/portfolio/kairos/gallery08.png",
+    "caption": "Contacts page populated by HTTP requests to a REST API in PHP which fetches the data from a MySQL database."
+  }, {
+    "url": "/assets/images/portfolio/kairos/gallery02.png",
+    "caption": "Bootstrap based lightbox modal and gallery for images."
+  }, {
+    "url": "/assets/images/portfolio/kairos/gallery03.png",
+    "caption": "Angular filters to sort/filter the data on various parameters."
+  }, {
+    "url": "/assets/images/portfolio/kairos/gallery04.png",
+    "caption": "Full dual language support with the click of a button using state parameters."
+  }, {
+    "url": "/assets/images/portfolio/kairos/gallery05.png",
+    "caption": "Custom CMS with complete CRUD functionalities using a REST API coded in PHP."
+  }, {
+    "url": "/assets/images/portfolio/kairos/gallery06.png",
+    "caption": "Image upload and retrieval via PHP."
+  }, {
+    "url": "/assets/images/portfolio/kairos/gallery09.png",
+    "caption": "SQL database design."
+  }]
+}, {
+  "id": 9,
+  "name": "ELiquid Canada Website",
+  "date": "August 2016",
+  "task": "Full Stack Web Development",
+  "desc": "ELiquid needed a new website for their ecommerce company. I was provided the initial design which I converted to an Angular 2 SPA implementing standard ecommerce website functionalities like product filtering, CRUD functionalities for sellers/admins etc. I also handled the database design as well as building a RESTful API for the frontend to communicate with the database.",
+  "imgUrl": "/assets/images/portfolio/eliquid/thumb.png",
+  "client": "ELiquid Canada",
+  "clientDesc": "ELiquid Canada is an e-commerce platform for vapes (e-cigarretes)",
+  "clientLogo": "/assets/images/portfolio/eliquid/logo.png",
+  "clientUrl": "http://eliquidscanada.com",
+  "stack": ["angular", "ts", "babel", "php", "mysql"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/eliquid/gallery01.png",
+    "caption": "Home page populated by a RESTful API coded in PHP."
+  }, {
+    "url": "/assets/images/portfolio/eliquid/gallery02.png",
+    "caption": "Angular filters for filtering products according to various criteria."
+  }, {
+    "url": "/assets/images/portfolio/eliquid/gallery03.png",
+    "caption": "Filters in action displaying products of a certain company."
+  }, {
+    "url": "/assets/images/portfolio/eliquid/gallery04.png",
+    "caption": "Product pages populated via route ids in the url."
+  }, {
+    "url": "/assets/images/portfolio/eliquid/gallery05.png",
+    "caption": "Sliding wishlist/cart functionality."
+  }, {
+    "url": "/assets/images/portfolio/eliquid/gallery06.png",
+    "caption": "CRUD functionality using a RESTful API coded in PHP and a MySQL database."
+  }, {
+    "url": "/assets/images/portfolio/eliquid/gallery07.png",
+    "caption": "Orders interface for each seller ordered by buyer and buyer type."
+  }, {
+    "url": "/assets/images/portfolio/eliquid/gallery08.png",
+    "caption": "Interface for website admin to change lists displayed on the home page."
+  }, {
+    "url": "/assets/images/portfolio/eliquid/gallery09.png",
+    "caption": "SQL database design."
+  }]
 
 }, {
-    "id": 13,
-    "name": "Macondo Games Website",
-    "date": "January 2016",
-    "task": "Full Stack Web Development",
-    "desc": "For the website for my video games company I designed and implemented a responsive SPA website with a contact form. I also handled the database design and backend.",
-    "imgUrl": "/assets/images/portfolio/macondo/thumb.png",
-    "client": "Macondo Games (personal)",
-    "clientDesc": "Macondo Games is an independent video game company based out of Mumbai (that I own)",
-    "clientLogo": "/assets/images/portfolio/macondo/logo.png",
-    "clientUrl": "http://www.macondogames.com",
-    "stack": ["angular", "jquery", "sass", "compass", "bower", "babel", "gulp"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/macondo/gallery01.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/macondo/gallery02.png",
-        "caption": "Form validation via JQuery. Mailing list script in PHP and Zoho API."
-    }, {
-        "url": "/assets/images/portfolio/macondo/gallery03.png",
-        "caption": "AJAX confirms form submission via a customised modal."
-    }, {
-        "url": "/assets/images/portfolio/macondo/gallery04.png",
-        "caption": "Facebook/Twitter APIs used for share/tweet buttons respectively."
-    }]
+  "id": 10,
+  "name": "Workplace Savings Calculator",
+  "date": "March 2016",
+  "task": "Desktop Software Development",
+  "desc": "Global Workplace Analytics had an Excel calculator that calculated savings for remote work and telecommunication which they wanted to convert to a mobile and desktop version. I handled the design and development of this multi-platform application.",
+  "imgUrl": "/assets/images/portfolio/gwa/thumb.png",
+  "client": "Global Workplace Analytics",
+  "clientDesc": "GWA is a management consultancy company that create and communicate strategies for the workplace",
+  "clientLogo": "/assets/images/portfolio/gwa/logo.png",
+  "clientUrl": "http://globalworkplaceanalytics.com/",
+  "stack": ["unity", "csharp"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/gwa/gallery01.png",
+    "caption": "Minimalist main UI with an input slider and a radial progress bar for output."
+  }, {
+    "url": "/assets/images/portfolio/gwa/gallery02.png",
+    "caption": "Panel slides away to reveal more detailed output parameters."
+  }, {
+    "url": "/assets/images/portfolio/gwa/gallery03.png",
+    "caption": "Tabbed structure for the various inputs on the left."
+  }, {
+    "url": "/assets/images/portfolio/gwa/gallery04.png",
+    "caption": "Color changes to indicate positive/negative effects."
+  }, {
+    "url": "/assets/images/portfolio/gwa/gallery05.png",
+    "caption": "Panels for each output parameter to see dependent inputs."
+  }]
 
 }, {
-    "id": 14,
-    "name": "Icarus Inc Website",
-    "date": "May 2016",
-    "task": "Full Stack Web Development",
-    "desc": "For the website for my webcomic I designed and implemented a responsive SPA website with navigation controls for the comic. I also handled the database design and backend.",
-    "imgUrl": "/assets/images/portfolio/icarusinc/thumb.png",
-    "client": "Icarus Inc (personal)",
-    "clientDesc": "Icarus Inc is a dystopian sci-fi webcomic set in the near future (that I am writing)",
-    "clientLogo": "/assets/images/portfolio/icarusinc/logo.png",
-    "clientUrl": "http://www.icarus-inc.com",
-    "stack": ["angular", "sass", "compass", "bower", "babel", "gulp"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/icarusinc/gallery03.png",
-        "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
-    }, {
-        "url": "/assets/images/portfolio/icarusinc/gallery01.png",
-        "caption": "Slider and ui-router used for comic navigation."
-    }, {
-        "url": "/assets/images/portfolio/icarusinc/gallery02.png",
-        "caption": "Bootstrap based carousel."
-    }]
+  "id": 11,
+  "name": "Socilab",
+  "date": "April 2016",
+  "task": "Frontend Web Development",
+  "desc": "Socilab wanted a frontend overhaul for their social anlytics website. I implemented a new responsive design as well as additional frontend functionalities and visualizations.",
+  "imgUrl": "/assets/images/portfolio/socilab/thumb.png",
+  "client": "Socilab",
+  "clientDesc": "Socilab is a platform for social network analysis using LinkedIn networks",
+  "clientLogo": "/assets/images/portfolio/socilab/logo.png",
+  "clientUrl": "http://socilab.com/",
+  "stack": ["angular", "bootstrap", "sass", "compass", "node", "mongodb", "gulp"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/socilab/gallery03.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/socilab/gallery01.png",
+    "caption": "Minimalist home page with a carousel stating the various functionalities of the site."
+  }, {
+    "url": "/assets/images/portfolio/socilab/gallery02.png",
+    "caption": "Minimalist contact form for consulting work. Email script was made using Node.js"
+  }, {
+    "url": "/assets/images/portfolio/socilab/gallery04.png",
+    "caption": "Visual metrics of the user's nework is displayed in a graphical form using the LinkedIn API."
+  }, {
+    "url": "/assets/images/portfolio/socilab/gallery05.png",
+    "caption": "LinkedIn API provides for a messaging functionality."
+  }]
 
 }, {
-    "id": 15,
-    "name": "Mrinal Mech Website",
-    "date": "August 2016",
-    "task": "Full Stack Web Development",
-    "desc": "For my personal portfolio website I designed and implemented a responsive SPA website. I also handled the database design and backend.",
-    "imgUrl": "/assets/images/portfolio/mrinalmech/thumb.png",
-    "client": "Mrinal Mech (personal)",
-    "clientDesc": "My portfolio website",
-    "clientLogo": "/assets/images/portfolio/mrinalmech/logo.png",
-    "clientUrl": "http://www.mrinalmech.com",
-    "stack": ["react", "reactrouter", "redux", "jquery", "babel", "aws", "gulp", "browserify"],
-    "gallery": [{
-        "url": "/assets/images/portfolio/mrinalmech/gallery01.png",
-        "caption": "Fully responsive layout on a variety of devices. A custom CSS template was used."
-    }, {
-        "url": "/assets/images/portfolio/mrinalmech/gallery04.png",
-        "caption": "Data loaded via AJAX requests to a JSON file."
-    }, {
-        "url": "/assets/images/portfolio/mrinalmech/gallery02.png",
-        "caption": "Pagination with Redux states to remember last viewed pages."
-    }, {
-        "url": "/assets/images/portfolio/mrinalmech/gallery03.png",
-        "caption": "React router used for routing with sliding animations."
-    }, {
-        "url": "/assets/images/portfolio/mrinalmech/gallery05.png",
-        "caption": "Pure CSS loading screens."
-    }]
+  "id": 12,
+  "name": "American Steel",
+  "date": "June 2016",
+  "task": "Game Development",
+  "desc": "American Steel is a 2d run and gun shooter (Contra, Megaman et al.) with a visual aesthetic reminiscent of 80s Saturday morning cartoons (He-man, Centurions et al.). I am handling the entire programming aspect including artificial intelligence, physics, gameplay programming etc.",
+  "imgUrl": "/assets/images/portfolio/americansteel/thumb.png",
+  "client": "Macondo Games (personal)",
+  "clientDesc": "American Steel is a 2d run and gun shooter with a visual aesthetic reminiscent of 80s Saturday morning cartoons (that I am developing)",
+  "clientLogo": "/assets/images/portfolio/americansteel/logo.png",
+  "clientUrl": "http://www.macondogames.com/#games",
+  "stack": ["unity", "csharp", "trello"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/americansteel/gallery01.png",
+    "caption": "Level Selection Screen done in an 80s aesthetic."
+  }, {
+    "url": "/assets/images/portfolio/americansteel/gallery03.png",
+    "caption": "The first boss fight in the game"
+  }, {
+    "url": "/assets/images/portfolio/americansteel/gallery02.png",
+    "caption": "Project management via Trello."
+  }, {
+    "url": "/assets/images/portfolio/americansteel/gallery04.png",
+    "caption": "Animation using Unity's Mecanim animation system."
+  }]
+
+}, {
+  "id": 13,
+  "name": "Macondo Games Website",
+  "date": "January 2016",
+  "task": "Full Stack Web Development",
+  "desc": "For the website for my video games company I designed and implemented a responsive SPA website with a contact form. I also handled the database design and backend.",
+  "imgUrl": "/assets/images/portfolio/macondo/thumb.png",
+  "client": "Macondo Games (personal)",
+  "clientDesc": "Macondo Games is an independent video game company based out of Mumbai (that I own)",
+  "clientLogo": "/assets/images/portfolio/macondo/logo.png",
+  "clientUrl": "http://www.macondogames.com",
+  "stack": ["angular", "jquery", "sass", "compass", "bower", "babel", "gulp"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/macondo/gallery01.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/macondo/gallery02.png",
+    "caption": "Form validation via JQuery. Mailing list script in PHP and Zoho API."
+  }, {
+    "url": "/assets/images/portfolio/macondo/gallery03.png",
+    "caption": "AJAX confirms form submission via a customised modal."
+  }, {
+    "url": "/assets/images/portfolio/macondo/gallery04.png",
+    "caption": "Facebook/Twitter APIs used for share/tweet buttons respectively."
+  }]
+
+}, {
+  "id": 14,
+  "name": "Icarus Inc Website",
+  "date": "May 2016",
+  "task": "Full Stack Web Development",
+  "desc": "For the website for my webcomic I designed and implemented a responsive SPA website with navigation controls for the comic. I also handled the database design and backend.",
+  "imgUrl": "/assets/images/portfolio/icarusinc/thumb.png",
+  "client": "Icarus Inc (personal)",
+  "clientDesc": "Icarus Inc is a dystopian sci-fi webcomic set in the near future (that I am writing)",
+  "clientLogo": "/assets/images/portfolio/icarusinc/logo.png",
+  "clientUrl": "http://www.icarus-inc.com",
+  "stack": ["angular", "sass", "compass", "bower", "babel", "gulp"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/icarusinc/gallery03.png",
+    "caption": "Fully responsive layout on a variety of devices. Bootstrap was used for the grid layout."
+  }, {
+    "url": "/assets/images/portfolio/icarusinc/gallery01.png",
+    "caption": "Slider and ui-router used for comic navigation."
+  }, {
+    "url": "/assets/images/portfolio/icarusinc/gallery02.png",
+    "caption": "Bootstrap based carousel."
+  }]
+
+}, {
+  "id": 15,
+  "name": "Mrinal Mech Website",
+  "date": "August 2016",
+  "task": "Full Stack Web Development",
+  "desc": "For my personal portfolio website I designed and implemented a responsive SPA website. I also handled the database design and backend.",
+  "imgUrl": "/assets/images/portfolio/mrinalmech/thumb.png",
+  "client": "Mrinal Mech (personal)",
+  "clientDesc": "My portfolio website",
+  "clientLogo": "/assets/images/portfolio/mrinalmech/logo.png",
+  "clientUrl": "http://www.mrinalmech.com",
+  "stack": ["react", "reactrouter", "redux", "jquery", "babel", "aws", "gulp", "browserify"],
+  "gallery": [{
+    "url": "/assets/images/portfolio/mrinalmech/gallery01.png",
+    "caption": "Fully responsive layout on a variety of devices. A custom CSS template was used."
+  }, {
+    "url": "/assets/images/portfolio/mrinalmech/gallery04.png",
+    "caption": "Data loaded via AJAX requests to a JSON file."
+  }, {
+    "url": "/assets/images/portfolio/mrinalmech/gallery02.png",
+    "caption": "Pagination with Redux states to remember last viewed pages."
+  }, {
+    "url": "/assets/images/portfolio/mrinalmech/gallery03.png",
+    "caption": "React router used for routing with sliding animations."
+  }, {
+    "url": "/assets/images/portfolio/mrinalmech/gallery05.png",
+    "caption": "Pure CSS loading screens."
+  }]
 
 }]
